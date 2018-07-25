@@ -1,0 +1,1 @@
+The same contribution guidelines as in the tt.bot repository are used here.

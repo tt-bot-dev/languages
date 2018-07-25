@@ -1,0 +1,13 @@
+# When the language isn't known or is being added, notify the maintainers
+*       @tt-bot-dev/maintainers
+
+# Lookie here, something in English is borked. Notify maintainers
+en.js   @tt-bot-dev/maintainers
+
+# trans.js is a language that allows you to show contexts. Don't disturb Vlag in this case, because it's my borks.
+trans.js @tttie
+
+# Notify the translators.
+cs-CZ.js @tt-bot-dev/cs-cz
+sk-SK.js @tt-bot-dev/sk-sk
+ro-RO.js @tt-bot-dev/ro-ro
