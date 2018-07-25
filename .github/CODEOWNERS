@@ -8,6 +8,6 @@ en.js   @tt-bot-dev/maintainers
 trans.js @tttie
 
 # Notify the translators.
-cs-CZ.js @tt-bot-dev/cs-cz
-sk-SK.js @tt-bot-dev/sk-sk
-ro-RO.js @tt-bot-dev/ro-ro
+cs-*.js @tt-bot-dev/cs-cz
+sk-*.js @tt-bot-dev/sk-sk
+ro-*.js @tt-bot-dev/ro-ro
