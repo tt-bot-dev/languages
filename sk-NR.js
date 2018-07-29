@@ -195,7 +195,7 @@ module.exports = {
     //strike.js
     BOTS_NOT_STRIKABLE:                             "Nemal by si varovať oných, botov. Je možné, že ublížíš ich rozumu :(",
     YOU_GOT_STRIKED:                                "Vypadá, že máš nové varovaní.",
-    STRIKE_DETAILS:                                 (issuer, reason) => `Varovaní je poslaté ${issuer} z dajakého dóvodu \`${reason || "Tak teda bez dóvodu"}\`.`,
+    STRIKE_DETAILS:                                 (issuer, reason) => `Varovaní je poslaté od ${issuer} z vraj že dajakého dóvodu: \`${reason || "No, tak teda bez dóvodu"}\`.`,
     PAY_ATTENTION:                                  "Nerob garázdu!",
 
     //strikes.js
