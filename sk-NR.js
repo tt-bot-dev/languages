@@ -287,6 +287,7 @@ Otázka končí za 5 minút, takže nebuď lemravý.`,
     YES:                                            "Áno",
     NO:                                             "Níe",
     TOOLONG:                                        "Mám to dlhé a nedá sa to ukázať :(",
+    INVALID_ARG:                                    arg => `Voláky neplatný argument: ${arg}, já vám tomu nerozumím ale opravte si to sami!`,
 
     // Locale info
     NATIVE_LOCALE_NAME:                             "Slovenčina (Nitránske nárečí)",
