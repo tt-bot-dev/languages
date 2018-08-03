@@ -284,6 +284,7 @@ Otázka expiruje za 5 minút.`,
     YES:                                            "Ano",
     NO:                                             "Nie",
     TOOLONG:                                        "Príliš dlhé na ukázánie, prepáč :(",
+    INVALID_ARG:                                    arg => `Neplatný argument: ${arg}`,
 
     // Locale info
     NATIVE_LOCALE_NAME:                             "Slovenčina",
