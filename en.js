@@ -237,6 +237,7 @@ Query will automatically expire in 5 minutes.`,
     YES:                                            "Yes",
     NO:                                             "No",
     TOOLONG:                                        "Too long to show, sorry :(",
+    INVALID_ARG:                                    arg => `Invalid argument: ${arg}`,
     
     NATIVE_LOCALE_NAME:                             "English",
     ENGLISH_LOCALE_NAME:                            "English"
