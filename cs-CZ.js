@@ -276,7 +276,7 @@ Dotaz expiruje za 5 minut.`,
     YES:                                            "Ano",
     NO:                                             "Ne",
     TOOLONG:                                        "Příliš dlouhé na ukázání, promiň :(",
-    INVALID_ARG:                                    arg => `Neplatný argument: ${arg}`
+    INVALID_ARG:                                    arg => `Neplatný argument: ${arg}`,
 
     // Locale info
     NATIVE_LOCALE_NAME:                             "Čeština",
