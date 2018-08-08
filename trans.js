@@ -1,3 +1,5 @@
+// This language is for the translators of tt.bot to see the contexts of the terms.
+
 if (global.i18n) t()
 else setTimeout(i18nchecker, 100);
 
