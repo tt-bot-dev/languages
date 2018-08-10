@@ -50,7 +50,7 @@ module.exports = {
     AGREE_FAULT:                                    owner => `Prepáč, ale nemôžem ti dať rolu. Prosím, povedz o tom vlastníkovi serveru (${bot.getTag(owner)})`,
 
     //agreesetup.js
-    AGREE_SETUP_ALREADY:                            "Funkcia súhlasu tu je. Steš ju vypnút?\nNapíš y alebo yes na vypnutie. Inak napíš n alebo no. Na odpoveď máš 10 sekúnd, tak sa nebuc šuchta",
+    AGREE_SETUP_ALREADY:                            "Funkcia súhlasu tu je. Steš ju vypnút?\nNapíš y alebo yes na vypnutie. Inak napíš n alebo no. Na odpoveď máš 10 sekúnd, tak sa nešuchci!",
     AGREE_DISABLED:                                 "Kónečne! Funkcia áno je vypatá.",
     AGREE_ROLE_QUERY:                               "Ic het! Naondi sem méno role, kerú steš ondiť na funkciu áno.",
     AGREE_SETUP:                                    prefix => `Ná tu máš! Keď sem volado napíše \`${prefix || config.prefix}agree\`, dám im hentú rolu. Móže byť rád že neni sprostý.`,
@@ -132,8 +132,8 @@ module.exports = {
     KICK_DONE:                                      user => `:ok_hand: Trogár ${bot.getTag(user)} je vykotený.`,
 
     //logging.js
-    LOGGING_ALREADY_SETUP:                          "Funkcia americké záznamové zaríďení tu je. Steš ju vypnút?\nNapíš y alebo yes na vypnutie. Inak napíš n alebo no. Na odpoveď máš 10 sekúnd, tak sa nebuc šuchta",
-    LOGGING_DISABLED:                               "Kónečne! Funkcia americké záznamové zaríďení je vypatá!",
+    LOGGING_ALREADY_SETUP:                          "Funkcia Americké záznamové zaríďení tu je. Steš ju vypnút?\nNapíš y alebo yes na vypnutie. Inak napíš n alebo no. Na odpoveď máš 10 sekúnd, tak sa nešuchci!",
+    LOGGING_DISABLED:                               "Kónečne! Funkcia Americké záznamové zaríďení je vypatá!",
     LOGGING_SETUP:                                  "Ná tu máš! Keď voláka s udalostí bude, naondím ju sem.",
 
     //needsmorejpeg.js
