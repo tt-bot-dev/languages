@@ -115,6 +115,7 @@ module.exports = {
     INVALID_TIMEZONE:                               `This timezone is invalid. You can find a list of possible timezones [here](https://cdn.rawgit.com/TTtie/TTtie-Bot/master/tz.txt)`,
     INVALID_LOCALE:                                 locale => `Invalid locale \`${locale}\``,
     LOCALE_SET:                                     locale => `Set your locale to ${locale}.`,
+    USER_PROFILE:                                   user => `${user}'s profile`,
 
     //serverinfo.js
     GUILD_VERIFICATION_NONE:                        "None",

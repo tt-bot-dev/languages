@@ -154,6 +154,7 @@ module.exports = {
     INVALID_TIMEZONE:                               `Tohle časové pásmo není správné. Seznam možných časových pásem najdeš [zde](https://cdn.rawgit.com/TTtie/TTtie-Bot/master/tz.txt)`,
     INVALID_LOCALE:                                 locale => `Neplatný jazyk: \`${locale}\``,
     LOCALE_SET:                                     locale => `Tvůj jazyk byl nastaven na ${locale}.`,
+    USER_PROFILE:                                   user => `Profil uživatele ${user}`,
 
     //serverinfo.js
     GUILD_VERIFICATION_NONE:                        "Žádná",
