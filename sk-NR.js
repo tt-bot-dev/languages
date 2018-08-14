@@ -163,6 +163,7 @@ module.exports = {
     INVALID_TIMEZONE:                               `Toto časové pásmo je skoro správne, len neni dobre. Zoznam časových pásem nájdeš vraj na [tomto míste](https://cdn.rawgit.com/TTtie/TTtie-Bot/master/tz.txt)`,
     INVALID_LOCALE:                                 locale => `Nahovno jazyk: \`${locale}\``,
     LOCALE_SET:                                     locale => `Nastaveu si si jazyk ${locale}.`,
+    USER_PROFILE:                                   user => `Profil trogára ${user}`,
 
     //serverinfo.js
     GUILD_VERIFICATION_NONE:                        "Žádna",
