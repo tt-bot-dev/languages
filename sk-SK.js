@@ -267,6 +267,11 @@ Otázka expiruje za 5 minút.`,
     REACTION_MENU_EXIT_CHANNEL_DELETE:              "Menu ukončené, pretože kanál bol zmazaný.",
     REACTION_MENU_NO_AUTOREMOVE:                    "Chyba: Nemôžem odstrániť tvoju reakciu pretože mi chýba oprávnenie \"Spravovať správy\".\nKeď mi ho niekto dá, odstránim tvoju reakciu pre tvoje pohodlie.",
 
+    // Modlog
+
+    MODS_UNSTRIKABLE:                               "Nemôžeš varovať moderátora!",
+
+    
     // General
     NONE:                                           "Žiadne",
     MEMBERS:                                        "Členovia",
