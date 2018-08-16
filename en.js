@@ -220,6 +220,10 @@ Query will automatically expire in 5 minutes.`,
     REACTION_MENU_EXIT_CHANNEL_DELETE:              "Exited the menu because the channel was deleted.",
     REACTION_MENU_NO_AUTOREMOVE:                    "Error: Cannot remove your reaction because I'm very likely lacking the Manage Messages permission.\nIf you give it to me, I'll remove your reaction for your convenience.",
 
+    // Modlog
+
+    MODS_UNSTRIKABLE:                               "You cannot strike a moderator!",
+
     // General
     NONE:                                           "None",
     MEMBERS:                                        "Members",

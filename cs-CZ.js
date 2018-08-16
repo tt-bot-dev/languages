@@ -252,6 +252,8 @@ Dotaz expiruje za 5 minut.`,
 
     // There is going to be webserver translations soon, but currently cannot figure it out.
 
+    // Modlog
+    MODS_UNSTRIKABLE:                               "Nemůžeš varovat moderátora!",
 
     // Reaction menu
     REACTION_MENU_EXIT_MANUAL:                      "Opustil(a) jsi menu.",
