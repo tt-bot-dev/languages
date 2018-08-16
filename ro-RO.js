@@ -115,6 +115,7 @@ module.exports = {
     INVALID_TIMEZONE:                               `Acest fus orar este invalid. Puteți găsi o listă cu fusuri orare posible [aici](https://cdn.rawgit.com/TTtie/TTtie-Bot/master/tz.txt)`,
     INVALID_LOCALE:                                 locale => `Locație invalidă \`${locale}\``,
     LOCALE_SET:                                     locale => `Am setat locația dvs. în ${locale}.`,
+    USER_PROFILE:                                   user => `Profilul lui ${user}`,
 
     //serverinfo.js
     GUILD_VERIFICATION_NONE:                        "Niciunul",
@@ -212,6 +213,8 @@ Altfel, reacționați cu ❌ ca să anulați.
 
     // Aici vor fi traducerile pentru webserver cât de curând, dar deocamdată nu pot să mă asortez cu asta.
 
+    // Modlog
+    MODS_UNSTRIKABLE:                               "Nu puteți da strike la moderatori!",
 
     // Reaction menu
     REACTION_MENU_EXIT_MANUAL:                      "A-ți ieșit din meniu.",
@@ -237,7 +240,8 @@ Altfel, reacționați cu ❌ ca să anulați.
     YES:                                            "Da",
     NO:                                             "Nu",
     TOOLONG:                                        "Prea lung ca să ecranizez, îmi pare rău. :(",
-    
+    INVALID_ARG:                                    arg => `Argument invalid: ${arg}`,
+
     NATIVE_LOCALE_NAME:                             "Română",
     ENGLISH_LOCALE_NAME:                            "Romanian"
 };
