@@ -270,6 +270,11 @@ Otázka končí za 5 minút, takže nebuď lemravý.`,
     REACTION_MENU_EXIT_CHANNEL_DELETE:              "Menu vypaté, lebo haraburda je vyondená.",
     REACTION_MENU_NO_AUTOREMOVE:                    "Problém: Nedá sa odstránit tvoju trogársku reakciu protože mi volado nedal oprávnení \"Spravovať správy\".\nKeď mi ho volado dá, budem štastný a odstránim aj tvoju trogársku reakciu pre tvoje pohodlí.",
 
+    // Modlog
+
+    MODS_UNSTRIKABLE:                               "Nemôžeš zaondiť podradeného!",
+
+    
     // General
     NONE:                                           "Žádne",
     MEMBERS:                                        "Hovadá",
