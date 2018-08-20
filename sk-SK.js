@@ -57,11 +57,51 @@ module.exports = {
 
     //clear.js
     CLEAR_DONE:                                     messages => `:ok_hand: ${getDeletedPlural(messages)} ${messages} ${getMessagesPlural(messages)}.`,
+    CLEAR_CONFIRM:                                  `Si si istý/á, že chceš zmazať správy podľa vypísaných argumentov? Keď ano, napíš y alebo yes. Inak napíš n alebo no. Na odpoveď máš 10 sekúnd.`,
 
     // config.js
-    GUILD_CONFIG:                                   (guild, items) => `\`\`\`\nKonfigurácia serveru pre ${guild}\n${items.join("\n")}\`\`\`\nAj keď názvy nastavení sú jednoduché, je možné, že vaše nastavenie môže spôsobiť neplechu.\nKeď chceš namiesto toho použiť webovoú verziu, choď na ${config.webserverDisplay("/")}`,
     SETTING_UPDATED:                                (setting, value) => `Nastavenie ${setting} nastavené na ${value}`,
     SETTING_UNKNOWN:                                setting => `Neznáme nastavenie ${setting}`,
+    WELCOME_TO_CONFIG:                              () => `Vitaj v konfigurácii tt.bot-a! Použi reakcie na prístup k jednotlivým kategóriam nastavení.
+Menu môžeš opustiť kedy chceš reagovaním :stop_button:
+Chceš radšej použiť webové rozhranie? Choď sem: ${config.webserverDisplay("/")}`,
+    CONFIG_PREFIX:                                  `:pen_fountain: Predpona (prefix)`,
+    CONFIG_PREFIX_DESCRIPTION:                      () => `Tu môžeš nastaviť predponu (prefix) ${bot.user.username}-a. Používanie \`${config.prefix}\` ako prefix bude stále fungovať.`,
+    CONFIG_MODROLE:                                 `:hammer: Role moderátora`,
+    CONFIG_MODROLE_DESCRIPTION:                     `Môžeš si nastaviť vlastnú rolu moderátora, ktorú bude bot používať. Ber na vedomie, že toto je len referencia na meno role (nerozlišujú sa VEĽKÉ a malé písmena).`,
+    CONFIG_FAREWELL:                                `:wave: Rozlúčenie`,
+    CONFIG_FAREWELL_DESCRIPTION:                    `Táto funkcia ti umožní vidieť, kdo odišiel zo serveru. Týmto nastavením upravíš správu, ktorá bude posielaná. Toto používa [ttMsg](https://github.com/tt-bot-dev/tt.bot/wiki/ttMsg) (anglicky).`,
+    CONFIG_FAREWELL_CHANNEL:                        `:pen_ballpoint: Kanál pre rozlúčenie`,    
+    CONFIG_FAREWELL_CHANNEL_DESCRIPTION:            `Týmto môžeš nastaviť kde se majú posielať správy pre vyššie popísanú funkciu.`,
+    CONFIG_AGREE_CHANNEL:                           `:white_check_mark: Kanál pro funkciu súhlasu`,
+    CONFIG_AGREE_CHANNEL_DESCRIPTION:               `Táto funkcia umožňuje luďom si pridať rolu člena použitím príkazu \`agree\`. Toto si nájde použitie, napríklad. keď chceš zaručiť, že všetci videli pravidlá serveru.`,
+    CONFIG_MODLOG_CHANNEL:                          `:tools: Kanál pre záznam moderátorských akcii`,
+    CONFIG_MODLOG_CHANNEL_DESCRIPTION:              `Umožňuje zaznamenávanie moderátorských akcii (varovánie, vyhodenie, (soft)ban) vykonaných cez bota do určeného kanálu.`,
+    CONFIG_LOG_CHANNEL:                             `:notepad_spiral: Kanál pre záznamy`,
+    CONFIG_LOG_CHANNEL_DESCRIPTION:                 `Toto je mocná funkcia tt.bot-a, ktorá umožňuje zaznamenávanie niektorých akcí na serveri. [Zisti o tom viac (anglicky)](https://github.com/tt-bot-dev/tt.bot/wiki/Logging-events)`,
+    CONFIG_LOG_EVENTS:                              `:pencil: Akcie pre záznamy`,
+    CONFIG_LOG_EVENTS_DESCRIPTION:                  `Tu môžeš určiť, ktoré akcie budú zaznamenávané pre vyššie uvedenoú funkciu.`,
+    CONFIG_GREETING:                                `:handshake: Privítanie`,
+    CONFIG_GREETING_DESCRIPTION:                    `Táto funkcia ti umožňuje poslať správu, ktorú si môžeš prispôsobiť aby si privítal(a) nových členov na serveri. Týmto nastavením upravíš správu, ktorá bude posielaná. Toto používa [ttMsg](https://github.com/tt-bot-dev/tt.bot/wiki/ttMsg) (anglicky).`,
+    CONFIG_GREETING_CHANNEL:                        `:pencil2: Kanál pre privítanie`,
+    CONFIG_GREETING_CHANNEL_DESCRIPTION:            `Týmto môžeš nastaviť kde se majú posielať správy pre vyššie popísanú funkciu.`,
+    CONFIG_MEMBER_ROLE:                             `:busts_in_silhouette: Role člena`,
+    CONFIG_MEMBER_ROLE_DESCRIPTION:                 `Táto rola bude používáná pre členov serveru, ktorí súhlasili s pravidlami.`,
+    SETTING_CURRENT_VAL:                            val => `Aktuálna hodnota nastavení je ${val}`,
+    SETTING_SET:                                    ":pencil: Nastaviť",
+    SETTING_SET_DESCRIPTION:                        "Nastaví hodnotu tohoto nastavenia na novú hodnotu.",
+    SETTING_RESET:                                  ":x: Resetovať",
+    SETTING_DISABLE:                                ":x: Vypnúť",
+    SETTING_RESET_DESCRIPTION:                      def => `Toto zresetuje hodnotu na pôvodnú hodnotu (${def})`,
+    SETTING_DISABLE_DESCRIPTION:                    `Toto odstrání túto hodnotu z konfigurácie.`,
+    SETTING_HOME:                                   ":house: Domov",
+    SETTING_HOME_DESCRIPTION:                       "Vráti sa späť do hlavného menu.",
+    QUESTION_STRING_VAL:                            "Napíš sem novú hodnotu. Na odpoveď máš 60 sekúnd.",
+    QUESTION_CHANNEL_VAL:                           `Napiš sem kanál, ktorý chceš použiť. Na odpoveď máš 30 sekúnd.`,
+    QUESTION_ROLE_VAL:                              `Napiš sem roli, ktorý chceš použiť. Na odpoveď máš 30 sekúnd.`,
+    QUESTION_RESET:                                 c => `Si si istý/a, že chceš zresetovať ${c} na pôvodnú hodnotu?\nNapíš y alebo yes na resetovanie. Inak napiš n alebo no. Na odpoveď máš 10 sekúnd.`,
+    QUESTION_DISABLE:                               c => `Si si istý/a, že chceš vypnúť ${c}?\nNapíš y alebo yes na resetovanie. Inak napiš n alebo no. Na odpoveď máš 10 sekúnd.`,
+    
 
     //delpunish.js
     CANNOT_UNSTRIKE:                                err => `Nemôžem odstrániť varovanie z tohoto dôvodu: ${err}`,
@@ -74,18 +114,9 @@ module.exports = {
 - Tvoje emoji môžu byť rychlejšie alebo pomalšie v závislosti na frekvencií snímkov (používame 20ms odstup/50fps)
 - Tvoje emoji môžu byť orezáné.`,
     IMAGE_GENERATION_TIME:                          (sec, nsec) => `Generovanie tohoto obrázku trvalo ${sec} sekund a ${Math.floor(nsec / 1e6)} ms`,
-
-    //farewell.js
-    FAREWELL_UPDATED:                               (message, channelID) => `:ok_hand: Rozlúčenie nastavené na \`${message}\`. Rozlúčenie bude poslané do <#${channelID}>.`, 
-    FAREWELL_RESET:                                 "Rozlúčenie bolo resetované.",
-
+    
     //getavatar.js
     AVATAR_NOT_LOADING:                             avatar => `[Obrázok sa nenačítava?](${avatar})`,
-
-
-    //greet.js
-    GREETING_UPDATED:                               (message, channelID) => `:ok_hand: Privítanie nastavené na \`${message}\`. Privítanie bude poslané do <#${channelID}>.`,
-    GREETING_RESET:                                 "Privítanie bolo resetované.",
 
     //hackban.js
     HACKBANNED_USERS:                               users => `:ok_hand: ${getBannedPlural(users)} ${users} ${getBannedUserPlural(users)}.`,
@@ -128,11 +159,6 @@ module.exports = {
     //kick.js
     KICK_DONE:                                      user => `:ok_hand: Používateľ ${bot.getTag(user)} bol vyhodený.`,
 
-    //logging.js
-    LOGGING_ALREADY_SETUP:                          "Funkcia záznamov už bola nastavená na tomto serveri. Chceš ju vypnúť?\nNapíš y alebo yes na vypnutie. Inak napíš n alebo no. Na odpoveď máš 10 sekúnd.",
-    LOGGING_DISABLED:                               "Hotovo! Funkcia záznamov bola vypnutá!",
-    LOGGING_SETUP:                                  "A je to! Keď nejaká z udalostí nastane, pošlem ju sem.",
-
     //needsmorejpeg.js
     // No terms for this one.
     //škoda noo, ja bych to bol preložil aj toto
@@ -161,6 +187,7 @@ module.exports = {
     INVALID_LOCALE:                                 locale => `Neplatný jazyk: \`${locale}\``,
     LOCALE_SET:                                     locale => `Tvoj jazyk bol nastavený na ${locale}.`,
     USER_PROFILE:                                   user => `Profil používateľa ${user}`,
+    PROFILE_LOCALE_LIST:                            (currentLocale, status) => `Momentálne máš nastavený tento jazyk: \`${currentLocale}\`!\nAktuálny stav jazykov:\n${status}`,
 
     //serverinfo.js
     GUILD_VERIFICATION_NONE:                        "Žiadna",
@@ -239,7 +266,7 @@ module.exports = {
     HI_I_AM_BOT:                                    `:wave: Ahoj!`,
     SOME_THINGS_SAID:                               () => `Moje meno je ${bot.user.username} a som instancia tt.bot-a, multifunkčného a zábavného bota pre Discord. Cítil som potrebu popísať ti, kto som.`,
     GETTING_STARTED:                                ":floppy_disk: Začíname",
-    GETTING_STARTED_DESCRIPTION:                    `Nepotrebuješ nastavovať tt.bot-a, aby si si užil(a) jeho základné funkcie! Ale k používaniu príkazov pre moderátorov, ty (alebo ktokoľvek s oprávnením Administrátor) musí použiť príkaz \`${config.prefix}config\`, aby vytvoril konfiguráciu serveru. A to je v podstate všetko! Daj svojim moderátorom rolu "tt.bot mod" a môžu začať moderovať! Alebo nastav nastavenie modRole na meno tvojej role pre moderátorov.`,
+    GETTING_STARTED_DESCRIPTION:                    `Nepotrebuješ nastavovať tt.bot-a, aby si si užil(a) jeho základné funkcie! Ale k používaniu príkazov pre moderátorov, ty (alebo ktokoľvek s oprávnením Spravovať server) musí použiť príkaz \`${config.prefix}config\`, aby vytvoril konfiguráciu serveru. A to je v podstate všetko! Daj svojim moderátorom rolu "tt.bot mod" a môžu začať moderovať! Alebo nastav nastavenie modRole na meno tvojej role pre moderátorov.`,
     EVERYTHING_ELSE:                                ":books: Všetko ostatné",
     EVERYTHING_ELSE_DESCRIPTION:                    "Keď potrebuješ pomôct (alebo si s nami len porozprávať), príď na náš server podpory; pozvánku nájdeš v príkaze info.",
     THANKS_FOR_CHOOSING:                            "Ďakujeme, že si si vybral(a) tt.bot-a!",
