@@ -3,24 +3,58 @@ module.exports = {
     //agree.js
     AGREE_FAULT:                                    owner => `Sorry, but I'm not able to give you the role. Please tell the server owner (${bot.getTag(owner)}) about this.`,
 
-    //agreesetup.js
-    AGREE_SETUP_ALREADY:                            "The agreement feature was already set up on this server. Do you want to disable it?\nType y or yes for disabling it. n or no otherwise. To respond, you have 10 seconds.",
-    AGREE_DISABLED:                                 "Done! The agree feature is now disabled.",
-    AGREE_ROLE_QUERY:                               "So, here we go! Please type your search query to choose the role you want to set up the agreement feature.",
-    AGREE_SETUP:                                    prefix => `The setup is done! Now, when somebody types \`${prefix || config.prefix}agree\` here, I'll give them the role.`,
-
     //ban.js
     BAN_DONE:                                       user => `:ok_hand: Banned ${bot.getTag(user)}.`,
 
     //clear.js
     CLEAR_DONE:                                     messages => `:ok_hand: Deleted ${messages} messages.`,
+    CLEAR_CONFIRM:                                  `Are you sure you want to delete the messages according to your arguments? Type y or yes to continue; n or no for stopping the action. You have 10 seconds to respond.`,
 
     // config.js
-    GUILD_CONFIG:                                   (guild, items) => `\`\`\`\nServer configuration for ${guild}\n${items.join("\n")}\`\`\`\nEven though the config names are selfexplanatory, it is possible that your settings might bork the configuration.\nIf you want to use the web version instead, go to ${config.webserverDisplay("/")}`,
-    SETTING_UPDATED:                                (setting, value) => `Updated ${setting} to ${value}`,
-    SETTING_UNKNOWN:                                setting => `Unknown setting ${setting}`,
+    WELCOME_TO_CONFIG:                              () => `Welcome to tt.bot's configuration! Please use reactions to access the individual setting categories.
+You can use :stop_button: reaction to stop at any time.
+Want to use the web interface instead? Go here: ${config.webserverDisplay("/")}`,
+    SETTING_UPDATED:                                (setting, value) => `Updated ${setting} to ${value}\nPlease note that using this way of configuring the bot is deprecated. If you want to configure tt.bot from Discord, use the config command with no arguments.`,
+    SETTING_UNKNOWN:                                setting => `Unknown setting ${setting}\nPlease note that using this way of configuring the bot is deprecated. If you want to configure tt.bot from Discord, use the config command with no arguments.`,
+    CONFIG_PREFIX:                                  `:pen_fountain: Prefix`,
+    CONFIG_PREFIX_DESCRIPTION:                      () => `Here you can set ${bot.user.username}'s prefix. Using \`${config.prefix}\` as the prefix will still work.`,
+    CONFIG_MODROLE:                                 `:hammer: Moderator role`,
+    CONFIG_MODROLE_DESCRIPTION:                     `You can set the custom moderator role for the bot to use. Keep in mind, this is just a case insensitive reference to the role name.`,
+    CONFIG_FAREWELL:                                `:wave: Farewell`,
+    CONFIG_FAREWELL_DESCRIPTION:                    `This feature gives you an ability to see who left the server. You can set the message using this setting. This uses [ttMsg](https://github.com/tt-bot-dev/tt.bot/wiki/ttMsg).`,
+    CONFIG_FAREWELL_CHANNEL:                        `:pen_ballpoint: Farewell channel`,    
+    CONFIG_FAREWELL_CHANNEL_DESCRIPTION:            `Using this, you can set where to post the messages for the above mentioned feature.`,
+    CONFIG_AGREE_CHANNEL:                           `:white_check_mark: Agreement channel`,
+    CONFIG_AGREE_CHANNEL_DESCRIPTION:               `This feature allows one to give themselves the member role by using the \`agree\` command. This is useful when you want to guarantee everyone read the rules.`,
+    CONFIG_MODLOG_CHANNEL:                          `:tools: Modlog channel`,
+    CONFIG_MODLOG_CHANNEL_DESCRIPTION:              `This allows logging moderative actions (strike, kick, (soft)ban) done through the bot to a specific channel.`,
+    CONFIG_LOG_CHANNEL:                             `:notepad_spiral: Log channel`,
+    CONFIG_LOG_CHANNEL_DESCRIPTION:                 `This is a powerful feature of tt.bot that allows logging of some actions in the server. [Learn more about this](https://github.com/tt-bot-dev/tt.bot/wiki/Logging-events)`,
+    CONFIG_LOG_EVENTS:                              `:pencil: Log events`,
+    CONFIG_LOG_EVENTS_DESCRIPTION:                  `Here you can specify what events for the above mentioned feature will be logged.`,
+    CONFIG_GREETING:                                `:handshake: Greeting`,
+    CONFIG_GREETING_DESCRIPTION:                    `This feature gives you an ability to send a message that allows more customization in order to welcome your new members. You can set the message using this setting. This uses [ttMsg](https://github.com/tt-bot-dev/tt.bot/wiki/ttMsg).`,
+    CONFIG_GREETING_CHANNEL:                        `:pencil2: Greeting channel`,
+    CONFIG_GREETING_CHANNEL_DESCRIPTION:            `Using this, you can set where to post the messages for the above mentioned feature.`,
+    CONFIG_MEMBER_ROLE:                             `:busts_in_silhouette: Member role`,
+    CONFIG_MEMBER_ROLE_DESCRIPTION:                 `This role is the role used for the agreement feature.`,
+    SETTING_CURRENT_VAL:                            val => `The current value is ${val}`,
+    SETTING_SET:                                    ":pencil: Set",
+    SETTING_SET_DESCRIPTION:                        "Sets the value of this setting to a new value.",
+    SETTING_RESET:                                  ":x: Reset",
+    SETTING_DISABLE:                                ":x: Disable",
+    SETTING_RESET_DESCRIPTION:                      def => `This will reset the value to the default value (${def})`,
+    SETTING_DISABLE_DESCRIPTION:                    `This will remove the configuration listing from your configuration.`,
+    SETTING_HOME:                                   ":house: Home",
+    SETTING_HOME_DESCRIPTION:                       "Goes back to the main menu",
+    QUESTION_STRING_VAL:                            "Please type in your new value. You have 60 seconds to respond.",
+    QUESTION_CHANNEL_VAL:                           `Please type in the channel you want to use. You have 30 seconds to respond.`,
+    QUESTION_ROLE_VAL:                              `Please type in the channel you want to use. You have 30 seconds to respond.`,
+    QUESTION_RESET:                                 c => `Are you sure you want to reset ${c} to the default value?\nType in y or yes if you want to. n or no otherwise. You have 10 seconds to respond.`,
+    QUESTION_DISABLE:                               c => `Are you sure you want to disable ${c}?\nType in y or yes if you want to. n or no otherwise. You have 10 seconds to respond.`,
+    
 
-    //delpunish.js
+    //delpunish.js  
     CANNOT_UNSTRIKE:                                err => `Cannot remove the strike for this reason: ${err}`,
 
     //emoji.js
@@ -32,17 +66,8 @@ module.exports = {
 - Your emoji may get cut off.`,
     IMAGE_GENERATION_TIME:                          (sec, nsec) => `Generating this image took ${sec} seconds and ${Math.floor(nsec / 1e6)} ms`,
 
-    //farewell.js
-    FAREWELL_UPDATED:                               (message, channelID) => `:ok_hand: Updated the leave message to \`${message}\`. It will be sent into <#${channelID}>.`, 
-    FAREWELL_RESET:                                 "Reset the farewells.",
-
     //getavatar.js
     AVATAR_NOT_LOADING:                             avatar => `[Image not loading?](${avatar})`,
-
-
-    //greet.js
-    GREETING_UPDATED:                               (message, channelID) => `:ok_hand: Updated the welcome message to \`${message}\`. It will be sent into <#${channelID}>.`,
-    GREETING_RESET:                                 "Reset the greetings.",
 
     //hackban.js
     HACKBANNED_USERS:                               users => `:ok_hand: Banned ${users} user${users !== 1 ? "s": ""} .`,
@@ -85,11 +110,6 @@ module.exports = {
     //kick.js
     KICK_DONE:                                      user => `:ok_hand: Kicked ${bot.getTag(user)}.`,
 
-    //logging.js
-    LOGGING_ALREADY_SETUP:                          "The logging feature was already set up on this server. Do you want to disable it?\nType y or yes for disabling it. n or no otherwise. To respond, you have 10 seconds.",
-    LOGGING_DISABLED:                               "Done! The logging feature is now disabled.",
-    LOGGING_SETUP:                                  "The setup is done! Now, when one of the specified events trigger, I'll send them here.",
-
     //needsmorejpeg.js
     // No terms for this one.
 
@@ -116,6 +136,7 @@ module.exports = {
     INVALID_LOCALE:                                 locale => `Invalid locale \`${locale}\``,
     LOCALE_SET:                                     locale => `Set your locale to ${locale}.`,
     USER_PROFILE:                                   user => `${user}'s profile`,
+    PROFILE_LOCALE_LIST:                            (currentLocale, status) => `You currently have set \`${currentLocale}\` as your locale!\nCurrent language status:\n${status}`,
 
     //serverinfo.js
     GUILD_VERIFICATION_NONE:                        "None",
@@ -193,7 +214,7 @@ module.exports = {
     HI_I_AM_BOT:                                    `:wave: Hi there!`,
     SOME_THINGS_SAID:                               () => `My name is ${bot.user.username} and I'm an instance of tt.bot, a multifunctional and fun Discord bot. I felt there is a need of describe myself to you.`,
     GETTING_STARTED:                                ":floppy_disk: Getting started",
-    GETTING_STARTED_DESCRIPTION:                    `You don't require any setup for tt.bot to work with basic features! However, to use some moderation commands, you (or anyone with Administrator permission) have to use the \`${config.prefix}config\` command to create the configuration. And that's basically it! Give your staff the "tt.bot mod" role and they can start moderating! Or set the modRole setting to whatever your role name is.`,
+    GETTING_STARTED_DESCRIPTION:                    `You don't require any setup for tt.bot to work with basic features! However, to use some moderation commands, you (or anyone with Manage Server permission) have to use the \`${config.prefix}config\` command to create the configuration. And that's basically it! Give your staff the "tt.bot mod" role and they can start moderating! Or set the modRole setting to whatever your role name is.`,
     EVERYTHING_ELSE:                                ":books: Everything else",
     EVERYTHING_ELSE_DESCRIPTION:                    "If you need help (or just want to hang out with us), feel free to come to our support server; the invite is in the info command.",
     THANKS_FOR_CHOOSING:                            "Thanks for choosing tt.bot!",
@@ -219,7 +240,6 @@ Query will automatically expire in 5 minutes.`,
     REACTION_MENU_EXIT_MESSAGE_DELETE:              "Exited the menu because the message was deleted.",
     REACTION_MENU_EXIT_CHANNEL_DELETE:              "Exited the menu because the channel was deleted.",
     REACTION_MENU_NO_AUTOREMOVE:                    "Error: Cannot remove your reaction because I'm very likely lacking the Manage Messages permission.\nIf you give it to me, I'll remove your reaction for your convenience.",
-
     // Modlog
 
     MODS_UNSTRIKABLE:                               "You cannot strike a moderator!",
