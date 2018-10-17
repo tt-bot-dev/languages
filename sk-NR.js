@@ -115,7 +115,7 @@ module.exports = {
     INFO_UPTIME:                                    "Čas funglu:",
 
     //invite.js
-    BOT_INVITE:                                     `Na tu máš: <https://discordapp.com/oauth2/authorize?client_id=195506253806436353&scope=bot&permissions=-1\n\nKeď steš pomócť, nebuď lemravý a dójdi a server prvej pomoci.`,
+    BOT_INVITE:                                     `Na tu máš: https://discordapp.com/oauth2/authorize?client_id=195506253806436353&scope=bot&permissions=-1\n\nKeď steš pomócť, nebuď lemravý a dójdi a server prvej pomoci.`,
 
     //inviteinspector.js
     CANNOT_GET_INVITE:                              "Nevím najísť pozvánku.",
