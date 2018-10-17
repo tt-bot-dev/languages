@@ -94,7 +94,7 @@ Want to use the web interface instead? Go here: ${config.webserverDisplay("/")}`
     INFO_UPTIME:                                    "Uptime:",
 
     //invite.js
-    BOT_INVITE:                                     `Here you go! <https://discordapp.com/oauth2/authorize?client_id=195506253806436353&scope=bot&permissions=-1\n\nIf you need help using the bot, come to our support server, invite is in info command.`,
+    BOT_INVITE:                                     `Here you go! https://discordapp.com/oauth2/authorize?client_id=195506253806436353&scope=bot&permissions=-1\n\nIf you need help using the bot, come to our support server, invite is in info command.`,
 
     //inviteinspector.js
     CANNOT_GET_INVITE:                              "I cannot get the information on the invite.",
