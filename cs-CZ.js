@@ -132,7 +132,7 @@ Chceš radši použít webové rozhraní? Jdi sem: ${config.webserverDisplay("/"
     INFO_UPTIME:                                    "Doba provozu:",
 
     //invite.js
-    BOT_INVITE:                                     `Tady máš: <https://discordapp.com/oauth2/authorize?client_id=195506253806436353&scope=bot&permissions=-1\n\nPokud potřebuješ pomoct s používáním bota, přijď na náš server podpory, pozvánka je příkazu info.`,
+    BOT_INVITE:                                     `Tady máš: https://discordapp.com/oauth2/authorize?client_id=195506253806436353&scope=bot&permissions=-1\n\nPokud potřebuješ pomoct s používáním bota, přijď na náš server podpory, pozvánka je příkazu info.`,
 
     //inviteinspector.js
     CANNOT_GET_INVITE:                              "Nemůžu získat informace o pozvánce.",
