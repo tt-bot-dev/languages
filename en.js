@@ -66,6 +66,45 @@ Want to use the web interface instead? Go here: ${config.webserverDisplay("/")}`
 - Your emoji may get cut off.`,
     IMAGE_GENERATION_TIME:                          (sec, nsec) => `Generating this image took ${sec} seconds and ${Math.floor(nsec / 1e6)} ms`,
 
+    //extensions.js
+    NO_EXTENSIONS:                                  "You don't have any extensions yet!",
+    NO_MORE_EXTENSIONS:                             "There aren't any more extensions than that.",
+    EXTENSION_LIST:                                 guild => `Here are the extensions for ${guild.name}`,
+    EXTENSION_LIST_FIELD:                           ext => `
+ID: ${ext.id}
+Allowed channels: ${ext.allowedChannels.map(c => `<#${c}>`).join(", ") || "All"}
+Allowed roles: ${ext.allowedRoles.map(r => `<@&${r}>`).join(", ") || "All"}`,
+    QUESTION_EXTENSION_CODE:                        "Please upload your code as a Discord attachment. You have 60 seconds to upload the code.\nKeep in mind, that the code must be a in a .js file.",
+    QUESTION_EXTENSION_NAME:                        "Please tell me how would you like to name your extension. The limit for the name is 100 characters. You have 60 seconds to respond.",
+    QUESTION_EXTENSION_TRIGGER:                     "Please tell me what command trigger would you like to use. The limit for the command trigger is 20 characters. Also, you cannot use spaces in the trigger. You have 20 seconds to respond.",
+    QUESTION_EXTENSION_CHANNEL_RESTRICT:            "Would you like to restrict running the extension to certain channels? Type y or yes if you want to, n or no otherwise. You have 10 seconds to respond.",
+    ALLOWED_CHANNELS:                               "Allowed channels",
+    EXTENSION_MENU_SUBTEXT:                         additionalStr => `Please type in the letter next to the action to do the listed action${additionalStr}`,
+    ALLOWED_CHANNELS_ACTION_ADD:                    "a: Add",
+    ALLOWED_CHANNELS_ACTION_ADD_DESCRIPTION:        role => `Adds a ${role ? "role" : "channel"} to the list of allowed ${role ? "role" : "channel"}s`,
+    ALLOWED_CHANNELS_ACTION_REMOVE:                 "r: Remove",
+    ALLOWED_CHANNELS_ACTION_REMOVE_DESCRIPTION:     role => `Removes a ${role ? "role" : "channel"} off the list of allowed ${role ? "role" : "channel"}s`,
+    ALLOWED_CHANNELS_ACTION_DONE:                   "d: Done",
+    ALLOWED_CHANNELS_ACTION_DONE_DESCRIPTION:       "Finishes editing",
+    QUESTION_ALLOWED_CHANNELS_ADD:                  roleOrChannel => `Please type in the ${roleOrChannel ? "role" : "channel"} you want to add in. You have 30 seconds to respond.`,
+    QUESTION_ALLOWED_CHANNELS_REMOVE:               roleOrChannel => `Please type in the ${roleOrChannel ? "role" : "channel"} you want to remove. You have 30 seconds to respond.`,
+    CHANNEL_ALLOWED_ALREADY:                        role => `This ${role ? "role" : "channel"} is allowed already.`,
+    CHANNEL_DISALLOWED_ALREADY:                     role => `This ${role ? "role" : "channel"} is disallowed already.`,
+    ALLOWED_CHANNELS_MENU_CANCELLED:                role => `Menu cancelled due to inactivity; the ${role ? "role" : "channel"}s that were selected already will be used.`,
+    QUESTION_EXTENSION_ROLE_RESTRICT:               "Would you like to restrict running the extension to members with certain roles? Type y or yes if you want to, n or no otherwise. You have 10 seconds to respond.",
+    ALLOWED_ROLES:                                  "Allowed roles",
+    MENU_CURRENTLY_SELECTED:                        rolesOrChannels => `Currently allowed ${rolesOrChannels ? "roles" : "channels"}:`,
+    QUESTION_EXTENSION_STORE:                       "Do you want to use a different extension store than the default one? Type y or yes if you want to use one. n or no otherwise. To respond, you have 10 seconds.",
+    QUESTION_EXTENSION_STORE_ID:                    "Type in the store ID now.",
+    STORE_NONEXISTANT:                              "This store doesn't exist.",
+    STORE_CREATED:                                  store => `Created a store with an ID ${store}`,
+    EXTENSION_CREATED:                              (extensionName, id) => `Finished! Extension ${extensionName} has been successfully created! Its ID is ${id}.`,
+    EXTENSION_NONEXISTANT:                          "This extension doesn't exist.",
+    QUESTION_EXTENSION_DELETE:                      ext => `Are you sure you want to delete the extension ${ext.name} (ID ${ext.id})? Type y or yes if you want to. n or no otherwise. To respond, you have 10 seconds.`,
+    QUESTION_EXTENSION_DELETE_STORE:                ext => `Done! The extension ${ext.name} is deleted.\nWould you also like to delete its store (ID ${ext.store})? Type y or yes if you want to. n or no otherwise. To respond, you have 10 seconds.`,
+    STORE_DELETE_NONEXISTANT:                       "Alright, but the store was already deleted.",
+    STORE_DELETED:                                  ext => `Done, deleted the store with an ID ${ext.store}`,
+
     //getavatar.js
     AVATAR_NOT_LOADING:                             avatar => `[Image not loading?](${avatar})`,
 
@@ -114,7 +153,24 @@ Want to use the web interface instead? Go here: ${config.webserverDisplay("/")}`
     // No terms for this one.
 
     // phone.js
-    // No terms for this command, the speakerphone feature won't be translated for now
+    ALREADY_HAVE_NUMBER:                            "You already have a phone number here, don't you?",
+    NUMBER_RESERVED:                                "Sorry, but phone numbers starting with TTBOT 0 (882680) are reserved for the developers.",
+    NUMBER_EXISTS:                                  "The number already exists, so why register it again?",
+    QUESTION_NUMBER_PRIVATE:                        "Do you want to make your number to be private? Private numbers show up as registered, however, when looked up, no information will be available.",
+    NUMBER_CREATED:                                 "Alright, that's all! Your number is now safe and sound.",
+    NUMBER_INVALID:                                 hint => `Uh... This is not a valid phone number.${hint ? "\nYour number must start with TTBOT (88268), then 9 numbers of your choice." : ""}`,
+    CALLER_NO_NUMBER:                               "We don't do anonymous calls, sorry.",
+    NUMBER_NONEXISTANT:                            "This number is not registered, sorry.",
+    CALLING:                                        "Alrighty, they are being called now!",
+    CALL_ABORTED_BOT_REMOVED:                       "Call aborted: The bot was removed from the guild you are calling.",
+    CALL_ABORTED_NO_PERMISSIONS:                    "Call aborted: The bot doesn't have the permissions to write in the channel you are calling.",
+    PRIVATE_NUMBER:                                 "Private number",
+    CHANNEL_INFORMATION:                            "Channel information",
+    NUMBER_AVAILABLE:                               "The bot was removed from the guild this number is registered at. This number is free to register now.",
+    CHANNEL_INFORMATION_VALUE:                      (channel, guild) => `${channel ? `#${channel.name}` : "unknown channel"} at ${guild.name}`,
+    NUMBER_INFORMATION:                             number => `Number information: ${number}`,
+    QUESTION_DELETE_NUM:                            number => `Are you sure to delete this number: ${number}? This action is irreversible.`,
+    NUMBER_DELETED:                                 "Done! The number is deleted.",
 
     //ping.js
     PING_LATENCY:                                   ms => `It took ${ms}ms to ping.`,
@@ -252,7 +308,7 @@ Query will automatically expire in 5 minutes.`,
     STATUS:                                         "Status",
     REASON:                                         "Reason",
     OP_CANCELLED:                                   "Operation cancelled.",
-    COMMAND_ERROR:                                  "Sorry, but I didn't get this right. Please double check the input and rerun the command.",
+    COMMAND_ERROR:                                  "Sorry, but I didn't get this right. Please double check the input and try again.",
     ARGS_MISSING:                                   `You miss some required arguments. :thinking:`,
     ROLE_HIERARCHY_ERROR:                           `You can't do this on that user.`,
     ERROR:                                          err => `Oops. I have tried completing your command, but I ran into an error. Please share this with my developers.\n\`\`\`js\nError:\n${err}\n\`\`\``,
@@ -263,6 +319,8 @@ Query will automatically expire in 5 minutes.`,
     NO:                                             "No",
     TOOLONG:                                        "Too long to show, sorry :(",
     INVALID_ARG:                                    arg => `Invalid argument: ${arg}`,
+    PAGE:                                           page => `Page ${page}`,
+    ALL:                                            "All",
     
     NATIVE_LOCALE_NAME:                             "English",
     ENGLISH_LOCALE_NAME:                            "English"
