@@ -321,5 +321,6 @@ Otázka expiruje za 5 minút.`,
 
     // Locale info
     NATIVE_LOCALE_NAME:                             "Slovenčina",
-    ENGLISH_LOCALE_NAME:                            "Slovak"
+    ENGLISH_LOCALE_NAME:                            "Slovak",
+    fallbackLanguage:                               "en"
 };

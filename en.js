@@ -153,14 +153,14 @@ Allowed roles: ${ext.allowedRoles.map(r => `<@&${r}>`).join(", ") || "All"}`,
     // No terms for this one.
 
     // phone.js
-    ALREADY_HAVE_NUMBER:                            "You already have a phone number here, don't you?",
+    ALREADY_HAVE_NUMBER:                            "Sorry, but you have reached your telephone number limit and you cannot get more numbers.",
     NUMBER_RESERVED:                                "Sorry, but phone numbers starting with TTBOT 0 (882680) are reserved for the developers.",
-    NUMBER_EXISTS:                                  "The number already exists, so why register it again?",
+    NUMBER_EXISTS:                                  "The number already exists. Try another one.",
     QUESTION_NUMBER_PRIVATE:                        "Do you want to make your number to be private? Private numbers show up as registered, however, when looked up, no information will be available.",
     NUMBER_CREATED:                                 "Alright, that's all! Your number is now safe and sound.",
     NUMBER_INVALID:                                 hint => `Uh... This is not a valid phone number.${hint ? "\nYour number must start with TTBOT (88268), then 9 numbers of your choice." : ""}`,
     CALLER_NO_NUMBER:                               "We don't do anonymous calls, sorry.",
-    NUMBER_NONEXISTANT:                            "This number is not registered, sorry.",
+    NUMBER_NONEXISTANT:                             "This number is not registered, sorry.",
     CALLING:                                        "Alrighty, they are being called now!",
     CALL_ABORTED_BOT_REMOVED:                       "Call aborted: The bot was removed from the guild you are calling.",
     CALL_ABORTED_NO_PERMISSIONS:                    "Call aborted: The bot doesn't have the permissions to write in the channel you are calling.",
@@ -324,4 +324,5 @@ Query will automatically expire in 5 minutes.`,
     
     NATIVE_LOCALE_NAME:                             "English",
     ENGLISH_LOCALE_NAME:                            "English"
+  //fallbackLanguage:                               "en"
 };

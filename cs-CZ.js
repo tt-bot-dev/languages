@@ -103,7 +103,47 @@ Chceš radši použít webové rozhraní? Jdi sem: ${config.webserverDisplay("/"
     IMAGE_CAVEATS:                                  `Nikdo ani nic není dokonalé, tohle jsou některé problémy, o kterých víme a s kterými se můžeš setkat.
 - Tvoje emoji mohou být rychlejší nebo pomalejší v závislosti na frekvenci snímků (používáme 20ms odstup/50fps)
 - Tvoje emoji mohou být ořezány.`,
-    IMAGE_GENERATION_TIME:                          (sec, nsec) => `Generování tohoto obrázku trvalo ${sec} sekund a ${Math.floor(nsec / 1e6)} ms`,
+    IMAGE_GENERATION_TIME:                          (sec, nsec)=> `Generování tohoto obrázku trvalo ${sec} sekund a ${Math.floor(nsec / 1e6)} ms`,
+
+    //extensions.js
+    NO_EXTENSIONS:                                  "Zatím nemáš žádná rozšíření!",
+    NO_MORE_EXTENSIONS:                             "Více rozšíření už tady není.",
+    EXTENSION_LIST:                                 guild => `Tady jsou rozšíření ${guild.name}`,
+    EXTENSION_LIST_FIELD:                           ext => `
+ID: ${ext.id}
+Povolené kanály: ${ext.allowedChannels.map(c => `<#${c}>`).join(", ") || "Všechny"}
+Povolené role: ${ext.allowedRoles.map(r => `<@&${r}>`).join(", ") || "Všechny"}`,
+    QUESTION_EXTENSION_CODE:                        "Prosím nahraj svůj kód jako přílohu na Discordu. Máš na to 60 sekund.\nMěj na paměti, že kód musí být v souboru s příponou `.js`.",
+    QUESTION_EXTENSION_NAME:                        "Prosím, řekni mi název tvého rozšíření. Limit je 100 znaků, na odpověď máš 60 sekund.",
+    QUESTION_EXTENSION_TRIGGER:                     "Prosím, řekni mi jméno příkazu (command trigger). Limit je 20 znaků. Také nelze používat mezery. Na odpověď máš 20 sekund.",
+    QUESTION_EXTENSION_CHANNEL_RESTRICT:            "Chceš omezit spouštění tvého rozšíření je na vybrané kanály? Pokud chceš, napiš y nebo yes. Jinak napiš n nebo no. Na odpověď máš 10 sekund.",
+    ALLOWED_CHANNELS:                               "Povolené kanály",
+    EXTENSION_MENU_SUBTEXT:                         additionalStr => `Piš sem písmena vedle akcí, abys provedl danou akci${additionalStr}`,
+    ALLOWED_CHANNELS_ACTION_ADD:                    "a: Přidat",
+    ALLOWED_CHANNELS_ACTION_ADD_DESCRIPTION:        role => `Přidá ${role ? "roli" : "kanál"} na seznam povolených ${role ? "rolí" : "kanálů"}`,
+    ALLOWED_CHANNELS_ACTION_REMOVE:                 "r: Odebrat",
+    ALLOWED_CHANNELS_ACTION_REMOVE_DESCRIPTION:     role => `Odebere ${role ? "roli" : "kanál"} na seznam povolených ${role ? "rolí" : "kanálů"}`,
+    ALLOWED_CHANNELS_ACTION_DONE:                   "d: Hotovo",
+    ALLOWED_CHANNELS_ACTION_DONE_DESCRIPTION:       "Ukončí toto menu a uloží úpravy",
+    QUESTION_ALLOWED_CHANNELS_ADD:                  roleOrChannel => `Prosím napiš sem ${roleOrChannel ? "roli, kterou" : "kanál, který"} chceš přidat. Na odpověď máš 30 sekund.`,
+    QUESTION_ALLOWED_CHANNELS_REMOVE:               roleOrChannel => `Prosím napiš sem ${roleOrChannel ? "roli, kterou" : "kanál, který"} chceš odebrat. Na odpověď máš 30 sekund.`,
+    CHANNEL_ALLOWED_ALREADY:                        role => `${role ? "Tato role" : "Tento kanál"} je už povolen${!role || "a"}.`,
+    CHANNEL_DISALLOWED_ALREADY:                     role => `${role ? "Tato role" : "Tento kanál"} je už zakázán${!role || "a"}.`,
+    ALLOWED_CHANNELS_MENU_CANCELLED:                role => `Menu ukončeno kvůli neaktivitě; ${role ? "role" : "kanály"}, které byly vybrané budou použity.`,
+    QUESTION_EXTENSION_ROLE_RESTRICT:               "Chceš omezit spouštění tvého rozšíření jen členům s určitými rolemi? Pokud chceš, napiš y nebo yes. Jinak napiš n nebo no. Na odpověď máš 10 sekund.",
+    ALLOWED_ROLES:                                  "Povolené role",
+    MENU_CURRENTLY_SELECTED:                        rolesOrChannels => `Momentálně povolené ${rolesOrChannels ? "role" : "kanály"}:`,
+    QUESTION_EXTENSION_STORE:                       "Chceš použít jiné uložiště rozšíření místo výchozího. Pokud ano, napiš y nebo yes. Pokud ne, napiš n nebo no. Na odpověď máš 10 sekund.",
+    QUESTION_EXTENSION_STORE_ID:                    "Napiš sem ID uložiště.",
+    STORE_NONEXISTANT:                              "Toto uložiště neexistuje.",
+    STORE_CREATED:                                  store => `Vytvořeno uložiště s ID ${store}`,
+    EXTENSION_CREATED:                              (extensionName, id) => `Hotovo! Rozšíření ${extensionName} bylo vytvořeno! Jeho ID je ${id}.`,
+    EXTENSION_NONEXISTANT:                          "Toto rozšíření neexistuje.",
+    QUESTION_EXTENSION_DELETE:                      ext => `Jseš si jistý, že chceš odstranit rozšíření ${ext.name} (ID ${ext.id})? Pokud ano, napiš y nebo yes. Pokud ne, napiš n nebo no. Na odpověď máš 10 sekund.`,
+    QUESTION_EXTENSION_DELETE_STORE:                ext => `Hotovc! Rozšíření ${ext.name} je smazáno.\nChceš také smazat i jeho úložiště (ID ${ext.store})? Pokud ano, napiš y nebo yes. Pokud ne, napiš n nebo no. Na odpověď máš 10 sekund.`,
+    STORE_DELETE_NONEXISTANT:                       "OK, ale uložiště už bylo vymazáno.",
+    STORE_DELETED:                                  ext => `Hotovo, úložiště s ID ${ext.store} bylo smazáno`,
+
     //getavatar.js
     AVATAR_NOT_LOADING:                             avatar => `[Obrázek se nenačítá?](${avatar})`,
 
@@ -152,7 +192,24 @@ Chceš radši použít webové rozhraní? Jdi sem: ${config.webserverDisplay("/"
     // No terms for this one.
 
     // phone.js
-    // No terms for this command, the speakerphone feature won't be translated for now
+    ALREADY_HAVE_NUMBER:                            "Omlouvám se, ale dosáhl jsi limitu telefonních čísel a nemůžeš registrovat víc.",
+    NUMBER_RESERVED:                                "Omlouvám se, ale telefonní čísla začínající na TTBOT 0 (882660) jsou rezervovány pro vývojáře.",
+    NUMBER_EXISTS:                                  "Tohle číslo už existuje, zkus jiné.",
+    QUESTION_NUMBER_PRIVATE:                        "Chceš udělat svoje telefonní číslo neveřejným? Soukromá čísla se zobrazí jako registrovaná, ale ve výpisu informací o číslu nebudou žádné informace dostupné.",
+    NUMBER_CREATED:                                 "OK, to je všechno. Tvoje číslo už je uloženo.",
+    NUMBER_INVALID:                                 hint => `Hm.. tohle není správné telefonní číslo.${hint ? "\nTvoje číslo musí začínat na TTBOT (88268), pak 9 čísel." : ""}`,
+    CALLER_NO_NUMBER:                               "Promiň, ale anonymní hovory nejsou možné.",
+    NUMBER_NONEXISTANT:                             "Promiň, ale toto číslo neexistuje",
+    CALLING:                                        "V pořádku, už je vytáčím...",
+    CALL_ABORTED_BOT_REMOVED:                       "Hovor přerušen: Bot byl odebrán ze serveru, který voláš.",
+    CALL_ABORTED_NO_PERMISSIONS:                    "Hovor přerušen: Bot nemůže psát do kanálu, který voláš",
+    PRIVATE_NUMBER:                                 "Soukromé číslo",
+    CHANNEL_INFORMATION:                            "Informace o kanálu",
+    NUMBER_AVAILABLE:                               "Bot byl odstraněn ze serveru na kterém byl registrován. Toto číslo je uvolněno k registraci..",
+    CHANNEL_INFORMATION_VALUE:                      (channel, guild) => `${channel ? `#${channel.name}` : "Neznámý kanál"} na serveru ${guild.name}`,
+    NUMBER_INFORMATION:                             number => `Informace o číslu: ${number}`,
+    QUESTION_DELETE_NUM:                            number => `Jsi si jistý, že chceš smazat toto telefonní číslo: ${number}? Tato akce nelze vrátit zpět.`,
+    NUMBER_DELETED:                                 "Hotovo, číslo je odstraněno.",
 
     //ping.js
     PING_LATENCY:                                   ms => `Ping trval ${ms}ms.`,
@@ -301,7 +358,8 @@ Dotaz expiruje za 5 minut.`,
     TOOLONG:                                        "Příliš dlouhé na ukázání, promiň :(",
     INVALID_ARG:                                    arg => `Neplatný argument: ${arg}`,
 
-    // Locale info
+    // Locale info and metadata. Only uppercase strings can be used in the bot.
     NATIVE_LOCALE_NAME:                             "Čeština",
-    ENGLISH_LOCALE_NAME:                            "Czech"
+    ENGLISH_LOCALE_NAME:                            "Czech",
+    fallbackLanguage:                               "en"
 };
