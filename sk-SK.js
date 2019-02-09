@@ -70,7 +70,7 @@ Chceš radšej použiť webové rozhranie? Choď sem: ${config.webserverDisplay(
     CONFIG_MODROLE:                                 `:hammer: Role moderátora`,
     CONFIG_MODROLE_DESCRIPTION:                     `Môžeš si nastaviť vlastnú rolu moderátora, ktorú bude bot používať. Ber na vedomie, že toto je len referencia na meno role (nerozlišujú sa VEĽKÉ a malé písmena).`,
     CONFIG_FAREWELL:                                `:wave: Rozlúčenie`,
-    CONFIG_FAREWELL_DESCRIPTION:                    `Táto funkcia ti umožní vidieť, kdo odišiel zo serveru. Týmto nastavením upravíš správu, ktorá bude posielaná. Toto používa [ttMsg](https://github.com/tt-bot-dev/tt.bot/wiki/ttMsg) (anglicky).`,
+    CONFIG_FAREWELL_DESCRIPTION:                    `Táto funkcia ti umožní vidieť, kdo odišiel zo serveru. Týmto nastavením upravíš správu, ktorá bude posielaná. Toto používa [ttMsg](https://github.com/tt-bot-dev/tt.bot/blob/master/docs/ttMsg.md) (anglicky).`,
     CONFIG_FAREWELL_CHANNEL:                        `:pen_ballpoint: Kanál pre rozlúčenie`,    
     CONFIG_FAREWELL_CHANNEL_DESCRIPTION:            `Týmto môžeš nastaviť kde se majú posielať správy pre vyššie popísanú funkciu.`,
     CONFIG_AGREE_CHANNEL:                           `:white_check_mark: Kanál pro funkciu súhlasu`,
@@ -78,11 +78,11 @@ Chceš radšej použiť webové rozhranie? Choď sem: ${config.webserverDisplay(
     CONFIG_MODLOG_CHANNEL:                          `:tools: Kanál pre záznam moderátorských akcii`,
     CONFIG_MODLOG_CHANNEL_DESCRIPTION:              `Umožňuje zaznamenávanie moderátorských akcii (varovánie, vyhodenie, (soft)ban) vykonaných cez bota do určeného kanálu.`,
     CONFIG_LOG_CHANNEL:                             `:notepad_spiral: Kanál pre záznamy`,
-    CONFIG_LOG_CHANNEL_DESCRIPTION:                 `Toto je mocná funkcia tt.bot-a, ktorá umožňuje zaznamenávanie niektorých akcí na serveri. [Zisti o tom viac (anglicky)](https://github.com/tt-bot-dev/tt.bot/wiki/Logging-events)`,
+    CONFIG_LOG_CHANNEL_DESCRIPTION:                 `Toto je mocná funkcia tt.bot-a, ktorá umožňuje zaznamenávanie niektorých akcí na serveri. [Zisti o tom viac (anglicky)](https://github.com/tt-bot-dev/tt.bot/blob/master/docs/Logging-events.md)`,
     CONFIG_LOG_EVENTS:                              `:pencil: Akcie pre záznamy`,
     CONFIG_LOG_EVENTS_DESCRIPTION:                  `Tu môžeš určiť, ktoré akcie budú zaznamenávané pre vyššie uvedenoú funkciu.`,
     CONFIG_GREETING:                                `:handshake: Privítanie`,
-    CONFIG_GREETING_DESCRIPTION:                    `Táto funkcia ti umožňuje poslať správu, ktorú si môžeš prispôsobiť aby si privítal(a) nových členov na serveri. Týmto nastavením upravíš správu, ktorá bude posielaná. Toto používa [ttMsg](https://github.com/tt-bot-dev/tt.bot/wiki/ttMsg) (anglicky).`,
+    CONFIG_GREETING_DESCRIPTION:                    `Táto funkcia ti umožňuje poslať správu, ktorú si môžeš prispôsobiť aby si privítal(a) nových členov na serveri. Týmto nastavením upravíš správu, ktorá bude posielaná. Toto používa [ttMsg](https://github.com/tt-bot-dev/tt.bot/blob/master/docs/ttMsg.md) (anglicky).`,
     CONFIG_GREETING_CHANNEL:                        `:pencil2: Kanál pre privítanie`,
     CONFIG_GREETING_CHANNEL_DESCRIPTION:            `Týmto môžeš nastaviť kde se majú posielať správy pre vyššie popísanú funkciu.`,
     CONFIG_MEMBER_ROLE:                             `:busts_in_silhouette: Role člena`,
@@ -321,5 +321,6 @@ Otázka expiruje za 5 minút.`,
 
     // Locale info
     NATIVE_LOCALE_NAME:                             "Slovenčina",
-    ENGLISH_LOCALE_NAME:                            "Slovak"
+    ENGLISH_LOCALE_NAME:                            "Slovak",
+    fallbackLanguage:                               "cs-CZ"
 };

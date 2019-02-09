@@ -243,5 +243,6 @@ Altfel, reacționați cu ❌ ca să anulați.
     INVALID_ARG:                                    arg => `Argument invalid: ${arg}`,
 
     NATIVE_LOCALE_NAME:                             "Română",
-    ENGLISH_LOCALE_NAME:                            "Romanian"
+    ENGLISH_LOCALE_NAME:                            "Romanian",
+    fallbackLanguage:                               "en"
 };

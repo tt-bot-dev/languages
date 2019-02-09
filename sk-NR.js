@@ -297,5 +297,6 @@ Otázka končí za 5 minút, takže nebuď lemravý.`,
 
     // Locale info
     NATIVE_LOCALE_NAME:                             "Slovenčina (Nitránske nárečí)",
-    ENGLISH_LOCALE_NAME:                            "Slovak (Nitránske nárečí)"
+    ENGLISH_LOCALE_NAME:                            "Slovak (Nitránske nárečí)",
+    fallbackLanguage:                               "sk-SK"
 };
