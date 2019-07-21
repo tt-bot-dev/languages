@@ -1,4 +1,4 @@
-module.exports = {
+module.exports = bot => ({
     //#region commands
     //agree.js
     AGREE_FAULT:                                    owner => `Sorry, but I'm not able to give you the role. Please tell the server owner (${bot.getTag(owner)}) about this.`,
@@ -120,7 +120,7 @@ Allowed roles: ${ext.allowedRoles.map(r => `<@&${r}>`).join(", ") || "All"}`,
     HELP_ARGUMENTS:                                 "Arguments",
     HELP_ALIASES:                                   "Aliases",
     HELP_DESCRIPTION:                               "Description",
-    HELP_HOME:                                      (HelpMenu, permissions, msg) => `Welcome to tt.bot's help! Please use reactions to access the help for the command categories.\n:stop_button: Stop\n:house: Home (this page)\n${HelpMenu.MESSAGES(msg).filter((_, idx) => permissions[idx]).join("\n")}`,
+    HELP_HOME:                                      async (HelpMenu, permissions, msg) => `Welcome to tt.bot's help! Please use reactions to access the help for the command categories.\n:stop_button: Stop\n:house: Home (this page)\n${(await HelpMenu.MESSAGES(msg)).filter((_, idx) => permissions[idx]).join("\n")}`,
     HELP_NO_DESCRIPTION:                            "No description",
     HELP_REMINDER:                                  `Use ${config.prefix}help <command> to see more information about it.`,
 
@@ -128,12 +128,12 @@ Allowed roles: ${ext.allowedRoles.map(r => `<@&${r}>`).join(", ") || "All"}`,
     INFO_STATS:                                     "Stats",
     INFO_STATS_TEXT:                                () => `Guilds: ${bot.guilds.size}\nCached users: ${bot.users.size}\nChannels: ${Object.keys(bot.channelGuildMap).length}`,
     INFO_AUTHORS:                                   "Author(s) and help",
-    INFO_OWNERS:                                    ownerStrings => `${ownerStrings.join("\n")}\n[Support server](https://discord.gg/pGN5dMq)\n[GitHub repository](https://github.com/tttie/tttie-bot)`,
+    INFO_OWNERS:                                    ownerStrings => `${ownerStrings.join("\n")}\n[Support server](https://discord.gg/pGN5dMq)\n[GitHub repository](https://github.com/tt-bot-dev/tt.bot)`,
     INFO_VERSIONS:                                  "Versions:",
     INFO_UPTIME:                                    "Uptime:",
 
     //invite.js
-    BOT_INVITE:                                     `Here you go! <https://discordapp.com/oauth2/authorize?client_id=195506253806436353&scope=bot&permissions=-1\n\nIf you need help using the bot, come to our support server, invite is in info command.`,
+    BOT_INVITE:                                     `Here you go! <https://discordapp.com/oauth2/authorize?client_id=195506253806436353&scope=bot&permissions=-1>\n\nIf you need help using the bot, come to our support server, the invite is in info command.`,
 
     //inviteinspector.js
     CANNOT_GET_INVITE:                              "I cannot get the information on the invite.",
@@ -325,4 +325,4 @@ Query will automatically expire in 5 minutes.`,
     NATIVE_LOCALE_NAME:                             "English",
     ENGLISH_LOCALE_NAME:                            "English"
   //fallbackLanguage:                               "en"
-};
+});

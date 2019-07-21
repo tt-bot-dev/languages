@@ -37,7 +37,7 @@ function getItemsPlural(items) {
 }
 
 
-module.exports = {
+module.exports = bot => ({
     //#region commands
     //agree.js
     AGREE_FAULT:                                    owner => `Promiň, ale nemůžu ti dát roli. Prosím, řekni o tom vlastníkovi serveru (${bot.getTag(owner)})`,
@@ -159,7 +159,7 @@ Povolené role: ${ext.allowedRoles.map(r => `<@&${r}>`).join(", ") || "Všechny"
     HELP_ARGUMENTS:                                 "Argumenty",
     HELP_ALIASES:                                   "Aliasy",
     HELP_DESCRIPTION:                               "Popis",
-    HELP_HOME:                                      (HelpMenu, permissions, msg) => `Vítej v tt.bot-ově nápovědě! Použij reakce pro přístup k nápovědě pro jednotlivé kategorie.\n:stop_button: Ukončit\n:house: Domácí stránka (tahle stránka)\n${HelpMenu.MESSAGES(msg).filter((_, idx) => permissions[idx]).join("\n")}`,
+    HELP_HOME:                                      async (HelpMenu, permissions, msg) => `Vítej v tt.bot-ově nápovědě! Použij reakce pro přístup k nápovědě pro jednotlivé kategorie.\n:stop_button: Ukončit\n:house: Domácí stránka (tahle stránka)\n${(await HelpMenu.MESSAGES(msg)).filter((_, idx) => permissions[idx]).join("\n")}`,
     HELP_NO_DESCRIPTION:                            "Žádný popis",
     HELP_REMINDER:                                  `Použij ${config.prefix}help <příkaz> pro informace o jednotlivých příkazech (momentálně v angličtině).`,
 
@@ -167,12 +167,12 @@ Povolené role: ${ext.allowedRoles.map(r => `<@&${r}>`).join(", ") || "Všechny"
     INFO_STATS:                                     "Statistiky",
     INFO_STATS_TEXT:                                () => `Serverů: ${bot.guilds.size}\nUživatelů: ${bot.users.size}\nKanálů: ${Object.keys(bot.channelGuildMap).length}`,
     INFO_AUTHORS:                                   "Autoři a pomoc",
-    INFO_OWNERS:                                    ownerStrings => `${ownerStrings.join("\n")}\n[Server podpory](https://discord.gg/pGN5dMq)\n[Repozitář na GitHubu](https://github.com/tttie/tttie-bot)`,
+    INFO_OWNERS:                                    ownerStrings => `${ownerStrings.join("\n")}\n[Server podpory](https://discord.gg/pGN5dMq)\n[Repozitář na GitHubu](https://github.com/tt-bot-dev/tt.bot)`,
     INFO_VERSIONS:                                  "Verze:",
     INFO_UPTIME:                                    "Doba provozu:",
 
     //invite.js
-    BOT_INVITE:                                     `Tady máš: <https://discordapp.com/oauth2/authorize?client_id=195506253806436353&scope=bot&permissions=-1\n\nPokud potřebuješ pomoct s používáním bota, přijď na náš server podpory, pozvánka je příkazu info.`,
+    BOT_INVITE:                                     `Tady máš: <https://discordapp.com/oauth2/authorize?client_id=195506253806436353&scope=bot&permissions=-1>\n\nPokud potřebuješ pomoct s používáním bota, přijď na náš server podpory, pozvánka je příkazu info.`,
 
     //inviteinspector.js
     CANNOT_GET_INVITE:                              "Nemůžu získat informace o pozvánce.",
@@ -362,4 +362,4 @@ Dotaz expiruje za 5 minut.`,
     NATIVE_LOCALE_NAME:                             "Čeština",
     ENGLISH_LOCALE_NAME:                            "Czech",
     fallbackLanguage:                               "en"
-};
+});

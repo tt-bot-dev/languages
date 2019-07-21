@@ -44,7 +44,7 @@ function getItemsPlural(items) {
 }
 
 
-module.exports = {
+module.exports = bot => ({
     //#region commands
     //agree.js
     AGREE_FAULT:                                    owner => `Prepáč, ale nemôžem ti dať rolu. Prosím, povedz o tom vlastníkovi serveru (${bot.getTag(owner)})`,
@@ -102,7 +102,7 @@ module.exports = {
     HELP_ARGUMENTS:                                 "Argumenty",
     HELP_ALIASES:                                   "Aliasy",
     HELP_DESCRIPTION:                               "Popis",
-    HELP_HOME:                                      (HelpMenu, permissions, msg) => `Tu nápoveda tt.bot-a! Naondi reakciu a dostaneš ďalšé nápovedy.\n:stop_button: Vypať\n:house: Dom (toto)\n${HelpMenu.MESSAGES(msg).filter((_, idx) => permissions[idx]).join("\n")}`,
+    HELP_HOME:                                      async (HelpMenu, permissions, msg) => `Tu nápoveda tt.bot-a! Naondi reakciu a dostaneš ďalšé nápovedy.\n:stop_button: Vypať\n:house: Dom (toto)\n${(await HelpMenu.MESSAGES(msg)).filter((_, idx) => permissions[idx]).join("\n")}`,
     HELP_NO_DESCRIPTION:                            "Žádny popis",
     HELP_REMINDER:                                  `Naondi ${config.prefix}help <príkaz> a dostaneš informácie o jennollivých príkazoch (zatál v angličtine).`,
 
@@ -110,12 +110,12 @@ module.exports = {
     INFO_STATS:                                     "Štatistiky",
     INFO_STATS_TEXT:                                () => `Serverov: ${bot.guilds.size}\nPoužívateľov: ${bot.users.size}\nKanálov: ${Object.keys(bot.channelGuildMap).length}`,
     INFO_AUTHORS:                                   "Manufaktúra",
-    INFO_OWNERS:                                    ownerStrings => `${ownerStrings.join("\n")}\n[Server podpory](https://discord.gg/pGN5dMq)\n[Repozitár na GitHube](https://github.com/tttie/tttie-bot)`,
+    INFO_OWNERS:                                    ownerStrings => `${ownerStrings.join("\n")}\n[Server podpory](https://discord.gg/pGN5dMq)\n[Repozitár na GitHube](https://github.com/tt-bot-dev/tt.bot)`,
     INFO_VERSIONS:                                  "Verzia:",
     INFO_UPTIME:                                    "Čas funglu:",
 
     //invite.js
-    BOT_INVITE:                                     `Na tu máš: <https://discordapp.com/oauth2/authorize?client_id=195506253806436353&scope=bot&permissions=-1\n\nKeď steš pomócť, nebuď lemravý a dójdi a server prvej pomoci.`,
+    BOT_INVITE:                                     `Na tu máš: <https://discordapp.com/oauth2/authorize?client_id=195506253806436353&scope=bot&permissions=-1>\n\nKeď steš pomócť, nebuď lemravý a dójdi a server prvej pomoci.`,
 
     //inviteinspector.js
     CANNOT_GET_INVITE:                              "Nevím najísť pozvánku.",
@@ -299,4 +299,4 @@ Otázka končí za 5 minút, takže nebuď lemravý.`,
     NATIVE_LOCALE_NAME:                             "Slovenčina (Nitránske nárečí)",
     ENGLISH_LOCALE_NAME:                            "Slovak (Nitránske nárečí)",
     fallbackLanguage:                               "sk-SK"
-};
+});

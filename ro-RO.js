@@ -1,4 +1,4 @@
-module.exports = {
+module.exports = bot => ({
     //#region commands
     //agree.js
     AGREE_FAULT:                                    owner => `Scuze, dar n-am posibilitatea să-ți dau rolul specific. Luați-vă în legătură cu deținătorul serverului (${bot.getTag(owner)}) despre aceasta.`,
@@ -56,7 +56,7 @@ module.exports = {
     HELP_ARGUMENTS:                                 "Argumente",
     HELP_ALIASES:                                   "Pseudonime",
     HELP_DESCRIPTION:                               "Descriere",
-    HELP_HOME:                                      (HelpMenu, permissions, msg) => `Bunvenit la ghidul folosirii tt.bot! Vă rugăm să folosiți reacțile de mai jos pentru a accesa ghidul pentru categoria comenzilor.\n:stop_button: Oprire\n:house: Acasă (această pagină)\n${HelpMenu.MESSAGES(msg).filter((_, idx) => permissions[idx]).join("\n")}`,
+    HELP_HOME:                                      async (HelpMenu, permissions, msg) => `Bunvenit la ghidul folosirii tt.bot! Vă rugăm să folosiți reacțile de mai jos pentru a accesa ghidul pentru categoria comenzilor.\n:stop_button: Oprire\n:house: Acasă (această pagină)\n${(await HelpMenu.MESSAGES(msg)).filter((_, idx) => permissions[idx]).join("\n")}`,
     HELP_NO_DESCRIPTION:                            "Nicio descriere",
     HELP_REMINDER:                                  `Folosiți ${config.prefix}help <commandă> pentru a vedea mai multe informații despre aceasta.`,
 
@@ -69,7 +69,7 @@ module.exports = {
     INFO_UPTIME:                                    "Timp de funcționare:",
 
     //invite.js
-    BOT_INVITE:                                     `Aici! <https://discordapp.com/oauth2/authorize?client_id=195506253806436353&scope=bot&permissions=-1\n\nDacă aveți nevoie de ajutor pentru folosirea acestui bot, veniți în serverul nostru pentru suport, link-ul de invitație pentru server este în comanda info.`,
+    BOT_INVITE:                                     `Aici! <https://discordapp.com/oauth2/authorize?client_id=195506253806436353&scope=bot&permissions=-1>\n\nDacă aveți nevoie de ajutor pentru folosirea acestui bot, veniți în serverul nostru pentru suport, link-ul de invitație pentru server este în comanda info.`,
 
     //inviteinspector.js
     CANNOT_GET_INVITE:                              "Nu pot să iau informațtii în link-ul de invitație.",
@@ -245,4 +245,4 @@ Altfel, reacționați cu ❌ ca să anulați.
     NATIVE_LOCALE_NAME:                             "Română",
     ENGLISH_LOCALE_NAME:                            "Romanian",
     fallbackLanguage:                               "en"
-};
+});
