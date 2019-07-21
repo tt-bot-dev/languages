@@ -110,6 +110,8 @@ Allowed roles: ${ext.allowedRoles.map(r => `<@&${r}>`).join(", ") || "All"}`,
 
     //hackban.js
     HACKBANNED_USERS:                               users => `:ok_hand: Banned ${users} user${users !== 1 ? "s": ""} .`,
+    USER_NOT_FOUND:                                 ":warning: I couldn't find that user :(",
+    USER_NOT_FOUND_DESCRIPTION:                     "Are you sure this is a correct user ID?",
 
     //help.js
     HELP_PUBLIC:                                    "Public commands",

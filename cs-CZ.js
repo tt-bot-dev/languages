@@ -149,6 +149,8 @@ Povolené role: ${ext.allowedRoles.map(r => `<@&${r}>`).join(", ") || "Všechny"
 
     //hackban.js
     HACKBANNED_USERS:                               users => `:ok_hand: ${getBannedPlural(users)} ${users} ${getBannedUserPlural(users)}.`,
+    USER_NOT_FOUND:                                 ":warning: Nemohl jsem najít tohoto uživatele :(",
+    USER_NOT_FOUND_DESCRIPTION:                     "Jsi si jistý, že tohle je správné ID uživatele?",
 
     //help.js
     HELP_PUBLIC:                                    "Veřejné příkazy",
