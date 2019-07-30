@@ -160,7 +160,7 @@ module.exports = bot => ({
     FIELD_CREATED:                                  field => `Vyrobené políčko se názvami \`${field}\`.`,
     FIELD_DELETED:                                  field => `Políčko \`${field}\` je vyondené.`,
     FIELD_NONEXISTENT:                              "Toto políčko neni!",
-    INVALID_TIMEZONE:                               `Toto časové pásmo je skoro správne, len neni dobre. Zoznam časových pásem nájdeš vraj na [tomto míste](https://cdn.rawgit.com/TTtie/TTtie-Bot/master/tz.txt)`,
+    INVALID_TIMEZONE:                               `Toto časové pásmo je skoro správne, len neni dobre. Zoznam časových pásem nájdeš vraj na [tomto míste](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)`,
     INVALID_LOCALE:                                 locale => `Nahovno jazyk: \`${locale}\``,
     LOCALE_SET:                                     locale => `Nastaveu si si jazyk ${locale}.`,
     USER_PROFILE:                                   user => `Profil trogára ${user}`,

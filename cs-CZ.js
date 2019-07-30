@@ -229,7 +229,7 @@ Povolené role: ${ext.allowedRoles.map(r => `<@&${r}>`).join(", ") || "Všechny"
     FIELD_CREATED:                                  field => `Vytvořeno políčko s názvem \`${field}\`.`,
     FIELD_DELETED:                                  field => `Políčko \`${field}\` bylo smazáno.`,
     FIELD_NONEXISTENT:                              "Tohle políčko neexistuje!",
-    INVALID_TIMEZONE:                               `Tohle časové pásmo není správné. Seznam možných časových pásem najdeš [zde](https://cdn.rawgit.com/TTtie/TTtie-Bot/master/tz.txt)`,
+    INVALID_TIMEZONE:                               `Tohle časové pásmo není správné. Seznam možných časových pásem najdeš [zde](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)`,
     INVALID_LOCALE:                                 locale => `Neplatný jazyk: \`${locale}\``,
     LOCALE_SET:                                     locale => `Tvůj jazyk byl nastaven na ${locale}.`,
     USER_PROFILE:                                   user => `Profil uživatele ${user}`,

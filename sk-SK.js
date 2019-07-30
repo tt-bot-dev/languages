@@ -183,7 +183,7 @@ Chceš radšej použiť webové rozhranie? Choď sem: ${config.webserverDisplay(
     FIELD_CREATED:                                  field => `Vytvorené políčko s názvom \`${field}\`.`,
     FIELD_DELETED:                                  field => `Políčko \`${field}\` bolo zmazané.`,
     FIELD_NONEXISTENT:                              "Toto políčko neexistuje!",
-    INVALID_TIMEZONE:                               `Toto časové pásmo neni správne. Zoznam možných časových pásiem nájdeš [tu](https://cdn.rawgit.com/TTtie/TTtie-Bot/master/tz.txt)`,
+    INVALID_TIMEZONE:                               `Toto časové pásmo neni správne. Zoznam možných časových pásiem nájdeš [tu](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)`,
     INVALID_LOCALE:                                 locale => `Neplatný jazyk: \`${locale}\``,
     LOCALE_SET:                                     locale => `Tvoj jazyk bol nastavený na ${locale}.`,
     USER_PROFILE:                                   user => `Profil používateľa ${user}`,
