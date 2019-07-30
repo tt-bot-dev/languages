@@ -69,7 +69,7 @@ module.exports = bot => ({
     INFO_UPTIME:                                    "Timp de funcționare:",
 
     //invite.js
-    BOT_INVITE:                                     `Aici! <https://discordapp.com/oauth2/authorize?client_id=195506253806436353&scope=bot&permissions=-1>\n\nDacă aveți nevoie de ajutor pentru folosirea acestui bot, veniți în serverul nostru pentru suport, link-ul de invitație pentru server este în comanda info.`,
+    BOT_INVITE:                                     `Aici! <https://discordapp.com/oauth2/authorize?client_id=195506253806436353&scope=bot>\n\nDacă aveți nevoie de ajutor pentru folosirea acestui bot, veniți în serverul nostru pentru suport, link-ul de invitație pentru server este în comanda info.`,
 
     //inviteinspector.js
     CANNOT_GET_INVITE:                              "Nu pot să iau informațtii în link-ul de invitație.",
