@@ -64,7 +64,7 @@ module.exports = bot => ({
     INFO_STATS:                                     "Statistici",
     INFO_STATS_TEXT:                                () => `Nivel: ${bot.guilds.size}\nUtilizatori în cache: ${bot.users.size}\nCanale: ${Object.keys(bot.channelGuildMap).length}`,
     INFO_AUTHORS:                                   "Autor(i) și ghid",
-    INFO_OWNERS:                                    ownerStrings => `${ownerStrings.join("\n")}\n[Server pentru suport](https://discord.gg/pGN5dMq)\n[Colecție în Github](https://github.com/tttie/tttie-bot)`,
+    INFO_OWNERS:                                    ownerStrings => `${ownerStrings.join("\n")}\n[Server pentru suport](https://discord.gg/pGN5dMq)\n[Colecție în Github](https://github.com/tt-bot-dev/tt.bot)`,
     INFO_VERSIONS:                                  "Versiuni:",
     INFO_UPTIME:                                    "Timp de funcționare:",
 
