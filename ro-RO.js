@@ -112,7 +112,7 @@ module.exports = bot => ({
     FIELD_CREATED:                                  field => `Am făcut un câmp cu numele de \`${field}\`.`,
     FIELD_DELETED:                                  field => `Am șters câmpul \`${field}\``,
     FIELD_NONEXISTENT:                              "Acel câmp nu există!",
-    INVALID_TIMEZONE:                               `Acest fus orar este invalid. Puteți găsi o listă cu fusuri orare posible [aici](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)`,
+    INVALID_TIMEZONE:                               `Acest fus orar este invalid. Puteți găsi o listă cu fusuri orare posible aici: <https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List>`,
     INVALID_LOCALE:                                 locale => `Locație invalidă \`${locale}\``,
     LOCALE_SET:                                     locale => `Am setat locația dvs. în ${locale}.`,
     USER_PROFILE:                                   user => `Profilul lui ${user}`,
