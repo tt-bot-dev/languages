@@ -49,7 +49,7 @@ Want to use the web interface instead? Go here: ${config.webserverDisplay("/")}`
     SETTING_HOME_DESCRIPTION:                       "Goes back to the main menu",
     QUESTION_STRING_VAL:                            "Please type in your new value. You have 60 seconds to respond.",
     QUESTION_CHANNEL_VAL:                           `Please type in the channel you want to use. You have 30 seconds to respond.`,
-    QUESTION_ROLE_VAL:                              `Please type in the channel you want to use. You have 30 seconds to respond.`,
+    QUESTION_ROLE_VAL:                              `Please type in the role you want to use. You have 30 seconds to respond.`,
     QUESTION_RESET:                                 c => `Are you sure you want to reset ${c} to the default value?\nType in y or yes if you want to. n or no otherwise. You have 10 seconds to respond.`,
     QUESTION_DISABLE:                               c => `Are you sure you want to disable ${c}?\nType in y or yes if you want to. n or no otherwise. You have 10 seconds to respond.`,
     
