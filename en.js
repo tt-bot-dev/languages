@@ -73,7 +73,8 @@ Want to use the web interface instead? Go here: ${config.webserverDisplay("/")}`
     EXTENSION_LIST_FIELD:                           ext => `
 ID: ${ext.id}
 Allowed channels: ${ext.allowedChannels.map(c => `<#${c}>`).join(", ") || "All"}
-Allowed roles: ${ext.allowedRoles.map(r => `<@&${r}>`).join(", ") || "All"}`,
+Allowed roles: ${ext.allowedRoles.map(r => `<@&${r}>`).join(", ") || "All"}
+Store ID: ${ext.store}`,
     QUESTION_EXTENSION_CODE:                        "Please upload your code as a Discord attachment. You have 60 seconds to upload the code.\nKeep in mind, that the code must be a in a .js file.",
     QUESTION_EXTENSION_NAME:                        "Please tell me how would you like to name your extension. The limit for the name is 100 characters. You have 60 seconds to respond.",
     QUESTION_EXTENSION_TRIGGER:                     "Please tell me what command trigger would you like to use. The limit for the command trigger is 20 characters. Also, you cannot use spaces in the trigger. You have 20 seconds to respond.",

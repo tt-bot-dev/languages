@@ -112,7 +112,8 @@ Chceš radši použít webové rozhraní? Jdi sem: ${config.webserverDisplay("/"
     EXTENSION_LIST_FIELD:                           ext => `
 ID: ${ext.id}
 Povolené kanály: ${ext.allowedChannels.map(c => `<#${c}>`).join(", ") || "Všechny"}
-Povolené role: ${ext.allowedRoles.map(r => `<@&${r}>`).join(", ") || "Všechny"}`,
+Povolené role: ${ext.allowedRoles.map(r => `<@&${r}>`).join(", ") || "Všechny"}
+ID uložiště: ${ext.store}`,
     QUESTION_EXTENSION_CODE:                        "Prosím nahraj svůj kód jako přílohu na Discordu. Máš na to 60 sekund.\nMěj na paměti, že kód musí být v souboru s příponou `.js`.",
     QUESTION_EXTENSION_NAME:                        "Prosím, řekni mi název tvého rozšíření. Limit je 100 znaků, na odpověď máš 60 sekund.",
     QUESTION_EXTENSION_TRIGGER:                     "Prosím, řekni mi jméno příkazu (command trigger). Limit je 20 znaků. Také nelze používat mezery. Na odpověď máš 20 sekund.",
@@ -127,8 +128,8 @@ Povolené role: ${ext.allowedRoles.map(r => `<@&${r}>`).join(", ") || "Všechny"
     ALLOWED_CHANNELS_ACTION_DONE_DESCRIPTION:       "Ukončí toto menu a uloží úpravy",
     QUESTION_ALLOWED_CHANNELS_ADD:                  roleOrChannel => `Prosím napiš sem ${roleOrChannel ? "roli, kterou" : "kanál, který"} chceš přidat. Na odpověď máš 30 sekund.`,
     QUESTION_ALLOWED_CHANNELS_REMOVE:               roleOrChannel => `Prosím napiš sem ${roleOrChannel ? "roli, kterou" : "kanál, který"} chceš odebrat. Na odpověď máš 30 sekund.`,
-    CHANNEL_ALLOWED_ALREADY:                        role => `${role ? "Tato role" : "Tento kanál"} je už povolen${!role || "a"}.`,
-    CHANNEL_DISALLOWED_ALREADY:                     role => `${role ? "Tato role" : "Tento kanál"} je už zakázán${!role || "a"}.`,
+    CHANNEL_ALLOWED_ALREADY:                        role => `${role ? "Tato role" : "Tento kanál"} je už povolen${role ? "a" : ""}.`,
+    CHANNEL_DISALLOWED_ALREADY:                     role => `${role ? "Tato role" : "Tento kanál"} je už zakázán${role ? "a" : ""}.`,
     ALLOWED_CHANNELS_MENU_CANCELLED:                role => `Menu ukončeno kvůli neaktivitě; ${role ? "role" : "kanály"}, které byly vybrané budou použity.`,
     QUESTION_EXTENSION_ROLE_RESTRICT:               "Chceš omezit spouštění tvého rozšíření jen členům s určitými rolemi? Pokud chceš, napiš y nebo yes. Jinak napiš n nebo no. Na odpověď máš 10 sekund.",
     ALLOWED_ROLES:                                  "Povolené role",
@@ -140,7 +141,7 @@ Povolené role: ${ext.allowedRoles.map(r => `<@&${r}>`).join(", ") || "Všechny"
     EXTENSION_CREATED:                              (extensionName, id) => `Hotovo! Rozšíření ${extensionName} bylo vytvořeno! Jeho ID je ${id}.`,
     EXTENSION_NONEXISTANT:                          "Toto rozšíření neexistuje.",
     QUESTION_EXTENSION_DELETE:                      ext => `Jseš si jistý, že chceš odstranit rozšíření ${ext.name} (ID ${ext.id})? Pokud ano, napiš y nebo yes. Pokud ne, napiš n nebo no. Na odpověď máš 10 sekund.`,
-    QUESTION_EXTENSION_DELETE_STORE:                ext => `Hotovc! Rozšíření ${ext.name} je smazáno.\nChceš také smazat i jeho úložiště (ID ${ext.store})? Pokud ano, napiš y nebo yes. Pokud ne, napiš n nebo no. Na odpověď máš 10 sekund.`,
+    QUESTION_EXTENSION_DELETE_STORE:                ext => `Hotovo! Rozšíření ${ext.name} je smazáno.\nChceš také smazat i jeho úložiště (ID ${ext.store})? Pokud ano, napiš y nebo yes. Pokud ne, napiš n nebo no. Na odpověď máš 10 sekund.`,
     STORE_DELETE_NONEXISTANT:                       "OK, ale uložiště už bylo vymazáno.",
     STORE_DELETED:                                  ext => `Hotovo, úložiště s ID ${ext.store} bylo smazáno`,
 
