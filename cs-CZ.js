@@ -101,7 +101,7 @@ Chceš radši použít webové rozhraní? Jdi sem: ${config.webserverDisplay("/"
     IMAGE_NONE:                                     "Nemůžu získat obrázek. Zkontroluj tvůj vstup a zkus to znovu.",
     IMAGE_AUTO_GENERATED:                           "Tenhle obrázek je automaticky generován.",
     IMAGE_CAVEATS:                                  `Nikdo ani nic není dokonalé, tohle jsou některé problémy, o kterých víme a s kterými se můžeš setkat.
-- Tvoje emoji mohou být rychlejší nebo pomalejší v závislosti na frekvenci snímků (používáme 20ms odstup/50fps)
+- Z výkonnostních důvodů se obrázek generuje jako animované PNG. Animace těchto obrázků není podporována Discordem.
 - Tvoje emoji mohou být ořezány.`,
     IMAGE_GENERATION_TIME:                          (sec, nsec)=> `Generování tohoto obrázku trvalo ${sec} sekund a ${Math.floor(nsec / 1e6)} ms`,
 
@@ -240,11 +240,23 @@ ID uložiště: ${ext.store}`,
     GUILD_VERIFICATION_NONE:                        "Žádná",
     GUILD_VERIFICATION_LOW:                         "Nízká (Vyžaduje ověřený email)",
     GUILD_VERIFICATION_MEDIUM:                      "Střední (Vyžaduje ověřený email a musí uplynout 5 minut od registrace na Discordu)",
-
-        //These miss their tableflips because the tableflips are not translatable.
+    //These miss their tableflips because the tableflips are not translatable.
     GUILD_VERIFICATION_TABLEFLIP:                   "(Vyžaduje ověřený email, musí uplynout 5 minut od registrace na Discordu a musí uplynout 10 minut od příchodu na server)",
     GUILD_VERIFICATION_ULTRATABLEFLIP:              "(Vyžaduje ověřené telefonní číslo)",
     GUILD_VERIFICATION_LEVEL:                       "Úrověň ověření serveru",
+    ALLOWED_INVITE_SPLASH:                          "Tento server může mít vlastní pozadí na pozvánce",
+    ALLOWED_VIP_REGIONS:                            "Tento server má přístup k lepším hlasovým serverům",
+    ALLOWED_VANITY_URL:                             vanityURL => `Tento server může mít vlastní ${vanityURL ? "[" : ""}pozvánku${vanityURL ? `](https://discord.gg/${ctx.guild.vanityURL})` : ""}`,
+    ALLOWED_VERIFIED:                               "Tento server je ověřen",
+    ALLOWED_PARTNERED:                              "Tento server má uzavřené partnerství s Discordem",
+    ALLOWED_COMMERCE:                               "Tento server má přístup ke komerčním funkcím (např. obchodní kanály)",
+    ALLOWED_NEWS:                                   "Tento server může mít oznamovací kanály",
+    ALLOWED_LURKABLE:                               "Tento server může být prohlížen",
+    ALLOWED_DISCOVERABLE:                           "Tento server může být nalezen v menu hledání serverů",
+    ALLOWED_FEATURABLE:                             "Tento server může být ukázán v popředí menu hledání serverů",
+    ALLOWED_ANIMATED_ICON:                          "Tento server může mít animovanou ikonu",
+    ALLOWED_BANNER:                                 "Tento server může mít banner",
+    FEATURES:                                       "Funkce",
     REQUIRES_ADMIN_MFA:                             "Vyžaduje 2FA pro administrativní úkony",
     MEMBER_COUNT:                                   members => `${members} ${getMembersPlural(members)}`,
     ROLE_COUNT:                                     roles => `${roles} rol${(roles <5 && roles >0) ? "e": "í"}`,
