@@ -8,37 +8,37 @@
 
 // **POZOR! Následujúci preklad vo formáte .js je *možno* natoľko seriózny že ho netreba brať vážne. Šak priznajme si, je to iba vtipný preklad**
 function getMessagesPlural(messages) {
-    if (messages == 1) return "správa";
+    if (messages === 1) return "správa";
     if (messages >= 2 && messages <= 4) return "správy";
     return "správ";
 }
 
 function getDeletedPlural(messages) {
-    if (messages == 1) return "Vyondená";
+    if (messages === 1) return "Vyondená";
     if (messages >= 2 && messages <= 4) return "Vyondené";
     return "Vyondených";
 }
 
 function getBannedPlural(users) {
-    if (users == 1) return "Zaondený";
+    if (users === 1) return "Zaondený";
     if (users >= 2 && users <= 4) return "Zaondení";
     return "Zaondených";
 }
 
 function getBannedUserPlural(users) {
-    if (users == 1) return "trogár";
+    if (users === 1) return "trogár";
     if (users >=2 && users <= 4) return "trogári";
     return "trogárov";
 }
 
 function getMembersPlural(members) {
-    if (members == 1) return "hovado";
+    if (members === 1) return "hovado";
     if (members >= 2 && members <= 4) return "hovadá";
     return "hovád";
 }
 
 function getItemsPlural(items) {
-    if (items == 1) return "oná";
+    if (items === 1) return "oná";
     if (items >= 2 && items <= 4) return "oných";
     return "oných"
 }
@@ -62,9 +62,6 @@ module.exports = bot => ({
     CLEAR_DONE:                                     messages => `:ok_hand: ${getDeletedPlural(messages)} ${messages} ${getMessagesPlural(messages)}.`,
 
     // config.js
-    GUILD_CONFIG:                                   (guild, items) => `\`\`\`\nNastavení oného na ${guild}\n${items.join("\n")}\`\`\`\nAj keď to je jennoduché, je možné že nastavení spraví neporádek.\nKeď chceš namísto toho použiť internet, ic na ${config.webserverDisplay("/")}`,
-    SETTING_UPDATED:                                (setting, value) => `Nastavení ${setting} naondené na ${value}`,
-    SETTING_UNKNOWN:                                setting => `Nevím ${setting}`,
 
     //delpunish.js
     CANNOT_UNSTRIKE:                                err => `Nemóžem odondiť varovaní z dóvodu: ${err}`,
@@ -78,17 +75,8 @@ module.exports = bot => ({
 - Oné emotikóňe môžu byt orezané.`,
     IMAGE_GENERATION_TIME:                          (sec, nsec) => `Vyrábaní obrášku nám minulo ${sec} sekúnd a ${Math.floor(nsec / 1e6)} ms života.`,
 
-    //farewell.js
-    FAREWELL_UPDATED:                               (message, channelID) => `:ok_hand: Pápá naondené na \`${message}\`. Pápá bude odeslané do <#${channelID}>.`,
-    FAREWELL_RESET:                                 "Pápá je vyčistené.",
-
     //getavatar.js
     AVATAR_NOT_LOADING:                             avatar => `[Obráštek sa neondí?](${avatar})`,
-
-
-    //greet.js
-    GREETING_UPDATED:                               (message, channelID) => `:ok_hand: Ahoj naondené na \`${message}\`. Ahoj bude odeslané do <#${channelID}>.`,
-    GREETING_RESET:                                 "Ahoj je vyčistené.",
 
     //hackban.js
     HACKBANNED_USERS:                               users => `:ok_hand: ${getBannedPlural(users)} ${users} ${getBannedUserPlural(users)}.`,
@@ -130,11 +118,6 @@ module.exports = bot => ({
 
     //kick.js
     KICK_DONE:                                      user => `:ok_hand: Trogár ${bot.getTag(user)} je vykotený.`,
-
-    //logging.js
-    LOGGING_ALREADY_SETUP:                          "Funkcia Americké záznamové zaríďení tu je. Steš ju vypnút?\nNapíš y alebo yes na vypnutie. Inak napíš n alebo no. Na odpoveď máš 10 sekúnd, tak sa nešuchci!",
-    LOGGING_DISABLED:                               "Kónečne! Funkcia Americké záznamové zaríďení je vypatá!",
-    LOGGING_SETUP:                                  "Ná tu máš! Keď voláka s udalostí bude, naondím ju sem.",
 
     //needsmorejpeg.js
     // No terms for this one.

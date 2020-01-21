@@ -16,9 +16,7 @@ module.exports = bot => ({
     CLEAR_DONE:                                     messages => `:ok_hand: ${messages} (de) mesaje au fost șterse.`,
 
     // config.js
-    GUILD_CONFIG:                                   (guild, items) => `\`\`\`\nConfigurația serverului pentru ${guild}\n${items.join("\n")}\`\`\`\nChiar daca numele configurațiilor sunt auto-explicative, este posibil ca setătiile dvs. să rupă configurația actuală.\nDacă dotiți să folosiți versiunea de web, duceți-vă în ${config.webserverDisplay("/")}`,
-    SETTING_UPDATED:                                (setting, value) => `Setarea ${setting} a fost actualizată în ${value}`,
-    SETTING_UNKNOWN:                                setting => `Setare necunoscută, ${setting}`,
+    // TBD
 
     //delpunish.js
     CANNOT_UNSTRIKE:                                err => `Nu pot să șterg strike-ul respectiv din cauza acestui motiv: ${err}`,

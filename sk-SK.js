@@ -5,37 +5,37 @@
 // "Šéfe, mně se asi něco nepovedlo."
 // toť toto je menší úvod na tento preklad do Slovenčiny. 
 function getMessagesPlural(messages) {
-    if (messages == 1) return "správa";
+    if (messages === 1) return "správa";
     if (messages >= 2 && messages <= 4) return "správy";
     return "správ";
 }
 
 function getDeletedPlural(messages) {
-    if (messages == 1) return "Zmazaná";
+    if (messages === 1) return "Zmazaná";
     if (messages >= 2 && messages <= 4) return "Zmazané";
     return "Zmazaných";
 }
 
 function getBannedPlural(users) {
-    if (users == 1) return "Zabanovaný";
+    if (users === 1) return "Zabanovaný";
     if (users >= 2 && users <= 4) return "Zabanovaní";
     return "Zabanovaných";
 }
 
 function getBannedUserPlural(users) {
-    if (users == 1) return "použivateľ";
+    if (users === 1) return "použivateľ";
     if (users >=2 && users <= 4) return "použivatelia";
     return "použivateľov";
 }
 
 function getMembersPlural(members) {
-    if (members == 1) return "člen";
+    if (members === 1) return "člen";
     if (members >= 2 && members <= 4) return "členovia";
     return "členov";
 }
 
 function getItemsPlural(items) {
-    if (items == 1) return "vec";
+    if (items === 1) return "vec";
     if (items >= 2 && items <= 4) return "veci";
     return "vecí"
 }

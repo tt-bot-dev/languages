@@ -14,8 +14,6 @@ module.exports = bot => ({
     WELCOME_TO_CONFIG:                              () => `Welcome to tt.bot's configuration! Please use reactions to access the individual setting categories.
 You can use :stop_button: reaction to stop at any time.
 Want to use the web interface instead? Go here: ${config.webserverDisplay("/")}`,
-    SETTING_UPDATED:                                (setting, value) => `Updated ${setting} to ${value}\nPlease note that using this way of configuring the bot is deprecated. If you want to configure tt.bot from Discord, use the config command with no arguments.`,
-    SETTING_UNKNOWN:                                setting => `Unknown setting ${setting}\nPlease note that using this way of configuring the bot is deprecated. If you want to configure tt.bot from Discord, use the config command with no arguments.`,
     CONFIG_PREFIX:                                  `:pen_fountain: Prefix`,
     CONFIG_PREFIX_DESCRIPTION:                      () => `Here you can set ${bot.user.username}'s prefix. Using \`${config.prefix}\` as the prefix will still work.`,
     CONFIG_MODROLE:                                 `:hammer: Moderator role`,
@@ -38,6 +36,8 @@ Want to use the web interface instead? Go here: ${config.webserverDisplay("/")}`
     CONFIG_GREETING_CHANNEL_DESCRIPTION:            `Using this, you can set where to post the messages for the above mentioned feature.`,
     CONFIG_MEMBER_ROLE:                             `:busts_in_silhouette: Member role`,
     CONFIG_MEMBER_ROLE_DESCRIPTION:                 `This role is the role used for the agreement feature.`,
+    CONFIG_LOCALE:                                  ":speaking_head: Locale",
+    CONFIG_LOCALE_DESCRIPTION:                      "Sets the language which I will use for those who haven't set up a profile yet.",
     SETTING_CURRENT_VAL:                            val => `The current value is ${val}`,
     SETTING_SET:                                    ":pencil: Set",
     SETTING_SET_DESCRIPTION:                        "Sets the value of this setting to a new value.",
@@ -108,6 +108,7 @@ Store ID: ${ext.store}`,
 
     //getavatar.js
     AVATAR_NOT_LOADING:                             avatar => `[Image not loading?](${avatar})`,
+    USER_AVATAR:                                    user => `${user}'s avatar`,
 
     //hackban.js
     HACKBANNED_USERS:                               users => `:ok_hand: Banned ${users} user${users !== 1 ? "s": ""} .`,
@@ -140,7 +141,9 @@ Store ID: ${ext.store}`,
 
     //inviteinspector.js
     CANNOT_GET_INVITE:                              "I cannot get the information about the invite.",
-    INVITE_ERR_FOOTER:                              "Are you sure the invite exists and that I'm not banned from there? This also doesn't work with group DMs.",
+    INVITE_ERR_FOOTER:                              "Are you sure the invite exists? This also doesn't work with group DMs.",
+    CANNOT_GET_INVITE_BANNED:                       "I cannot get the information about the invite because I'm banned from there.",
+    CONTACT_GUILD_ADMIN:                            "Please contact the administrators of the server to unban me and try again.",
     INV_CHANNEL_TYPE:                               "Channel type",
     INV_CHANNEL_TYPE_VAL:                           (type, channelName) => `${type === 0 ? "Text" : "Voice"} channel named ${bot.escapeMarkdown(channelName)}`,
     INV_GUILD_ID:                                   "Guild ID",
@@ -153,7 +156,10 @@ Store ID: ${ext.store}`,
     KICK_DONE:                                      user => `:ok_hand: Kicked ${bot.getTag(user)}.`,
 
     //needsmorejpeg.js
-    // No terms for this one.
+    CANNOT_JPEGIFY:                                 ":x: Cannot JPEG-ify the image",
+    CANNOT_FETCH_IMAGE:                             "The image cannot be fetched.",
+    CANNOT_JPEGIFY_INTERNAL_ERROR:                  ":x: Cannot JPEG-ify the image due to an internal error",
+
 
     // phone.js
     ALREADY_HAVE_NUMBER:                            "Sorry, but you have reached your telephone number limit and you cannot get more numbers.",
@@ -184,6 +190,10 @@ Store ID: ${ext.store}`,
     PROFILE_NONEXISTENT:                            "You haven't created a profile yet!",
     PROFILE_DELETED:                                "Deleted your profile.",
     PROFILE_CREATED:                                "OK. Your profile is created.",
+    PROFILE_CREATE_SETUP:                           "Hello there! Would you like to set your profile up before I create one? Type y or yes if you want to, n or no if you don't. You have 10 seconds to answer.\n\nKeep in mind that you can still modify the values using other subcommands.",
+    PROFILE_CREATE_TIMEZONE:                        "What is your timezone? This timezone should be a valid entry in the IANA timezone DB (check <https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List> for a list of them)\nYou have 30 seconds to answer. Type \"none\" if you don't want to set one yet.",
+    PROFILE_CREATE_LOCALE:                          () => `Which language do you speak? Here are the available languages: ${Object.keys(bot.i18n.languages).join(", ")}\nIn case it is not listed or don't want to set a language yet, type "none". You have 30 seconds to choose.\nYou can help us contributing languages on GitHub: <https://github.com/tt-bot-dev/languages>`,
+    PROFILE_TIMEZONE:                               tz => `Your current timezone is ${tz}.\nIn order to change it, provide a timezone as an argument.`,
     INVALID_TIMEZONE:                               `This timezone is invalid. You can find a list of possible timezones here: <https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List>`,
     INVALID_LOCALE:                                 locale => `Invalid locale \`${locale}\``,
     LOCALE_SET:                                     locale => `Set your locale to ${locale}.`,
@@ -247,10 +257,6 @@ Store ID: ${ext.store}`,
     TAG_DELETED:                                    tag => `Deleted a tag with a name of \`${tag}\`.`,
     TAG_UPDATED:                                    tag => `Updated a tag with a name of \`${tag}\`.`,
     TAG_DISPLAY:                                    tag => `Tag ${tag}`,
-
-    //talk.js
-    QUERY_TOO_LONG:                                 "Your query is too long.",
-    CANT_TELL:                                      "I don't know how to respond to that :/",
 
     //timefor.js
     NO_TZ:                                          "This user hasn't set any timezone yet.",
@@ -329,6 +335,7 @@ Query will automatically expire in 5 minutes.`,
     INVALID_ARG:                                    arg => `Invalid argument: ${arg}`,
     PAGE:                                           page => `Page ${page}`,
     ALL:                                            "All",
+    SORRY:                                          "We're sorry for that.",
     
     NATIVE_LOCALE_NAME:                             "English",
     ENGLISH_LOCALE_NAME:                            "English"

@@ -1,37 +1,37 @@
 // Říká se, že čeština je krásný, ale těžký jazyk.
 // Tohle je pokus doplnit pády češtiny.
 function getMessagesPlural(messages) {
-    if (messages == 1) return "zpráva";
+    if (messages === 1) return "zpráva";
     if (messages >= 2 && messages <= 4) return "zprávy";
     return "zpráv";
 }
 
 function getDeletedPlural(messages) {
-    if (messages == 1) return "Smazána";
+    if (messages === 1) return "Smazána";
     if (messages >= 2 && messages <= 4) return "Smazány";
     return "Smazáno";
 }
 
 function getBannedPlural(users) {
-    if (users == 1) return "Zabanován";
+    if (users === 1) return "Zabanován";
     if (users >= 2 && users <= 4) return "Zabanováni";
     return "Zabanováno";
 }
 
 function getBannedUserPlural(users) {
-    if (users == 1) return "uživatel";
+    if (users === 1) return "uživatel";
     if (users >=2 && users <= 4) return "uživatelé";
     return "uživatelů";
 }
 
 function getMembersPlural(members) {
-    if (members == 1) return "člen";
+    if (members === 1) return "člen";
     if (members >= 2 && members <= 4) return "členové";
     return "členů";
 }
 
 function getItemsPlural(items) {
-    if (items == 1) return "věc";
+    if (items === 1) return "věc";
     if (items >= 2 && items <= 4) return "věci";
     return "věcí"
 }
@@ -50,8 +50,6 @@ module.exports = bot => ({
     CLEAR_CONFIRM:                                  `Jsi si jistý/a, že chceš smazat zprávy podle vypsaných argumentů? Pokud ano, napiš y nebo yes. Jinak napiš n nebo no. Na odpověď máš 10 sekund.`,
 
     // config.js
-    SETTING_UPDATED:                                (setting, value) => `Nastavení ${setting} nastaveno na ${value}\nTahle metoda je zastaralá. Pro konfiguraci tt.bot-a z Discordu, použij příkaz config bez argumentů`,
-    SETTING_UNKNOWN:                                setting => `Neznámé nastavení ${setting}\nTahle metoda je zastaralá. Pro konfiguraci tt.bot-a z Discordu, použij příkaz config bez argumentů`,
     WELCOME_TO_CONFIG:                              () => `Vítej v konfiguraci tt.bot-a! Použij reakce pro přístup k jednotlivým kategoriím nastavení.
 Kdykoli můžeš opustit menu pomocí reakce :stop_button:
 Chceš radši použít webové rozhraní? Jdi sem: ${config.webserverDisplay("/")}`,
@@ -77,6 +75,8 @@ Chceš radši použít webové rozhraní? Jdi sem: ${config.webserverDisplay("/"
     CONFIG_GREETING_CHANNEL_DESCRIPTION:            `Tímhle můžeš nastavit kde se mají posílat zprávy pro výše popsanou funkci.`,
     CONFIG_MEMBER_ROLE:                             `:busts_in_silhouette: Role člena`,
     CONFIG_MEMBER_ROLE_DESCRIPTION:                 `Tato role bude používána pro členy serveru, kteří souhlasili s pravidly.`,
+    CONFIG_LOCALE:                                  ":speaking_head: Jazyk",
+    CONFIG_LOCALE_DESCRIPTION:                      "Nastavuje jazyk, který budu používat pro ty, kteří nemají nastavený profil.",
     SETTING_CURRENT_VAL:                            val => `Aktuální hodnota nastavení je ${val}`,
     SETTING_SET:                                    ":pencil: Nastavit",
     SETTING_SET_DESCRIPTION:                        "Nastaví hodnotu tohoto nastavení na novou hodnotu.",
@@ -147,6 +147,7 @@ ID uložiště: ${ext.store}`,
 
     //getavatar.js
     AVATAR_NOT_LOADING:                             avatar => `[Obrázek se nenačítá?](${avatar})`,
+    USER_AVATAR:                                    user => `Avatar uživatele ${user}`,
 
     //hackban.js
     HACKBANNED_USERS:                               users => `:ok_hand: ${getBannedPlural(users)} ${users} ${getBannedUserPlural(users)}.`,
@@ -179,7 +180,9 @@ ID uložiště: ${ext.store}`,
 
     //inviteinspector.js
     CANNOT_GET_INVITE:                              "Nemůžu získat informace o pozvánce.",
-    INVITE_ERR_FOOTER:                              "Jsi si jistý, že pozvánka je skutečná, a že nejsem odsud zabanován? Tohle nefunguje s pozvánkami do skupinových zpráv.",
+    INVITE_ERR_FOOTER:                              "Jsi si jistý, že pozvánka je skutečná? Tohle nefunguje s pozvánkami do skupinových zpráv.",
+    CANNOT_GET_INVITE_BANNED:                       "Nemůžu získat informace o pozvánce, protože jsem odsud zabanován.",
+    CONTACT_GUILD_ADMIN:                            "Prosím kontaktuj administrátory serveru, aby mě odbanovali.",
     INV_CHANNEL_TYPE:                               "Typ kanálu",
     INV_CHANNEL_TYPE_VAL:                           (type, channelName) => `${type === 0 ? "Textový" : "Hlasový"} kanál s názvem ${bot.escapeMarkdown(channelName)}`,
     INV_GUILD_ID:                                   "ID serveru",
@@ -192,7 +195,9 @@ ID uložiště: ${ext.store}`,
     KICK_DONE:                                      user => `:ok_hand: Uživatel ${bot.getTag(user)} byl vyhozen.`,
 
     //needsmorejpeg.js
-    // No terms for this one.
+    CANNOT_JPEGIFY:                                 ":x: Nemůžu JPEG-izovat obrázek",
+    CANNOT_FETCH_IMAGE:                             "Obrázek nemůže být načten.",
+    CANNOT_JPEGIFY_INTERNAL_ERROR:                  ":x: Nemůžu JPEG-izovat obrázek kvůli interní chybě.",
 
     // phone.js
     ALREADY_HAVE_NUMBER:                            "Omlouvám se, ale dosáhl jsi limitu telefonních čísel a nemůžeš registrovat víc.",
@@ -223,17 +228,13 @@ ID uložiště: ${ext.store}`,
     PROFILE_NONEXISTENT:                            "Ještě nemáš profil.",
     PROFILE_DELETED:                                "Tvůj profil je smazán.",
     PROFILE_CREATED:                                "OK. Tvůj profil je vytvořen.",
-    INVALID_COLOR:                                  "Tahle barva není správná! Tenhle příkaz bere barvu v hex formátu (#1234AB)",
-    BOT_PROFILE:                                    "Boti nemají profily.",
-    PROFILE_SPECIFIC_NONEXISTENT:                   user => `Uživatel ${user} nemá profil.`,
-    NO_PROFILE_FIELDS:                              "Žádná profilová políčka",
-    FIELD_CREATED:                                  field => `Vytvořeno políčko s názvem \`${field}\`.`,
-    FIELD_DELETED:                                  field => `Políčko \`${field}\` bylo smazáno.`,
-    FIELD_NONEXISTENT:                              "Tohle políčko neexistuje!",
+    PROFILE_CREATE_SETUP:                           "Ahoj! Chtěl by sis nastavit profil před tím, než ho vytvořím? Napiš y nebo yes pokud chceš, jinak napiš n nebo no. Na odpověď máš 10 sekund.\n\nMěj na paměti, že stále můžeš změnit tyto hodnoty pomocí ostatních podpříkazů.",
+    PROFILE_CREATE_TIMEZONE:                        "Jaké je tvoje časové pásmo? Toto časové pásmo musí být jedna z platných položek databáze časových pásem IANA (viz <https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List>)\nNa odpověď máš 30 sekund. Napiš \"none\" pokud ji zatím nechceš nastavovat.",
+    PROFILE_CREATE_LOCALE:                          () => `Kterým jazykem mluvíš? Dostupné jazyky jsou: ${Object.keys(bot.i18n.languages).join(", ")}\nPokud tady svůj jazyk nemáš, nebo ho nechceš nastavovat, napiš "none". Na výběr máš 30 sekund.\nMůžeš nám kdykoli pomoci překládat na GitHubu: <https://github.com/tt-bot-dev/languages>`,
+    PROFILE_TIMEZONE:                               tz => `Tvoje časové pásmo je momentálně ${tz}.\nAbys ho změnil, napiš nové časové pásmo jako argument.`,
     INVALID_TIMEZONE:                               `Tohle časové pásmo není správné. Seznam možných časových pásem najdeš zde: <https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List>`,
     INVALID_LOCALE:                                 locale => `Neplatný jazyk: \`${locale}\``,
     LOCALE_SET:                                     locale => `Tvůj jazyk byl nastaven na ${locale}.`,
-    USER_PROFILE:                                   user => `Profil uživatele ${user}`,
     PROFILE_LOCALE_LIST:                            (currentLocale, status) => `Momentálně máš nastavený tento jazyk: \`${currentLocale}\`!\nAktuální stav jazyků:\n${status}`,
 
     //serverinfo.js
@@ -293,10 +294,6 @@ ID uložiště: ${ext.store}`,
     TAG_DELETED:                                    tag => `Smazán tag s názvem \`${tag}\`.`,
     TAG_UPDATED:                                    tag => `Upraven tag s názvem \`${tag}\`.`,
     TAG_DISPLAY:                                    tag => `Tag ${tag}`,
-
-    //talk.js
-    QUERY_TOO_LONG:                                 "Tvůj dotaz je příliš dlouhý.",
-    CANT_TELL:                                      "Nevím jak na toto odpovědět :thinking:",
 
     //timefor.js
     NO_TZ:                                          "Tento uživatel si zatím nenastavil časové pásmo.",
@@ -374,6 +371,7 @@ Dotaz expiruje za 5 minut.`,
     INVALID_ARG:                                    arg => `Neplatný argument: ${arg}`,
     PAGE:                                           page => `Strana ${page}`,
     ALL:                                            "Vše",
+    SORRY:                                          "Omlouvám se.",
 
     // Locale info and metadata. Only uppercase strings can be used in the bot.
     NATIVE_LOCALE_NAME:                             "Čeština",
