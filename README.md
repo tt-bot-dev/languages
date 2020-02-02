@@ -33,12 +33,15 @@ So you want to add your native language, huh?
 - **What is the context of the strings?**  
 To see the context, run `tt.profile locale trans`.  
 This will switch you to a special language that will show the term names instead of the actual strings. However, arguments are ignored and in some strings, you won't see what you want to see. If this is the case, go to [tt.bot's repository][tt.bot repo] and look for code similar to one of these:  
-  ```js
-  msg.t("TERM_NAME", args, moreArgs)
-  ```
-  ```js
-  bot.i18n.getTranslation("TERM_NAME", "LOCALE", args, moreArgs)
-  ```
+> ```js
+> await ctx.t("TERM_NAME", args, moreArgs)
+> ```
+> ```js
+> await bot.i18n.getTranslation("TERM_NAME", "LOCALE", args, moreArgs)
+> ```
+> ```js
+> await this.sosamba.getTranslation("TERM_NAME", "LOCALE", args, moreArgs);
+> ```
 
 - **What happens after my language is approved?**  
 We will create a new team for your language and add you to the `tt-bot-dev` organization. That way, you don't have to fork the repository and you can commit to other branches. Pushing to `master` branch is restricted to maintainers for security reasons.
