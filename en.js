@@ -1,3 +1,6 @@
+"use strict";
+const config = require("../config"); // External reference from https://github.com/tt-bot-dev/tt.bot root
+
 module.exports = bot => ({
     //#region commands
     //agree.js
@@ -8,34 +11,34 @@ module.exports = bot => ({
 
     //clear.js
     CLEAR_DONE:                                     messages => `:ok_hand: Deleted ${messages} messages.`,
-    CLEAR_CONFIRM:                                  `Are you sure you want to delete the messages according to your arguments? Type y or yes to continue; n or no for stopping the action. You have 10 seconds to respond.`,
+    CLEAR_CONFIRM:                                  "Are you sure you want to delete the messages according to your arguments? Type y or yes to continue; n or no for stopping the action. You have 10 seconds to respond.",
 
     // config.js
     WELCOME_TO_CONFIG:                              () => `Welcome to tt.bot's configuration! Please use reactions to access the individual setting categories.
 You can use :stop_button: reaction to stop at any time.
 Want to use the web interface instead? Go here: ${config.webserverDisplay("/")}`,
-    CONFIG_PREFIX:                                  `:pen_fountain: Prefix`,
+    CONFIG_PREFIX:                                  ":pen_fountain: Prefix",
     CONFIG_PREFIX_DESCRIPTION:                      () => `Here you can set ${bot.user.username}'s prefix. Using \`${config.prefix}\` as the prefix will still work.`,
-    CONFIG_MODROLE:                                 `:hammer: Moderator role`,
-    CONFIG_MODROLE_DESCRIPTION:                     `You can set the custom moderator role for the bot to use. Keep in mind, this is just a case insensitive reference to the role name.`,
-    CONFIG_FAREWELL:                                `:wave: Farewell`,
-    CONFIG_FAREWELL_DESCRIPTION:                    `This feature gives you an ability to see who left the server. You can set the message using this setting. This uses [ttMsg](https://github.com/tt-bot-dev/tt.bot/blob/master/docs/ttMsg.md).`,
-    CONFIG_FAREWELL_CHANNEL:                        `:pen_ballpoint: Farewell channel`,    
-    CONFIG_FAREWELL_CHANNEL_DESCRIPTION:            `Using this, you can set where to post the messages for the above mentioned feature.`,
-    CONFIG_AGREE_CHANNEL:                           `:white_check_mark: Agreement channel`,
-    CONFIG_AGREE_CHANNEL_DESCRIPTION:               `This feature allows one to give themselves the member role by using the \`agree\` command. This is useful when you want to guarantee everyone read the rules.`,
-    CONFIG_MODLOG_CHANNEL:                          `:tools: Modlog channel`,
-    CONFIG_MODLOG_CHANNEL_DESCRIPTION:              `This allows logging moderative actions (strike, kick, (soft)ban) done through the bot to a specific channel.`,
-    CONFIG_LOG_CHANNEL:                             `:notepad_spiral: Log channel`,
-    CONFIG_LOG_CHANNEL_DESCRIPTION:                 `This is a powerful feature of tt.bot that allows logging of some actions in the server. [Learn more about this](https://github.com/tt-bot-dev/tt.bot/blob/wip-v3.2/docs/Logging-events.md)`,
-    CONFIG_LOG_EVENTS:                              `:pencil: Log events`,
-    CONFIG_LOG_EVENTS_DESCRIPTION:                  `Here you can specify what events for the above mentioned feature will be logged.`,
-    CONFIG_GREETING:                                `:handshake: Greeting`,
-    CONFIG_GREETING_DESCRIPTION:                    `This feature gives you an ability to send a message that allows more customization in order to welcome your new members. You can set the message using this setting. This uses [ttMsg](https://github.com/tt-bot-dev/tt.bot/blob/master/docs/ttMsg.md).`,
-    CONFIG_GREETING_CHANNEL:                        `:pencil2: Greeting channel`,
-    CONFIG_GREETING_CHANNEL_DESCRIPTION:            `Using this, you can set where to post the messages for the above mentioned feature.`,
-    CONFIG_MEMBER_ROLE:                             `:busts_in_silhouette: Member role`,
-    CONFIG_MEMBER_ROLE_DESCRIPTION:                 `This role is the role used for the agreement feature.`,
+    CONFIG_MODROLE:                                 ":hammer: Moderator role",
+    CONFIG_MODROLE_DESCRIPTION:                     "You can set the custom moderator role for the bot to use. Keep in mind, this is just a case insensitive reference to the role name.",
+    CONFIG_FAREWELL:                                ":wave: Farewell",
+    CONFIG_FAREWELL_DESCRIPTION:                    "This feature gives you an ability to see who left the server. You can set the message using this setting. This uses [ttMsg](https://github.com/tt-bot-dev/tt.bot/blob/master/docs/ttMsg.md).",
+    CONFIG_FAREWELL_CHANNEL:                        ":pen_ballpoint: Farewell channel",    
+    CONFIG_FAREWELL_CHANNEL_DESCRIPTION:            "Using this, you can set where to post the messages for the above mentioned feature.",
+    CONFIG_AGREE_CHANNEL:                           ":white_check_mark: Agreement channel",
+    CONFIG_AGREE_CHANNEL_DESCRIPTION:               "This feature allows one to give themselves the member role by using the `agree` command. This is useful when you want to guarantee everyone read the rules.",
+    CONFIG_MODLOG_CHANNEL:                          ":tools: Modlog channel",
+    CONFIG_MODLOG_CHANNEL_DESCRIPTION:              "This allows logging moderative actions (strike, kick, (soft)ban) done through the bot to a specific channel.",
+    CONFIG_LOG_CHANNEL:                             ":notepad_spiral: Log channel",
+    CONFIG_LOG_CHANNEL_DESCRIPTION:                 "This is a powerful feature of tt.bot that allows logging of some actions in the server. [Learn more about this](https://github.com/tt-bot-dev/tt.bot/blob/wip-v3.2/docs/Logging-events.md)",
+    CONFIG_LOG_EVENTS:                              ":pencil: Log events",
+    CONFIG_LOG_EVENTS_DESCRIPTION:                  "Here you can specify what events for the above mentioned feature will be logged.",
+    CONFIG_GREETING:                                ":handshake: Greeting",
+    CONFIG_GREETING_DESCRIPTION:                    "This feature gives you an ability to send a message that allows more customization in order to welcome your new members. You can set the message using this setting. This uses [ttMsg](https://github.com/tt-bot-dev/tt.bot/blob/master/docs/ttMsg.md).",
+    CONFIG_GREETING_CHANNEL:                        ":pencil2: Greeting channel",
+    CONFIG_GREETING_CHANNEL_DESCRIPTION:            "Using this, you can set where to post the messages for the above mentioned feature.",
+    CONFIG_MEMBER_ROLE:                             ":busts_in_silhouette: Member role",
+    CONFIG_MEMBER_ROLE_DESCRIPTION:                 "This role is the role used for the agreement feature.",
     CONFIG_LOCALE:                                  ":speaking_head: Locale",
     CONFIG_LOCALE_DESCRIPTION:                      "Sets the language which I will use for those who haven't set up a profile yet.",
     SETTING_CURRENT_VAL:                            val => `The current value is ${val}`,
@@ -44,12 +47,12 @@ Want to use the web interface instead? Go here: ${config.webserverDisplay("/")}`
     SETTING_RESET:                                  ":x: Reset",
     SETTING_DISABLE:                                ":x: Disable",
     SETTING_RESET_DESCRIPTION:                      def => `This will reset the value to the default value (${def})`,
-    SETTING_DISABLE_DESCRIPTION:                    `This will remove the configuration listing from your configuration.`,
+    SETTING_DISABLE_DESCRIPTION:                    "This will remove the configuration listing from your configuration.",
     SETTING_HOME:                                   ":house: Home",
     SETTING_HOME_DESCRIPTION:                       "Goes back to the main menu",
     QUESTION_STRING_VAL:                            "Please type in your new value. You have 60 seconds to respond.",
-    QUESTION_CHANNEL_VAL:                           `Please type in the channel you want to use. You have 30 seconds to respond.`,
-    QUESTION_ROLE_VAL:                              `Please type in the role you want to use. You have 30 seconds to respond.`,
+    QUESTION_CHANNEL_VAL:                           "Please type in the channel you want to use. You have 30 seconds to respond.",
+    QUESTION_ROLE_VAL:                              "Please type in the role you want to use. You have 30 seconds to respond.",
     QUESTION_RESET:                                 c => `Are you sure you want to reset ${c} to the default value?\nType in y or yes if you want to. n or no otherwise. You have 10 seconds to respond.`,
     QUESTION_DISABLE:                               c => `Are you sure you want to disable ${c}?\nType in y or yes if you want to. n or no otherwise. You have 10 seconds to respond.`,
     
@@ -137,7 +140,7 @@ Store ID: ${ext.store}`,
     INFO_UPTIME:                                    "Uptime:",
 
     //invite.js
-    BOT_INVITE:                                     `Here you go! <https://discordapp.com/oauth2/authorize?client_id=195506253806436353&scope=bot>\n\nIf you need help using the bot, come to our support server, the invite is in info command.`,
+    BOT_INVITE:                                     "Here you go! <https://discordapp.com/oauth2/authorize?client_id=195506253806436353&scope=bot>\n\nIf you need help using the bot, come to our support server, the invite is in info command.",
 
     //inviteinspector.js
     CANNOT_GET_INVITE:                              "I cannot get the information about the invite.",
@@ -194,7 +197,7 @@ Store ID: ${ext.store}`,
     PROFILE_CREATE_TIMEZONE:                        "What is your timezone? This timezone should be a valid entry in the IANA timezone DB (check <https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List> for a list of them)\nYou have 30 seconds to answer. Type \"none\" if you don't want to set one yet.",
     PROFILE_CREATE_LOCALE:                          () => `Which language do you speak? Here are the available languages: ${Object.keys(bot.i18n.languages).join(", ")}\nIn case it is not listed or don't want to set a language yet, type "none". You have 30 seconds to choose.\nYou can help us contributing languages on GitHub: <https://github.com/tt-bot-dev/languages>`,
     PROFILE_TIMEZONE:                               tz => `Your current timezone is ${tz}.\nIn order to change it, provide a timezone as an argument.`,
-    INVALID_TIMEZONE:                               `This timezone is invalid. You can find a list of possible timezones here: <https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List>`,
+    INVALID_TIMEZONE:                               "This timezone is invalid. You can find a list of possible timezones here: <https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List>",
     INVALID_LOCALE:                                 locale => `Invalid locale \`${locale}\``,
     LOCALE_SET:                                     locale => `Set your locale to ${locale}.`,
     PROFILE_LOCALE_LIST:                            (currentLocale, status) => `You currently have set \`${currentLocale}\` as your locale!\nCurrent language status:\n${status}`,
@@ -281,7 +284,7 @@ Store ID: ${ext.store}`,
 
     //#region events
     // It is possible that the server owner has a profile.
-    HI_I_AM_BOT:                                    `:wave: Hi there!`,
+    HI_I_AM_BOT:                                    ":wave: Hi there!",
     SOME_THINGS_SAID:                               () => `My name is ${bot.user.username} and I'm an instance of tt.bot, a moderation/utility Discord bot. I felt there is a need of describe myself to you.`,
     GETTING_STARTED:                                ":floppy_disk: Getting started",
     GETTING_STARTED_DESCRIPTION:                    `You don't require any setup for tt.bot to work with basic features! However, to use some moderation commands, you (or anyone with Manage Server permission) have to use the \`${config.prefix}config\` command to create the configuration. And that's basically it! Give your staff the "tt.bot mod" role and they can start moderating! Or set the moderator role to the role you'd like to give the moderator permissions to.`,
@@ -323,11 +326,11 @@ Query will automatically expire in 5 minutes.`,
     REASON:                                         "Reason",
     OP_CANCELLED:                                   "Operation cancelled.",
     COMMAND_ERROR:                                  "Sorry, but I didn't get this right. Please double check the input and try again.",
-    ARGS_MISSING:                                   `You miss some required arguments. :thinking:`,
-    ROLE_HIERARCHY_ERROR:                           `You can't do this on that user.`,
+    ARGS_MISSING:                                   "You miss some required arguments. :thinking:",
+    ROLE_HIERARCHY_ERROR:                           "You can't do this on that user.",
     ERROR:                                          err => `Oops. I have tried completing your command, but I ran into an error. Please share this with my developers.\n\`\`\`js\nError:\n${err}\n\`\`\``,
-    OOPS:                                           `Oops.. I have a little problem.`,
-    MISSING_PERMISSIONS:                            `I'm missing the permission to do this in your server.`,
+    OOPS:                                           "Oops.. I have a little problem.",
+    MISSING_PERMISSIONS:                            "I'm missing the permission to do this in your server.",
     CREATED_ON:                                     "Created on",
     YES:                                            "Yes",
     NO:                                             "No",
@@ -339,5 +342,5 @@ Query will automatically expire in 5 minutes.`,
     
     NATIVE_LOCALE_NAME:                             "English",
     ENGLISH_LOCALE_NAME:                            "English"
-  //fallbackLanguage:                               "en"
+    //fallbackLanguage:                             "en"
 });

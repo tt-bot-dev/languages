@@ -1,3 +1,6 @@
+"use strict";
+const config = require("../config"); // External reference from https://github.com/tt-bot-dev/tt.bot root
+
 module.exports = bot => ({
     //#region commands
     //agree.js
@@ -67,7 +70,7 @@ module.exports = bot => ({
     INFO_UPTIME:                                    "Timp de funcționare:",
 
     //invite.js
-    BOT_INVITE:                                     `Aici! <https://discordapp.com/oauth2/authorize?client_id=195506253806436353&scope=bot>\n\nDacă aveți nevoie de ajutor pentru folosirea acestui bot, veniți în serverul nostru pentru suport, link-ul de invitație pentru server este în comanda info.`,
+    BOT_INVITE:                                     "Aici! <https://discordapp.com/oauth2/authorize?client_id=195506253806436353&scope=bot>\n\nDacă aveți nevoie de ajutor pentru folosirea acestui bot, veniți în serverul nostru pentru suport, link-ul de invitație pentru server este în comanda info.",
 
     //inviteinspector.js
     CANNOT_GET_INVITE:                              "Nu pot să iau informațtii în link-ul de invitație.",
@@ -110,7 +113,7 @@ module.exports = bot => ({
     FIELD_CREATED:                                  field => `Am făcut un câmp cu numele de \`${field}\`.`,
     FIELD_DELETED:                                  field => `Am șters câmpul \`${field}\``,
     FIELD_NONEXISTENT:                              "Acel câmp nu există!",
-    INVALID_TIMEZONE:                               `Acest fus orar este invalid. Puteți găsi o listă cu fusuri orare posible aici: <https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List>`,
+    INVALID_TIMEZONE:                               "Acest fus orar este invalid. Puteți găsi o listă cu fusuri orare posible aici: <https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List>",
     INVALID_LOCALE:                                 locale => `Locație invalidă \`${locale}\``,
     LOCALE_SET:                                     locale => `Am setat locația dvs. în ${locale}.`,
     USER_PROFILE:                                   user => `Profilul lui ${user}`,
@@ -120,7 +123,7 @@ module.exports = bot => ({
     GUILD_VERIFICATION_LOW:                         "Scăzut (Trebuie să aibă un email verificat pe contul de Discord)",
     GUILD_VERIFICATION_MEDIUM:                      "Mediu (Trebuie de asemenea să fie înregistrat/ă pe Discord mai mult de 5 minute)",
 
-        //Acestea au tableflip-uriile pierdute deoarece tableflip-uriile nu sunt traductibile.
+    //Acestea au tableflip-uriile pierdute deoarece tableflip-uriile nu sunt traductibile.
     GUILD_VERIFICATION_TABLEFLIP:                   "(Trebuie de asemenea să fie înregistrat pe Discord mai mult de 5 minute și să fie în server mai mult de 10 minute)",
     GUILD_VERIFICATION_ULTRATABLEFLIP:              "(Trebuie să aibă un număar de telefon verificat pe contul de Discord)",
     GUILD_VERIFICATION_LEVEL:                       "Nivel de verificare",
@@ -188,7 +191,7 @@ module.exports = bot => ({
 
     //#region events
     // Este posibil ca deținătorul serverului să aibă un profil.
-    HI_I_AM_BOT:                                    `:wave: Salutare!`,
+    HI_I_AM_BOT:                                    ":wave: Salutare!",
     SOME_THINGS_SAID:                               () => `Mă numesc ${bot.user.username} și sunt o instanță de tt.bot, un bot de Discord multifuncțional și distractiv. Am avut o presimțire că trebuia să mă descriu ție.`,
     GETTING_STARTED:                                ":floppy_disk: Noțiuniie de bază",
     GETTING_STARTED_DESCRIPTION:                    `Nu avețti nevoie să setați tt.bot pentru folosirea caracteristicilor simple! Oricum, pentru ca să folosiți niște comenzi de moderare, dvs. (sau oricine altcineva cu permisiuni administrative) o să trebuiască să folosiți comanda \`${config.prefix}config\` ca să creați niște configurații. Și cam atât basic! Dă-le rolul "tt.bot mod" la moderatori și o să înceapă să modereze server-ul! Sau setează "modRole" în orice nume rolul tău ar avea.`,
@@ -229,11 +232,11 @@ Altfel, reacționați cu ❌ ca să anulați.
     REASON:                                         "Motiv",
     OP_CANCELLED:                                   "Operație anulată.",
     COMMAND_ERROR:                                  "Scuze, dar n-am primit comanda cum trebuie. Vă rugăm să verificați input-ul de două ori si re-rulați comanda.",
-    ARGS_MISSING:                                   `A-ți ratat niște argumente necesare. :thinking:`,
-    ROLE_HIERARCHY_ERROR:                           `Nu pot face asta în acel utilizator.`,
+    ARGS_MISSING:                                   "A-ți ratat niște argumente necesare. :thinking:",
+    ROLE_HIERARCHY_ERROR:                           "Nu pot face asta în acel utilizator.",
     ERROR:                                          err => `Ups, am încercat să executez comanda dar am căzut într-o eroare. Vă rugăm să trimite-ți asta la programatorii / dezvoltatorii mei.\n\`\`\`js\nError:\n${err}\n\`\`\``,
-    OOPS:                                           `Ups.. Am niște probleme mici.`,
-    MISSING_PERMISSIONS:                            `N-am permisiunea de a face asta în server-ul dvs..`,
+    OOPS:                                           "Ups.. Am niște probleme mici.",
+    MISSING_PERMISSIONS:                            "N-am permisiunea de a face asta în server-ul dvs..",
     CREATED_ON:                                     "Creat pe",
     YES:                                            "Da",
     NO:                                             "Nu",

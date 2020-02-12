@@ -1,3 +1,4 @@
+"use strict";
 // Nitránčina, to je pekný prídavek slovenčiny kerú dobre poznáme.
 // Nitránčina je doplnek slovenčiny ako je databáza doplnek k node.js(a tak ďál)
 // *pozor, keďže as toto volá nitránčina, nešpecifikujeme používání mixuvaného nárečá Nitránčina + Topoľčánske doplnky + volačo z oného Píšťanského nárečá keré sa kupodivu zaplítlo(aj keď níe véla) do nášho.
@@ -5,8 +6,10 @@
 // Opakujeme poslenné 2 vety ze Slovenského prekladu:
 // 'Keď sa niečo posere, prosím kompetentnú osobu rôzneho typu poslať na najlepšie vybraný server typu Aefer Community - sekcia napr. aj #main jednoduchú správu:
 // "Šéfe, mně se asi něco nepovedlo."'
-
 // **POZOR! Následujúci preklad vo formáte .js je *možno* natoľko seriózny že ho netreba brať vážne. Šak priznajme si, je to iba vtipný preklad**
+
+const config = require("../config"); // External reference from https://github.com/tt-bot-dev/tt.bot root
+
 function getMessagesPlural(messages) {
     if (messages === 1) return "správa";
     if (messages >= 2 && messages <= 4) return "správy";
@@ -40,7 +43,7 @@ function getMembersPlural(members) {
 function getItemsPlural(items) {
     if (items === 1) return "oná";
     if (items >= 2 && items <= 4) return "oných";
-    return "oných"
+    return "oných";
 }
 
 
@@ -103,7 +106,7 @@ module.exports = bot => ({
     INFO_UPTIME:                                    "Čas funglu:",
 
     //invite.js
-    BOT_INVITE:                                     `Na tu máš: <https://discordapp.com/oauth2/authorize?client_id=195506253806436353&scope=bot>\n\nKeď steš pomócť, nebuď lemravý a dójdi a server prvej pomoci.`,
+    BOT_INVITE:                                     "Na tu máš: <https://discordapp.com/oauth2/authorize?client_id=195506253806436353&scope=bot>\n\nKeď steš pomócť, nebuď lemravý a dójdi a server prvej pomoci.",
 
     //inviteinspector.js
     CANNOT_GET_INVITE:                              "Nevím najísť pozvánku.",
@@ -143,7 +146,7 @@ module.exports = bot => ({
     FIELD_CREATED:                                  field => `Vyrobené políčko se názvami \`${field}\`.`,
     FIELD_DELETED:                                  field => `Políčko \`${field}\` je vyondené.`,
     FIELD_NONEXISTENT:                              "Toto políčko neni!",
-    INVALID_TIMEZONE:                               `Toto časové pásmo je skoro správne, len neni dobre. Zoznam časových pásem nájdeš vraj na tomto míste: <https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List>`,
+    INVALID_TIMEZONE:                               "Toto časové pásmo je skoro správne, len neni dobre. Zoznam časových pásem nájdeš vraj na tomto míste: <https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List>",
     INVALID_LOCALE:                                 locale => `Nahovno jazyk: \`${locale}\``,
     LOCALE_SET:                                     locale => `Nastaveu si si jazyk ${locale}.`,
     USER_PROFILE:                                   user => `Profil trogára ${user}`,
@@ -153,14 +156,14 @@ module.exports = bot => ({
     GUILD_VERIFICATION_LOW:                         "Malá (Ste overený email)",
     GUILD_VERIFICATION_MEDIUM:                      "Stredná (Ste overený email a musí odejsť 5 minút od registruváňá na tom Discorde)",
 
-        //These miss their tableflips because the tableflips are not translatable.
+    // These miss their tableflips because the tableflips are not translatable.
     // veru je to smutné že to neni prekladateľné, ale čo už.
     GUILD_VERIFICATION_TABLEFLIP:                   "(Ste overený email, musí odejsť 5 minút od registruváňá na tom Discorde a musí oedjsť 10 minút od prijídeňá na tento server)",
     GUILD_VERIFICATION_ULTRATABLEFLIP:              "(Ste overené číslo napr. aj na pevnú linku ale hlavne na mobil)",
     GUILD_VERIFICATION_LEVEL:                       "Voláka úroveň overeňá serveru",
     REQUIRES_ADMIN_MFA:                             "Ste 2FA pre voláke administrativné veci",
     MEMBER_COUNT:                                   members => `${members} ${getMembersPlural(members)}`,
-    ROLE_COUNT:                                     roles => `${roles} rol${(roles <5 && roles >0) ? "e": "í"}`,
+    ROLE_COUNT:                                     roles => `${roles} rol${roles <5 && roles >0 ? "e": "í"}`,
     EXPLICIT_FILTERING:                             "Filtruváňí nedobrého obsahu",
     EXPLICIT_FILTERING_OFF:                         "Vypaté",
     EXPLICIT_FILTERING_NOROLE:                      "Zapaté pre trogárov bez rolí",
@@ -170,7 +173,7 @@ module.exports = bot => ({
     ALL_MESSAGES:                                   "Šecky správy",
     VOICE_REGION:                                   "Lokalita serveru",
     AFK_TIMEOUT:                                    "Voláky časový limit AFK",
-    AFK_MINUTES:                                    timeout => `${timeout / 60} minut${timeout / 60 == 1 ? "a" : ""}`,
+    AFK_MINUTES:                                    timeout => `${timeout / 60} minut${timeout / 60 === 1 ? "a" : ""}`,
     AFK_CHANNEL:                                    "Méno AFK kanálu",
 
     //softban.js
@@ -222,7 +225,7 @@ module.exports = bot => ({
 
     //#region events
     // It is possible that the server owner has a profile.
-    HI_I_AM_BOT:                                    `:wave: Serus!`,
+    HI_I_AM_BOT:                                    ":wave: Serus!",
     SOME_THINGS_SAID:                               () => `Ja som ${bot.user.username} a som brat tt.bot-a, multifunkčného a zábavného bota pre Discord. Mám potrebu ti trndzuvať s rukou.`,
     GETTING_STARTED:                                ":floppy_disk: Začátek",
     GETTING_STARTED_DESCRIPTION:                    `Netreba nastaviť ani hovno na tt.bot-a, aby si ho používal se základýma funkcámi! Ale k používáňú príkazov pre podradených, ty (alebo volado s vlastnosťou Nadradený/Administrátor) musí naondiť príkaz \`${config.prefix}config\`, aby vyrobil konfiguráciu serveru. A to je konec! Daj svojim podradeným rolu "tt.bot mod" a móžu začat moderovať! Alebo nastav nastavení modRole na méno tvojej role pre podradených.`,
@@ -267,11 +270,11 @@ Otázka končí za 5 minút, takže nebuď lemravý.`,
     REASON:                                         "Dóvod",
     OP_CANCELLED:                                   "Zrušené.",
     COMMAND_ERROR:                                  "Nepochopeu som ťa. Prosím ťa nebuď lemra a skontroluj tvoj oný a znovu skús príkaz.",
-    ARGS_MISSING:                                   `Chýba ti volačo v príkaze.`,
-    ROLE_HIERARCHY_ERROR:                           `Toto ti na druhého nedovolím.`,
+    ARGS_MISSING:                                   "Chýba ti volačo v príkaze.",
+    ROLE_HIERARCHY_ERROR:                           "Toto ti na druhého nedovolím.",
     ERROR:                                          err => `Bodaj ťa! Skúseu som to ale volačo sa posralo... Daj to vedieť vývojárom.\n\`\`\`js\nError:\n${err}\n\`\`\``,
-    OOPS:                                           `Bodaj ťa.. Volačo sa dosralo.`,
-    MISSING_PERMISSIONS:                            `Toto nevím spraviť na serveri.`,
+    OOPS:                                           "Bodaj ťa.. Volačo sa dosralo.",
+    MISSING_PERMISSIONS:                            "Toto nevím spraviť na serveri.",
     CREATED_ON:                                     "Vyrobený",
     YES:                                            "Áno",
     NO:                                             "Níe",

@@ -1,9 +1,12 @@
+"use strict";
 // Slovenčina, jazyk kerý šetci dobre poznáme, však?
 // Ja si tu naondím pár malinkých oných prekladov a pustím trochu plynu(nechcem hrešiť. + neni som Meliško)
 // Toto je jednoduchý preklad od našich bratóv z Čéch aby sme sa nedopustili nejakého hríchu a nespravili výpadek letiska.
 // Keď sa niečo posere, prosím kompetentnú osobu rôzneho typu poslať na najlepšie vybraný server typu Aefer Community - sekcia napr. aj #main jednoduchú správu:
 // "Šéfe, mně se asi něco nepovedlo."
 // toť toto je menší úvod na tento preklad do Slovenčiny. 
+const config = require("../config"); // External reference from https://github.com/tt-bot-dev/tt.bot root
+
 function getMessagesPlural(messages) {
     if (messages === 1) return "správa";
     if (messages >= 2 && messages <= 4) return "správy";
@@ -37,7 +40,7 @@ function getMembersPlural(members) {
 function getItemsPlural(items) {
     if (items === 1) return "vec";
     if (items >= 2 && items <= 4) return "veci";
-    return "vecí"
+    return "vecí";
 }
 
 
@@ -57,7 +60,7 @@ module.exports = bot => ({
 
     //clear.js
     CLEAR_DONE:                                     messages => `:ok_hand: ${getDeletedPlural(messages)} ${messages} ${getMessagesPlural(messages)}.`,
-    CLEAR_CONFIRM:                                  `Si si istý/á, že chceš zmazať správy podľa vypísaných argumentov? Keď ano, napíš y alebo yes. Inak napíš n alebo no. Na odpoveď máš 10 sekúnd.`,
+    CLEAR_CONFIRM:                                  "Si si istý/á, že chceš zmazať správy podľa vypísaných argumentov? Keď ano, napíš y alebo yes. Inak napíš n alebo no. Na odpoveď máš 10 sekúnd.",
 
     // config.js
     SETTING_UPDATED:                                (setting, value) => `Nastavenie ${setting} nastavené na ${value}`,
@@ -65,40 +68,40 @@ module.exports = bot => ({
     WELCOME_TO_CONFIG:                              () => `Vitaj v konfigurácii tt.bot-a! Použi reakcie na prístup k jednotlivým kategóriam nastavení.
 Menu môžeš opustiť kedy chceš reagovaním :stop_button:
 Chceš radšej použiť webové rozhranie? Choď sem: ${config.webserverDisplay("/")}`,
-    CONFIG_PREFIX:                                  `:pen_fountain: Predpona (prefix)`,
+    CONFIG_PREFIX:                                  ":pen_fountain: Predpona (prefix)",
     CONFIG_PREFIX_DESCRIPTION:                      () => `Tu môžeš nastaviť predponu (prefix) ${bot.user.username}-a. Používanie \`${config.prefix}\` ako prefix bude stále fungovať.`,
-    CONFIG_MODROLE:                                 `:hammer: Role moderátora`,
-    CONFIG_MODROLE_DESCRIPTION:                     `Môžeš si nastaviť vlastnú rolu moderátora, ktorú bude bot používať. Ber na vedomie, že toto je len referencia na meno role (nerozlišujú sa VEĽKÉ a malé písmena).`,
-    CONFIG_FAREWELL:                                `:wave: Rozlúčenie`,
-    CONFIG_FAREWELL_DESCRIPTION:                    `Táto funkcia ti umožní vidieť, kdo odišiel zo serveru. Týmto nastavením upravíš správu, ktorá bude posielaná. Toto používa [ttMsg](https://github.com/tt-bot-dev/tt.bot/blob/master/docs/ttMsg.md) (anglicky).`,
-    CONFIG_FAREWELL_CHANNEL:                        `:pen_ballpoint: Kanál pre rozlúčenie`,    
-    CONFIG_FAREWELL_CHANNEL_DESCRIPTION:            `Týmto môžeš nastaviť kde se majú posielať správy pre vyššie popísanú funkciu.`,
-    CONFIG_AGREE_CHANNEL:                           `:white_check_mark: Kanál pro funkciu súhlasu`,
-    CONFIG_AGREE_CHANNEL_DESCRIPTION:               `Táto funkcia umožňuje luďom si pridať rolu člena použitím príkazu \`agree\`. Toto si nájde použitie, napríklad. keď chceš zaručiť, že všetci videli pravidlá serveru.`,
-    CONFIG_MODLOG_CHANNEL:                          `:tools: Kanál pre záznam moderátorských akcii`,
-    CONFIG_MODLOG_CHANNEL_DESCRIPTION:              `Umožňuje zaznamenávanie moderátorských akcii (varovánie, vyhodenie, (soft)ban) vykonaných cez bota do určeného kanálu.`,
-    CONFIG_LOG_CHANNEL:                             `:notepad_spiral: Kanál pre záznamy`,
-    CONFIG_LOG_CHANNEL_DESCRIPTION:                 `Toto je mocná funkcia tt.bot-a, ktorá umožňuje zaznamenávanie niektorých akcí na serveri. [Zisti o tom viac (anglicky)](https://github.com/tt-bot-dev/tt.bot/blob/master/docs/Logging-events.md)`,
-    CONFIG_LOG_EVENTS:                              `:pencil: Akcie pre záznamy`,
-    CONFIG_LOG_EVENTS_DESCRIPTION:                  `Tu môžeš určiť, ktoré akcie budú zaznamenávané pre vyššie uvedenoú funkciu.`,
-    CONFIG_GREETING:                                `:handshake: Privítanie`,
-    CONFIG_GREETING_DESCRIPTION:                    `Táto funkcia ti umožňuje poslať správu, ktorú si môžeš prispôsobiť aby si privítal(a) nových členov na serveri. Týmto nastavením upravíš správu, ktorá bude posielaná. Toto používa [ttMsg](https://github.com/tt-bot-dev/tt.bot/blob/master/docs/ttMsg.md) (anglicky).`,
-    CONFIG_GREETING_CHANNEL:                        `:pencil2: Kanál pre privítanie`,
-    CONFIG_GREETING_CHANNEL_DESCRIPTION:            `Týmto môžeš nastaviť kde se majú posielať správy pre vyššie popísanú funkciu.`,
-    CONFIG_MEMBER_ROLE:                             `:busts_in_silhouette: Role člena`,
-    CONFIG_MEMBER_ROLE_DESCRIPTION:                 `Táto rola bude používáná pre členov serveru, ktorí súhlasili s pravidlami.`,
+    CONFIG_MODROLE:                                 ":hammer: Role moderátora",
+    CONFIG_MODROLE_DESCRIPTION:                     "Môžeš si nastaviť vlastnú rolu moderátora, ktorú bude bot používať. Ber na vedomie, že toto je len referencia na meno role (nerozlišujú sa VEĽKÉ a malé písmena).",
+    CONFIG_FAREWELL:                                ":wave: Rozlúčenie",
+    CONFIG_FAREWELL_DESCRIPTION:                    "Táto funkcia ti umožní vidieť, kdo odišiel zo serveru. Týmto nastavením upravíš správu, ktorá bude posielaná. Toto používa [ttMsg](https://github.com/tt-bot-dev/tt.bot/blob/master/docs/ttMsg.md) (anglicky).",
+    CONFIG_FAREWELL_CHANNEL:                        ":pen_ballpoint: Kanál pre rozlúčenie",    
+    CONFIG_FAREWELL_CHANNEL_DESCRIPTION:            "Týmto môžeš nastaviť kde se majú posielať správy pre vyššie popísanú funkciu.",
+    CONFIG_AGREE_CHANNEL:                           ":white_check_mark: Kanál pro funkciu súhlasu",
+    CONFIG_AGREE_CHANNEL_DESCRIPTION:               "Táto funkcia umožňuje luďom si pridať rolu člena použitím príkazu `agree`. Toto si nájde použitie, napríklad. keď chceš zaručiť, že všetci videli pravidlá serveru.",
+    CONFIG_MODLOG_CHANNEL:                          ":tools: Kanál pre záznam moderátorských akcii",
+    CONFIG_MODLOG_CHANNEL_DESCRIPTION:              "Umožňuje zaznamenávanie moderátorských akcii (varovánie, vyhodenie, (soft)ban) vykonaných cez bota do určeného kanálu.",
+    CONFIG_LOG_CHANNEL:                             ":notepad_spiral: Kanál pre záznamy",
+    CONFIG_LOG_CHANNEL_DESCRIPTION:                 "Toto je mocná funkcia tt.bot-a, ktorá umožňuje zaznamenávanie niektorých akcí na serveri. [Zisti o tom viac (anglicky)](https://github.com/tt-bot-dev/tt.bot/blob/master/docs/Logging-events.md)",
+    CONFIG_LOG_EVENTS:                              ":pencil: Akcie pre záznamy",
+    CONFIG_LOG_EVENTS_DESCRIPTION:                  "Tu môžeš určiť, ktoré akcie budú zaznamenávané pre vyššie uvedenoú funkciu.",
+    CONFIG_GREETING:                                ":handshake: Privítanie",
+    CONFIG_GREETING_DESCRIPTION:                    "Táto funkcia ti umožňuje poslať správu, ktorú si môžeš prispôsobiť aby si privítal(a) nových členov na serveri. Týmto nastavením upravíš správu, ktorá bude posielaná. Toto používa [ttMsg](https://github.com/tt-bot-dev/tt.bot/blob/master/docs/ttMsg.md) (anglicky).",
+    CONFIG_GREETING_CHANNEL:                        ":pencil2: Kanál pre privítanie",
+    CONFIG_GREETING_CHANNEL_DESCRIPTION:            "Týmto môžeš nastaviť kde se majú posielať správy pre vyššie popísanú funkciu.",
+    CONFIG_MEMBER_ROLE:                             ":busts_in_silhouette: Role člena",
+    CONFIG_MEMBER_ROLE_DESCRIPTION:                 "Táto rola bude používáná pre členov serveru, ktorí súhlasili s pravidlami.",
     SETTING_CURRENT_VAL:                            val => `Aktuálna hodnota nastavení je ${val}`,
     SETTING_SET:                                    ":pencil: Nastaviť",
     SETTING_SET_DESCRIPTION:                        "Nastaví hodnotu tohoto nastavenia na novú hodnotu.",
     SETTING_RESET:                                  ":x: Resetovať",
     SETTING_DISABLE:                                ":x: Vypnúť",
     SETTING_RESET_DESCRIPTION:                      def => `Toto zresetuje hodnotu na pôvodnú hodnotu (${def})`,
-    SETTING_DISABLE_DESCRIPTION:                    `Toto odstrání túto hodnotu z konfigurácie.`,
+    SETTING_DISABLE_DESCRIPTION:                    "Toto odstrání túto hodnotu z konfigurácie.",
     SETTING_HOME:                                   ":house: Domov",
     SETTING_HOME_DESCRIPTION:                       "Vráti sa späť do hlavného menu.",
     QUESTION_STRING_VAL:                            "Napíš sem novú hodnotu. Na odpoveď máš 60 sekúnd.",
-    QUESTION_CHANNEL_VAL:                           `Napiš sem kanál, ktorý chceš použiť. Na odpoveď máš 30 sekúnd.`,
-    QUESTION_ROLE_VAL:                              `Napiš sem roli, ktorý chceš použiť. Na odpoveď máš 30 sekúnd.`,
+    QUESTION_CHANNEL_VAL:                           "Napiš sem kanál, ktorý chceš použiť. Na odpoveď máš 30 sekúnd.",
+    QUESTION_ROLE_VAL:                              "Napiš sem roli, ktorý chceš použiť. Na odpoveď máš 30 sekúnd.",
     QUESTION_RESET:                                 c => `Si si istý/a, že chceš zresetovať ${c} na pôvodnú hodnotu?\nNapíš y alebo yes na resetovanie. Inak napiš n alebo no. Na odpoveď máš 10 sekúnd.`,
     QUESTION_DISABLE:                               c => `Si si istý/a, že chceš vypnúť ${c}?\nNapíš y alebo yes na resetovanie. Inak napiš n alebo no. Na odpoveď máš 10 sekúnd.`,
     
@@ -143,7 +146,7 @@ Chceš radšej použiť webové rozhranie? Choď sem: ${config.webserverDisplay(
     INFO_UPTIME:                                    "Doba prevádzky:",
 
     //invite.js
-    BOT_INVITE:                                     `Tu máš: <https://discordapp.com/oauth2/authorize?client_id=195506253806436353&scope=bot>\n\nKeď potrebuješ pomôcť s používaním bota, príd na náš server podpory, pozvánka je príkaze info.`,
+    BOT_INVITE:                                     "Tu máš: <https://discordapp.com/oauth2/authorize?client_id=195506253806436353&scope=bot>\n\nKeď potrebuješ pomôcť s používaním bota, príd na náš server podpory, pozvánka je príkaze info.",
 
     //inviteinspector.js
     CANNOT_GET_INVITE:                              "Nemôžem získať informácie o pozvánke.",
@@ -183,7 +186,7 @@ Chceš radšej použiť webové rozhranie? Choď sem: ${config.webserverDisplay(
     FIELD_CREATED:                                  field => `Vytvorené políčko s názvom \`${field}\`.`,
     FIELD_DELETED:                                  field => `Políčko \`${field}\` bolo zmazané.`,
     FIELD_NONEXISTENT:                              "Toto políčko neexistuje!",
-    INVALID_TIMEZONE:                               `Toto časové pásmo neni správne. Zoznam možných časových pásiem nájdeš tu: <https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List>`,
+    INVALID_TIMEZONE:                               "Toto časové pásmo neni správne. Zoznam možných časových pásiem nájdeš tu: <https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List>",
     INVALID_LOCALE:                                 locale => `Neplatný jazyk: \`${locale}\``,
     LOCALE_SET:                                     locale => `Tvoj jazyk bol nastavený na ${locale}.`,
     USER_PROFILE:                                   user => `Profil používateľa ${user}`,
@@ -194,14 +197,14 @@ Chceš radšej použiť webové rozhranie? Choď sem: ${config.webserverDisplay(
     GUILD_VERIFICATION_LOW:                         "Nízka (Vyžaduje overený email)",
     GUILD_VERIFICATION_MEDIUM:                      "Stredná (Vyžaduje overený email a musí uplynúť 5 minút od registrácie na Discorde)",
 
-        //These miss their tableflips because the tableflips are not translatable.
+    // These miss their tableflips because the tableflips are not translatable.
     // veru je to smutné že to neni prekladateľné, ale čo už.
     GUILD_VERIFICATION_TABLEFLIP:                   "(Vyžaduje overený email, musí uplynúť 5 minút od registrácie na Discorde a musí uplynúť 10 minút od príchodu na server)",
     GUILD_VERIFICATION_ULTRATABLEFLIP:              "(Vyžaduje overené telefónne číslo)",
     GUILD_VERIFICATION_LEVEL:                       "Úroveň overenia serveru",
     REQUIRES_ADMIN_MFA:                             "Vyžaduje 2FA pre administratívne úkony",
     MEMBER_COUNT:                                   members => `${members} ${getMembersPlural(members)}`,
-    ROLE_COUNT:                                     roles => `${roles} rol${(roles <5 && roles >0) ? "e": "í"}`,
+    ROLE_COUNT:                                     roles => `${roles} rol${roles <5 && roles >0 ? "e": "í"}`,
     EXPLICIT_FILTERING:                             "Filtrovanie explicitného obsahu",
     EXPLICIT_FILTERING_OFF:                         "Vypnuté",
     EXPLICIT_FILTERING_NOROLE:                      "Zapnuté pre používateľov bez rolí",
@@ -211,7 +214,7 @@ Chceš radšej použiť webové rozhranie? Choď sem: ${config.webserverDisplay(
     ALL_MESSAGES:                                   "Všetky správy",
     VOICE_REGION:                                   "Lokalita serveru",
     AFK_TIMEOUT:                                    "Časový limit AFK",
-    AFK_MINUTES:                                    timeout => `${timeout / 60} minut${timeout / 60 == 1 ? "a" : ""}`,
+    AFK_MINUTES:                                    timeout => `${timeout / 60} minut${timeout / 60 === 1 ? "a" : ""}`,
     AFK_CHANNEL:                                    "Názov AFK kanálu",
 
     //softban.js
@@ -263,7 +266,7 @@ Chceš radšej použiť webové rozhranie? Choď sem: ${config.webserverDisplay(
 
     //#region events
     // It is possible that the server owner has a profile.
-    HI_I_AM_BOT:                                    `:wave: Ahoj!`,
+    HI_I_AM_BOT:                                    ":wave: Ahoj!",
     SOME_THINGS_SAID:                               () => `Moje meno je ${bot.user.username} a som instancia tt.bot-a, multifunkčného a zábavného bota pre Discord. Cítil som potrebu popísať ti, kto som.`,
     GETTING_STARTED:                                ":floppy_disk: Začíname",
     GETTING_STARTED_DESCRIPTION:                    `Nepotrebuješ nastavovať tt.bot-a, aby si si užil(a) jeho základné funkcie! Ale k používaniu príkazov pre moderátorov, ty (alebo ktokoľvek s oprávnením Spravovať server) musí použiť príkaz \`${config.prefix}config\`, aby vytvoril konfiguráciu serveru. A to je v podstate všetko! Daj svojim moderátorom rolu "tt.bot mod" a môžu začať moderovať! Alebo nastav nastavenie modRole na meno tvojej role pre moderátorov.`,
@@ -308,11 +311,11 @@ Otázka expiruje za 5 minút.`,
     REASON:                                         "Dôvod",
     OP_CANCELLED:                                   "Operácia zrušená.",
     COMMAND_ERROR:                                  "Prepáč, ale nepochopil som tvoju informáciu. Prosím skontroluj tvoj vstup a znovu spusti príkaz.",
-    ARGS_MISSING:                                   `Chýbajú ti vyžadované argumenty.`,
-    ROLE_HIERARCHY_ERROR:                           `Nemôžeš toto urobiť na tohoto používateľa.`,
+    ARGS_MISSING:                                   "Chýbajú ti vyžadované argumenty.",
+    ROLE_HIERARCHY_ERROR:                           "Nemôžeš toto urobiť na tohoto používateľa.",
     ERROR:                                          err => `Jájha. Skúsil som splniť tvoj príkaz, ale mám problém. Prosím, daj toto mojim vývojárom.\n\`\`\`js\nError:\n${err}\n\`\`\``,
-    OOPS:                                           `Jájha.. Mám menší problém.`,
-    MISSING_PERMISSIONS:                            `Nemám oprávnenia na vykonanie akcie na tomto serveri.`,
+    OOPS:                                           "Jájha.. Mám menší problém.",
+    MISSING_PERMISSIONS:                            "Nemám oprávnenia na vykonanie akcie na tomto serveri.",
     CREATED_ON:                                     "Vytvorený",
     YES:                                            "Ano",
     NO:                                             "Nie",
