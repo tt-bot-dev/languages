@@ -265,7 +265,7 @@ Store ID: ${ext.store}`,
     NO_TZ:                                          "This user hasn't set any timezone yet.",
     TIME_FOR:                                       (time, user) => `It's ${time} for ${user}.`,
 
-    //uinfo.js
+    //userinfo.js
     PLAYING:                                        "Playing",
     STREAMING:                                      "Streaming",
     LISTENING_TO:                                   "Listening to",
