@@ -292,6 +292,8 @@ Store ID: ${ext.store}`,
     EVERYTHING_ELSE_DESCRIPTION:                    "If you need help (or just want to hang out with us), feel free to come to our support server; the invite can be found in the info command.",
     THANKS_FOR_CHOOSING:                            "Thanks for choosing tt.bot!",
     WISHING_GOOD_LUCK:                              "*I wish you good luck with your server-*",
+    FREE_SOFTWARE:                                  ":desktop: tt.bot is free software",
+    FREE_SOFTWARE_DESCRIPTION:                      "tt.bot is free software licensed under the [GNU AGPLv3 or later](https://github.com/tt-bot-dev/tt.bot/blob/v4-wip/LICENSE). Translations for tt.bot are licensed under the [MIT License](https://github.com/tt-bot-dev/languages/blob/v4-wip/LICENSE).",
     //#endregion events
 
     //#region queries
