@@ -3,6 +3,7 @@
 // Tohle je pokus doplnit pády češtiny.
 
 const config = require("../config"); // External reference from https://github.com/tt-bot-dev/tt.bot root
+
 function getMessagesPlural(messages) {
     if (messages === 1) return "zpráva";
     if (messages >= 2 && messages <= 4) return "zprávy";
