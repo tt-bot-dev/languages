@@ -207,16 +207,7 @@ module.exports = bot => ({
     TIME_FOR:                                       (time, user) => `${time} hodín trogára ${user}.`,
 
     //uinfo.js
-    PLAYING:                                        "Ondí",
-    STREAMING:                                      "Ondí",
-    LISTENING_TO:                                   "Ondí",
-    ONLINE:                                         "Je tu",
-    IDLE:                                           "Oddychuje",
-    DND:                                            "Dajte mu pokoj",
-    OFFLINE:                                        "Neni tu",
     USER_INFO:                                      (nickstr, limited = false) => `${limited? "Obmedzené i" : "I"}nformácie pre trogára ${nickstr}`,
-    PLAYING_NONE:                                   "Ništ",
-    SPACE_UNIVERSE:                                 "si vesmír.\nVeľa šťastá, našla si voláky easter egg :eyes:",
     CURRENT_VOICE:                                  "Živý hlasový kanál",
     NO_CURRENT_VOICE:                               "Žádny",
     JOINED_ON:                                      "Je na serveri:",

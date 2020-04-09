@@ -173,16 +173,7 @@ module.exports = bot => ({
     TIME_FOR:                                       (time, user) => `Timpul este ${time} pentru ${user}.`,
 
     //uinfo.js
-    PLAYING:                                        "Se joacă",
-    STREAMING:                                      "Face streaming la",
-    LISTENING_TO:                                   "Ascultă la",
-    ONLINE:                                         "Online",
-    IDLE:                                           "Inactiv",
-    DND:                                            "Nu deranja",
-    OFFLINE:                                        "Invizibil/Offline",
     USER_INFO:                                      (nickstr, limited = false) => `${limited? "Limited i" : "I"}nformație pentru ${nickstr}`,
-    PLAYING_NONE:                                   "Nimica",
-    SPACE_UNIVERSE:                                 "cu un univers în spațiu.\nSucces, A-ți găsit un ou de paște :eyes:",
     CURRENT_VOICE:                                  "Canalul de voice actual",
     JOINED_ON:                                      "Intrat din",
     NO_CURRENT_VOICE:                               "Niciunul",

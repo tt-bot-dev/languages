@@ -248,16 +248,7 @@ Chceš radšej použiť webové rozhranie? Choď sem: ${config.webserverDisplay(
     TIME_FOR:                                       (time, user) => `Je ${time} pre používateľa ${user}.`,
 
     //uinfo.js
-    PLAYING:                                        "Hrá",
-    STREAMING:                                      "Streamuje",
-    LISTENING_TO:                                   "Počúva",
-    ONLINE:                                         "Online",
-    IDLE:                                           "Nečinný",
-    DND:                                            "Nerušiť",
-    OFFLINE:                                        "Neviditelný/offline",
     USER_INFO:                                      (nickstr, limited = false) => `${limited? "Obmedzené i" : "I"}nformácie pre používateľa ${nickstr}`,
-    PLAYING_NONE:                                   "Nič",
-    SPACE_UNIVERSE:                                 "si s vesmírom plných medzier.\nVeľa šťastia, našiel(a) si easter egg :eyes:",
     CURRENT_VOICE:                                  "Aktuálny hlasový kanál",
     NO_CURRENT_VOICE:                               "Žiadny",
     JOINED_ON:                                      "Pripojený(á) na serveri:",
