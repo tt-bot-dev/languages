@@ -138,6 +138,7 @@ Store ID: ${ext.store}`,
     INFO_OWNERS:                                    ownerStrings => `${ownerStrings.join("\n")}\n[Support server](https://discord.gg/pGN5dMq)\n[GitHub repository](https://github.com/tt-bot-dev/tt.bot)`,
     INFO_VERSIONS:                                  "Versions:",
     INFO_UPTIME:                                    "Uptime:",
+    INFO_DONATE:                                    "Donate:",
 
     //invite.js
     BOT_INVITE:                                     "Here you go! <https://discordapp.com/oauth2/authorize?client_id=195506253806436353&scope=bot>\n\nIf you need help using the bot, come to our support server, the invite is in info command.",

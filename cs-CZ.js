@@ -178,6 +178,7 @@ ID uložiště: ${ext.store}`,
     INFO_OWNERS:                                    ownerStrings => `${ownerStrings.join("\n")}\n[Server podpory](https://discord.gg/pGN5dMq)\n[Repozitář na GitHubu](https://github.com/tt-bot-dev/tt.bot)`,
     INFO_VERSIONS:                                  "Verze:",
     INFO_UPTIME:                                    "Doba provozu:",
+    INFO_DONATE:                                    "Přispět:",
 
     //invite.js
     BOT_INVITE:                                     "Tady máš: <https://discordapp.com/oauth2/authorize?client_id=195506253806436353&scope=bot>\n\nPokud potřebuješ pomoct s používáním bota, přijď na náš server podpory, pozvánka je příkazu info.",
