@@ -285,7 +285,7 @@ Store ID: ${ext.store}`,
     THANKS_FOR_CHOOSING:                            "Thanks for choosing tt.bot!",
     WISHING_GOOD_LUCK:                              "*I wish you good luck with your server-*",
     FREE_SOFTWARE:                                  ":desktop: tt.bot is free software",
-    FREE_SOFTWARE_DESCRIPTION:                      "tt.bot is free software licensed under the [GNU AGPLv3 or later](https://github.com/tt-bot-dev/tt.bot/blob/v4-wip/LICENSE). Translations for tt.bot are licensed under the [MIT License](https://github.com/tt-bot-dev/languages/blob/v4-wip/LICENSE).",
+    FREE_SOFTWARE_DESCRIPTION:                      "tt.bot is free software licensed under the [GNU AGPLv3 or later](https://github.com/tt-bot-dev/tt.bot/blob/master/LICENSE). Translations for tt.bot are licensed under the [MIT License](https://github.com/tt-bot-dev/languages/blob/master/LICENSE).",
     //#endregion events
 
     //#region queries
