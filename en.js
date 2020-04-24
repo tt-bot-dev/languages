@@ -1,4 +1,7 @@
-module.exports = {
+"use strict";
+const config = require("../config"); // External reference from https://github.com/tt-bot-dev/tt.bot root
+
+module.exports = bot => ({
     //#region commands
     //agree.js
     AGREE_FAULT:                                    owner => `Sorry, but I'm not able to give you the role. Please tell the server owner (${bot.getTag(owner)}) about this.`,
@@ -8,48 +11,48 @@ module.exports = {
 
     //clear.js
     CLEAR_DONE:                                     messages => `:ok_hand: Deleted ${messages} messages.`,
-    CLEAR_CONFIRM:                                  `Are you sure you want to delete the messages according to your arguments? Type y or yes to continue; n or no for stopping the action. You have 10 seconds to respond.`,
+    CLEAR_CONFIRM:                                  "Are you sure you want to delete the messages according to your arguments? Type y or yes to continue; n or no for stopping the action. You have 10 seconds to respond.",
 
     // config.js
     WELCOME_TO_CONFIG:                              () => `Welcome to tt.bot's configuration! Please use reactions to access the individual setting categories.
 You can use :stop_button: reaction to stop at any time.
 Want to use the web interface instead? Go here: ${config.webserverDisplay("/")}`,
-    SETTING_UPDATED:                                (setting, value) => `Updated ${setting} to ${value}\nPlease note that using this way of configuring the bot is deprecated. If you want to configure tt.bot from Discord, use the config command with no arguments.`,
-    SETTING_UNKNOWN:                                setting => `Unknown setting ${setting}\nPlease note that using this way of configuring the bot is deprecated. If you want to configure tt.bot from Discord, use the config command with no arguments.`,
-    CONFIG_PREFIX:                                  `:pen_fountain: Prefix`,
+    CONFIG_PREFIX:                                  ":pen_fountain: Prefix",
     CONFIG_PREFIX_DESCRIPTION:                      () => `Here you can set ${bot.user.username}'s prefix. Using \`${config.prefix}\` as the prefix will still work.`,
-    CONFIG_MODROLE:                                 `:hammer: Moderator role`,
-    CONFIG_MODROLE_DESCRIPTION:                     `You can set the custom moderator role for the bot to use. Keep in mind, this is just a case insensitive reference to the role name.`,
-    CONFIG_FAREWELL:                                `:wave: Farewell`,
-    CONFIG_FAREWELL_DESCRIPTION:                    `This feature gives you an ability to see who left the server. You can set the message using this setting. This uses [ttMsg](https://github.com/tt-bot-dev/tt.bot/blob/master/docs/ttMsg.md).`,
-    CONFIG_FAREWELL_CHANNEL:                        `:pen_ballpoint: Farewell channel`,    
-    CONFIG_FAREWELL_CHANNEL_DESCRIPTION:            `Using this, you can set where to post the messages for the above mentioned feature.`,
-    CONFIG_AGREE_CHANNEL:                           `:white_check_mark: Agreement channel`,
-    CONFIG_AGREE_CHANNEL_DESCRIPTION:               `This feature allows one to give themselves the member role by using the \`agree\` command. This is useful when you want to guarantee everyone read the rules.`,
-    CONFIG_MODLOG_CHANNEL:                          `:tools: Modlog channel`,
-    CONFIG_MODLOG_CHANNEL_DESCRIPTION:              `This allows logging moderative actions (strike, kick, (soft)ban) done through the bot to a specific channel.`,
-    CONFIG_LOG_CHANNEL:                             `:notepad_spiral: Log channel`,
-    CONFIG_LOG_CHANNEL_DESCRIPTION:                 `This is a powerful feature of tt.bot that allows logging of some actions in the server. [Learn more about this](https://github.com/tt-bot-dev/tt.bot/blob/wip-v3.2/docs/Logging-events.md)`,
-    CONFIG_LOG_EVENTS:                              `:pencil: Log events`,
-    CONFIG_LOG_EVENTS_DESCRIPTION:                  `Here you can specify what events for the above mentioned feature will be logged.`,
-    CONFIG_GREETING:                                `:handshake: Greeting`,
-    CONFIG_GREETING_DESCRIPTION:                    `This feature gives you an ability to send a message that allows more customization in order to welcome your new members. You can set the message using this setting. This uses [ttMsg](https://github.com/tt-bot-dev/tt.bot/blob/master/docs/ttMsg.md).`,
-    CONFIG_GREETING_CHANNEL:                        `:pencil2: Greeting channel`,
-    CONFIG_GREETING_CHANNEL_DESCRIPTION:            `Using this, you can set where to post the messages for the above mentioned feature.`,
-    CONFIG_MEMBER_ROLE:                             `:busts_in_silhouette: Member role`,
-    CONFIG_MEMBER_ROLE_DESCRIPTION:                 `This role is the role used for the agreement feature.`,
+    CONFIG_MODROLE:                                 ":hammer: Moderator role",
+    CONFIG_MODROLE_DESCRIPTION:                     "You can set the custom moderator role for the bot to use. Keep in mind, this is just a case insensitive reference to the role name.",
+    CONFIG_FAREWELL:                                ":wave: Farewell",
+    CONFIG_FAREWELL_DESCRIPTION:                    "This feature gives you an ability to see who left the server. You can set the message using this setting. This uses [ttMsg](https://github.com/tt-bot-dev/tt.bot/blob/master/docs/ttMsg.md).",
+    CONFIG_FAREWELL_CHANNEL:                        ":pen_ballpoint: Farewell channel",    
+    CONFIG_FAREWELL_CHANNEL_DESCRIPTION:            "Using this, you can set where to post the messages for the above mentioned feature.",
+    CONFIG_AGREE_CHANNEL:                           ":white_check_mark: Agreement channel",
+    CONFIG_AGREE_CHANNEL_DESCRIPTION:               "This feature allows one to give themselves the member role by using the `agree` command. This is useful when you want to guarantee everyone read the rules.",
+    CONFIG_MODLOG_CHANNEL:                          ":tools: Modlog channel",
+    CONFIG_MODLOG_CHANNEL_DESCRIPTION:              "This allows logging moderative actions (strike, kick, (soft)ban) done through the bot to a specific channel.",
+    CONFIG_LOG_CHANNEL:                             ":notepad_spiral: Log channel",
+    CONFIG_LOG_CHANNEL_DESCRIPTION:                 "This is a powerful feature of tt.bot that allows logging of some actions in the server. [Learn more about this](https://github.com/tt-bot-dev/tt.bot/blob/wip-v3.2/docs/Logging-events.md)",
+    CONFIG_LOG_EVENTS:                              ":pencil: Log events",
+    CONFIG_LOG_EVENTS_DESCRIPTION:                  "Here you can specify what events for the above mentioned feature will be logged.",
+    CONFIG_GREETING:                                ":handshake: Greeting",
+    CONFIG_GREETING_DESCRIPTION:                    "This feature gives you an ability to send a message that allows more customization in order to welcome your new members. You can set the message using this setting. This uses [ttMsg](https://github.com/tt-bot-dev/tt.bot/blob/master/docs/ttMsg.md).",
+    CONFIG_GREETING_CHANNEL:                        ":pencil2: Greeting channel",
+    CONFIG_GREETING_CHANNEL_DESCRIPTION:            "Using this, you can set where to post the messages for the above mentioned feature.",
+    CONFIG_MEMBER_ROLE:                             ":busts_in_silhouette: Member role",
+    CONFIG_MEMBER_ROLE_DESCRIPTION:                 "This role is the role used for the agreement feature.",
+    CONFIG_LOCALE:                                  ":speaking_head: Locale",
+    CONFIG_LOCALE_DESCRIPTION:                      "Sets the language which I will use for those who haven't set up a profile yet.",
     SETTING_CURRENT_VAL:                            val => `The current value is ${val}`,
     SETTING_SET:                                    ":pencil: Set",
     SETTING_SET_DESCRIPTION:                        "Sets the value of this setting to a new value.",
     SETTING_RESET:                                  ":x: Reset",
     SETTING_DISABLE:                                ":x: Disable",
     SETTING_RESET_DESCRIPTION:                      def => `This will reset the value to the default value (${def})`,
-    SETTING_DISABLE_DESCRIPTION:                    `This will remove the configuration listing from your configuration.`,
+    SETTING_DISABLE_DESCRIPTION:                    "This will remove the configuration listing from your configuration.",
     SETTING_HOME:                                   ":house: Home",
     SETTING_HOME_DESCRIPTION:                       "Goes back to the main menu",
     QUESTION_STRING_VAL:                            "Please type in your new value. You have 60 seconds to respond.",
-    QUESTION_CHANNEL_VAL:                           `Please type in the channel you want to use. You have 30 seconds to respond.`,
-    QUESTION_ROLE_VAL:                              `Please type in the role you want to use. You have 30 seconds to respond.`,
+    QUESTION_CHANNEL_VAL:                           "Please type in the channel you want to use. You have 30 seconds to respond.",
+    QUESTION_ROLE_VAL:                              "Please type in the role you want to use. You have 30 seconds to respond.",
     QUESTION_RESET:                                 c => `Are you sure you want to reset ${c} to the default value?\nType in y or yes if you want to. n or no otherwise. You have 10 seconds to respond.`,
     QUESTION_DISABLE:                               c => `Are you sure you want to disable ${c}?\nType in y or yes if you want to. n or no otherwise. You have 10 seconds to respond.`,
     
@@ -62,7 +65,7 @@ Want to use the web interface instead? Go here: ${config.webserverDisplay("/")}`
     IMAGE_NONE:                                     "Could not get an image. Please validate your input and try again.",
     IMAGE_AUTO_GENERATED:                           "This image is automatically generated.",
     IMAGE_CAVEATS:                                  `Nobody and also nothing isn't perfect, these are current caveats that you may experience and we know about.
-- Your emoji may be fast/slow depending on the frame rate (we use 20ms delay/50fps)
+- For performance reasons, the image is being generated as an animated PNG. Animating these images is not supported by Discord.
 - Your emoji may get cut off.`,
     IMAGE_GENERATION_TIME:                          (sec, nsec) => `Generating this image took ${sec} seconds and ${Math.floor(nsec / 1e6)} ms`,
 
@@ -73,7 +76,8 @@ Want to use the web interface instead? Go here: ${config.webserverDisplay("/")}`
     EXTENSION_LIST_FIELD:                           ext => `
 ID: ${ext.id}
 Allowed channels: ${ext.allowedChannels.map(c => `<#${c}>`).join(", ") || "All"}
-Allowed roles: ${ext.allowedRoles.map(r => `<@&${r}>`).join(", ") || "All"}`,
+Allowed roles: ${ext.allowedRoles.map(r => `<@&${r}>`).join(", ") || "All"}
+Store ID: ${ext.store}`,
     QUESTION_EXTENSION_CODE:                        "Please upload your code as a Discord attachment. You have 60 seconds to upload the code.\nKeep in mind, that the code must be a in a .js file.",
     QUESTION_EXTENSION_NAME:                        "Please tell me how would you like to name your extension. The limit for the name is 100 characters. You have 60 seconds to respond.",
     QUESTION_EXTENSION_TRIGGER:                     "Please tell me what command trigger would you like to use. The limit for the command trigger is 20 characters. Also, you cannot use spaces in the trigger. You have 20 seconds to respond.",
@@ -107,9 +111,12 @@ Allowed roles: ${ext.allowedRoles.map(r => `<@&${r}>`).join(", ") || "All"}`,
 
     //getavatar.js
     AVATAR_NOT_LOADING:                             avatar => `[Image not loading?](${avatar})`,
+    USER_AVATAR:                                    user => `${user}'s avatar`,
 
     //hackban.js
     HACKBANNED_USERS:                               users => `:ok_hand: Banned ${users} user${users !== 1 ? "s": ""} .`,
+    USER_NOT_FOUND:                                 ":warning: I couldn't find that user :(",
+    USER_NOT_FOUND_DESCRIPTION:                     "Are you sure this is a correct user ID?",
 
     //help.js
     HELP_PUBLIC:                                    "Public commands",
@@ -120,24 +127,27 @@ Allowed roles: ${ext.allowedRoles.map(r => `<@&${r}>`).join(", ") || "All"}`,
     HELP_ARGUMENTS:                                 "Arguments",
     HELP_ALIASES:                                   "Aliases",
     HELP_DESCRIPTION:                               "Description",
-    HELP_HOME:                                      (HelpMenu, permissions, msg) => `Welcome to tt.bot's help! Please use reactions to access the help for the command categories.\n:stop_button: Stop\n:house: Home (this page)\n${HelpMenu.MESSAGES(msg).filter((_, idx) => permissions[idx]).join("\n")}`,
+    HELP_HOME:                                      async (HelpMenu, permissions, msg) => `Welcome to tt.bot's help! Please use reactions to access the help for the command categories.\n:stop_button: Stop\n:house: Home (this page)\n${(await HelpMenu.MESSAGES(msg)).filter((_, idx) => permissions[idx]).join("\n")}`,
     HELP_NO_DESCRIPTION:                            "No description",
     HELP_REMINDER:                                  `Use ${config.prefix}help <command> to see more information about it.`,
 
     //info.js
     INFO_STATS:                                     "Stats",
     INFO_STATS_TEXT:                                () => `Guilds: ${bot.guilds.size}\nCached users: ${bot.users.size}\nChannels: ${Object.keys(bot.channelGuildMap).length}`,
-    INFO_AUTHORS:                                   "Author(s) and help",
-    INFO_OWNERS:                                    ownerStrings => `${ownerStrings.join("\n")}\n[Support server](https://discord.gg/pGN5dMq)\n[GitHub repository](https://github.com/tttie/tttie-bot)`,
+    INFO_AUTHORS:                                   "Maintainers and help",
+    INFO_OWNERS:                                    ownerStrings => `${ownerStrings.join("\n")}\n[Support server](https://discord.gg/pGN5dMq)\n[GitHub repository](https://github.com/tt-bot-dev/tt.bot)`,
     INFO_VERSIONS:                                  "Versions:",
     INFO_UPTIME:                                    "Uptime:",
+    INFO_DONATE:                                    "Donate:",
 
     //invite.js
-    BOT_INVITE:                                     `Here you go! <https://discordapp.com/oauth2/authorize?client_id=195506253806436353&scope=bot&permissions=-1\n\nIf you need help using the bot, come to our support server, invite is in info command.`,
+    BOT_INVITE:                                     "Here you go! <https://discordapp.com/oauth2/authorize?client_id=195506253806436353&scope=bot>\n\nIf you need help using the bot, come to our support server, the invite is in info command.",
 
     //inviteinspector.js
-    CANNOT_GET_INVITE:                              "I cannot get the information on the invite.",
-    INVITE_ERR_FOOTER:                              "Are you sure the invite exists and that I'm not banned from there? This also doesn't work with group DMs.",
+    CANNOT_GET_INVITE:                              "I cannot get the information about the invite.",
+    INVITE_ERR_FOOTER:                              "Are you sure the invite exists? This also doesn't work with group DMs.",
+    CANNOT_GET_INVITE_BANNED:                       "I cannot get the information about the invite because I'm banned from there.",
+    CONTACT_GUILD_ADMIN:                            "Please contact the administrators of the server to unban me and try again.",
     INV_CHANNEL_TYPE:                               "Channel type",
     INV_CHANNEL_TYPE_VAL:                           (type, channelName) => `${type === 0 ? "Text" : "Voice"} channel named ${bot.escapeMarkdown(channelName)}`,
     INV_GUILD_ID:                                   "Guild ID",
@@ -150,7 +160,10 @@ Allowed roles: ${ext.allowedRoles.map(r => `<@&${r}>`).join(", ") || "All"}`,
     KICK_DONE:                                      user => `:ok_hand: Kicked ${bot.getTag(user)}.`,
 
     //needsmorejpeg.js
-    // No terms for this one.
+    CANNOT_JPEGIFY:                                 ":x: Cannot JPEG-ify the image",
+    CANNOT_FETCH_IMAGE:                             "The image cannot be fetched.",
+    CANNOT_JPEGIFY_INTERNAL_ERROR:                  ":x: Cannot JPEG-ify the image due to an internal error",
+
 
     // phone.js
     ALREADY_HAVE_NUMBER:                            "Sorry, but you have reached your telephone number limit and you cannot get more numbers.",
@@ -181,17 +194,13 @@ Allowed roles: ${ext.allowedRoles.map(r => `<@&${r}>`).join(", ") || "All"}`,
     PROFILE_NONEXISTENT:                            "You haven't created a profile yet!",
     PROFILE_DELETED:                                "Deleted your profile.",
     PROFILE_CREATED:                                "OK. Your profile is created.",
-    INVALID_COLOR:                                  "This color isn't valid! This command accepts a hex color (#1234AB)",
-    BOT_PROFILE:                                    "Bots don't have profiles.",
-    PROFILE_SPECIFIC_NONEXISTENT:                   user => `${user} hasn't got a profile.`,
-    NO_PROFILE_FIELDS:                              "No profile fields",
-    FIELD_CREATED:                                  field => `Made a field with name of \`${field}\`.`,
-    FIELD_DELETED:                                  field => `Deleted the field \`${field}\``,
-    FIELD_NONEXISTENT:                              "That field doesn't exist!",
-    INVALID_TIMEZONE:                               `This timezone is invalid. You can find a list of possible timezones [here](https://cdn.rawgit.com/TTtie/TTtie-Bot/master/tz.txt)`,
+    PROFILE_CREATE_SETUP:                           "Hello there! Would you like to set your profile up before I create one? Type y or yes if you want to, n or no if you don't. You have 10 seconds to answer.\n\nKeep in mind that you can still modify the values using other subcommands.",
+    PROFILE_CREATE_TIMEZONE:                        "What is your timezone? This timezone should be a valid entry in the IANA timezone DB (check <https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List> for a list of them)\nYou have 30 seconds to answer. Type \"none\" if you don't want to set one yet.",
+    PROFILE_CREATE_LOCALE:                          () => `Which language do you speak? Here are the available languages: ${Object.keys(bot.i18n.languages).join(", ")}\nIn case it is not listed or don't want to set a language yet, type "none". You have 30 seconds to choose.\nYou can help us contributing languages on GitHub: <https://github.com/tt-bot-dev/languages>`,
+    PROFILE_TIMEZONE:                               tz => `Your current timezone is ${tz}.\nIn order to change it, provide a timezone as an argument.`,
+    INVALID_TIMEZONE:                               "This timezone is invalid. You can find a list of possible timezones here: <https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List>",
     INVALID_LOCALE:                                 locale => `Invalid locale \`${locale}\``,
     LOCALE_SET:                                     locale => `Set your locale to ${locale}.`,
-    USER_PROFILE:                                   user => `${user}'s profile`,
     PROFILE_LOCALE_LIST:                            (currentLocale, status) => `You currently have set \`${currentLocale}\` as your locale!\nCurrent language status:\n${status}`,
 
     //serverinfo.js
@@ -199,10 +208,23 @@ Allowed roles: ${ext.allowedRoles.map(r => `<@&${r}>`).join(", ") || "All"}`,
     GUILD_VERIFICATION_LOW:                         "Low (Requires a verified email)",
     GUILD_VERIFICATION_MEDIUM:                      "Medium (Requires a verified email and being registered on Discord for at least 5 minutes)",
 
-        //These miss their tableflips because the tableflips are not translatable.
+    //These miss their tableflips because the tableflips are not translatable.
     GUILD_VERIFICATION_TABLEFLIP:                   "(Requires a verified email, being registered on Discord for at least 5 minutes and being on the server for at least 10 minutes)",
     GUILD_VERIFICATION_ULTRATABLEFLIP:              "(Requires a verified phone number)",
     GUILD_VERIFICATION_LEVEL:                       "Guild verification",
+    ALLOWED_INVITE_SPLASH:                          "This server can have an invite splash",
+    ALLOWED_VIP_REGIONS:                            "This server has access to higher-quality voice servers",
+    ALLOWED_VANITY_URL:                             vanityURL => `This server can have a ${vanityURL ? "[" : ""}vanity URL${vanityURL ? `](https://discord.gg/${vanityURL})` : ""}`,
+    ALLOWED_VERIFIED:                               "This server is verified",
+    ALLOWED_PARTNERED:                              "This server is partnered with Discord",
+    ALLOWED_COMMERCE:                               "This server has access to commerce features (store channels, for example)",
+    ALLOWED_NEWS:                                   "This server can have announcement channels",
+    ALLOWED_LURKABLE:                               "This server is lurkable",
+    ALLOWED_DISCOVERABLE:                           "This server can be found in the server discovery menu",
+    ALLOWED_FEATURABLE:                             "This server can be featured in the server discovery menu",
+    ALLOWED_ANIMATED_ICON:                          "This server can have an animated icon",
+    ALLOWED_BANNER:                                 "This server can have a banner",
+    FEATURES:                                       "Features",
     REQUIRES_ADMIN_MFA:                             "Requires admin 2FA",
     MEMBER_COUNT:                                   members => `${members} member${members !== 1 ? "s" : ""}`,
     ROLE_COUNT:                                     roles => `${roles} role${roles !== 1 ? "s" : ""}`,
@@ -240,25 +262,12 @@ Allowed roles: ${ext.allowedRoles.map(r => `<@&${r}>`).join(", ") || "All"}`,
     TAG_UPDATED:                                    tag => `Updated a tag with a name of \`${tag}\`.`,
     TAG_DISPLAY:                                    tag => `Tag ${tag}`,
 
-    //talk.js
-    QUERY_TOO_LONG:                                 "Your query is too long.",
-    CANT_TELL:                                      "I don't know how to respond to that :/",
-
     //timefor.js
     NO_TZ:                                          "This user hasn't set any timezone yet.",
     TIME_FOR:                                       (time, user) => `It's ${time} for ${user}.`,
 
-    //uinfo.js
-    PLAYING:                                        "Playing",
-    STREAMING:                                      "Streaming",
-    LISTENING_TO:                                   "Listening to",
-    ONLINE:                                         "Online",
-    IDLE:                                           "Idle",
-    DND:                                            "Do not disturb",
-    OFFLINE:                                        "Invisible/offline",
+    //userinfo.js
     USER_INFO:                                      (nickstr, limited = false) => `${limited? "Limited i" : "I"}nfo for ${nickstr}`,
-    PLAYING_NONE:                                   "Nothing",
-    SPACE_UNIVERSE:                                 "with an universe of spaces.\nGood luck, you found an easter egg :eyes:",
     CURRENT_VOICE:                                  "Current voice channel",
     JOINED_ON:                                      "Joined on",
     NO_CURRENT_VOICE:                               "None",
@@ -267,14 +276,16 @@ Allowed roles: ${ext.allowedRoles.map(r => `<@&${r}>`).join(", ") || "All"}`,
 
     //#region events
     // It is possible that the server owner has a profile.
-    HI_I_AM_BOT:                                    `:wave: Hi there!`,
-    SOME_THINGS_SAID:                               () => `My name is ${bot.user.username} and I'm an instance of tt.bot, a multifunctional and fun Discord bot. I felt there is a need of describe myself to you.`,
+    HI_I_AM_BOT:                                    ":wave: Hi there!",
+    SOME_THINGS_SAID:                               () => `My name is ${bot.user.username} and I'm an instance of tt.bot, a moderation/utility Discord bot. I felt there is a need of describe myself to you.`,
     GETTING_STARTED:                                ":floppy_disk: Getting started",
-    GETTING_STARTED_DESCRIPTION:                    `You don't require any setup for tt.bot to work with basic features! However, to use some moderation commands, you (or anyone with Manage Server permission) have to use the \`${config.prefix}config\` command to create the configuration. And that's basically it! Give your staff the "tt.bot mod" role and they can start moderating! Or set the modRole setting to whatever your role name is.`,
+    GETTING_STARTED_DESCRIPTION:                    `You don't require any setup for tt.bot to work with basic features! However, to use some moderation commands, you (or anyone with Manage Server permission) have to use the \`${config.prefix}config\` command to create the configuration. And that's basically it! Give your staff the "tt.bot mod" role and they can start moderating! Or set the moderator role to the role you'd like to give the moderator permissions to.`,
     EVERYTHING_ELSE:                                ":books: Everything else",
-    EVERYTHING_ELSE_DESCRIPTION:                    "If you need help (or just want to hang out with us), feel free to come to our support server; the invite is in the info command.",
+    EVERYTHING_ELSE_DESCRIPTION:                    "If you need help (or just want to hang out with us), feel free to come to our support server; the invite can be found in the info command.",
     THANKS_FOR_CHOOSING:                            "Thanks for choosing tt.bot!",
     WISHING_GOOD_LUCK:                              "*I wish you good luck with your server-*",
+    FREE_SOFTWARE:                                  ":desktop: tt.bot is free software",
+    FREE_SOFTWARE_DESCRIPTION:                      "tt.bot is free software licensed under the [GNU AGPLv3 or later](https://github.com/tt-bot-dev/tt.bot/blob/v4-wip/LICENSE). Translations for tt.bot are licensed under the [MIT License](https://github.com/tt-bot-dev/languages/blob/v4-wip/LICENSE).",
     //#endregion events
 
     //#region queries
@@ -309,11 +320,11 @@ Query will automatically expire in 5 minutes.`,
     REASON:                                         "Reason",
     OP_CANCELLED:                                   "Operation cancelled.",
     COMMAND_ERROR:                                  "Sorry, but I didn't get this right. Please double check the input and try again.",
-    ARGS_MISSING:                                   `You miss some required arguments. :thinking:`,
-    ROLE_HIERARCHY_ERROR:                           `You can't do this on that user.`,
+    ARGS_MISSING:                                   "You miss some required arguments. :thinking:",
+    ROLE_HIERARCHY_ERROR:                           "You can't do this on that user.",
     ERROR:                                          err => `Oops. I have tried completing your command, but I ran into an error. Please share this with my developers.\n\`\`\`js\nError:\n${err}\n\`\`\``,
-    OOPS:                                           `Oops.. I have a little problem.`,
-    MISSING_PERMISSIONS:                            `I'm missing the permission to do this in your server.`,
+    OOPS:                                           "Oops.. I have a little problem.",
+    MISSING_PERMISSIONS:                            "I'm missing the permission to do this in your server.",
     CREATED_ON:                                     "Created on",
     YES:                                            "Yes",
     NO:                                             "No",
@@ -321,8 +332,9 @@ Query will automatically expire in 5 minutes.`,
     INVALID_ARG:                                    arg => `Invalid argument: ${arg}`,
     PAGE:                                           page => `Page ${page}`,
     ALL:                                            "All",
+    SORRY:                                          "We're sorry for that.",
     
     NATIVE_LOCALE_NAME:                             "English",
     ENGLISH_LOCALE_NAME:                            "English"
-  //fallbackLanguage:                               "en"
-};
+    //fallbackLanguage:                             "en"
+});

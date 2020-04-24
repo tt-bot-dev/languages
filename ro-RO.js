@@ -1,4 +1,7 @@
-module.exports = {
+"use strict";
+const config = require("../config"); // External reference from https://github.com/tt-bot-dev/tt.bot root
+
+module.exports = bot => ({
     //#region commands
     //agree.js
     AGREE_FAULT:                                    owner => `Scuze, dar n-am posibilitatea să-ți dau rolul specific. Luați-vă în legătură cu deținătorul serverului (${bot.getTag(owner)}) despre aceasta.`,
@@ -16,9 +19,7 @@ module.exports = {
     CLEAR_DONE:                                     messages => `:ok_hand: ${messages} (de) mesaje au fost șterse.`,
 
     // config.js
-    GUILD_CONFIG:                                   (guild, items) => `\`\`\`\nConfigurația serverului pentru ${guild}\n${items.join("\n")}\`\`\`\nChiar daca numele configurațiilor sunt auto-explicative, este posibil ca setătiile dvs. să rupă configurația actuală.\nDacă dotiți să folosiți versiunea de web, duceți-vă în ${config.webserverDisplay("/")}`,
-    SETTING_UPDATED:                                (setting, value) => `Setarea ${setting} a fost actualizată în ${value}`,
-    SETTING_UNKNOWN:                                setting => `Setare necunoscută, ${setting}`,
+    // TBD
 
     //delpunish.js
     CANNOT_UNSTRIKE:                                err => `Nu pot să șterg strike-ul respectiv din cauza acestui motiv: ${err}`,
@@ -56,7 +57,7 @@ module.exports = {
     HELP_ARGUMENTS:                                 "Argumente",
     HELP_ALIASES:                                   "Pseudonime",
     HELP_DESCRIPTION:                               "Descriere",
-    HELP_HOME:                                      (HelpMenu, permissions, msg) => `Bunvenit la ghidul folosirii tt.bot! Vă rugăm să folosiți reacțile de mai jos pentru a accesa ghidul pentru categoria comenzilor.\n:stop_button: Oprire\n:house: Acasă (această pagină)\n${HelpMenu.MESSAGES(msg).filter((_, idx) => permissions[idx]).join("\n")}`,
+    HELP_HOME:                                      async (HelpMenu, permissions, msg) => `Bunvenit la ghidul folosirii tt.bot! Vă rugăm să folosiți reacțile de mai jos pentru a accesa ghidul pentru categoria comenzilor.\n:stop_button: Oprire\n:house: Acasă (această pagină)\n${(await HelpMenu.MESSAGES(msg)).filter((_, idx) => permissions[idx]).join("\n")}`,
     HELP_NO_DESCRIPTION:                            "Nicio descriere",
     HELP_REMINDER:                                  `Folosiți ${config.prefix}help <commandă> pentru a vedea mai multe informații despre aceasta.`,
 
@@ -64,12 +65,12 @@ module.exports = {
     INFO_STATS:                                     "Statistici",
     INFO_STATS_TEXT:                                () => `Nivel: ${bot.guilds.size}\nUtilizatori în cache: ${bot.users.size}\nCanale: ${Object.keys(bot.channelGuildMap).length}`,
     INFO_AUTHORS:                                   "Autor(i) și ghid",
-    INFO_OWNERS:                                    ownerStrings => `${ownerStrings.join("\n")}\n[Server pentru suport](https://discord.gg/pGN5dMq)\n[Colecție în Github](https://github.com/tttie/tttie-bot)`,
+    INFO_OWNERS:                                    ownerStrings => `${ownerStrings.join("\n")}\n[Server pentru suport](https://discord.gg/pGN5dMq)\n[Colecție în Github](https://github.com/tt-bot-dev/tt.bot)`,
     INFO_VERSIONS:                                  "Versiuni:",
     INFO_UPTIME:                                    "Timp de funcționare:",
 
     //invite.js
-    BOT_INVITE:                                     `Aici! <https://discordapp.com/oauth2/authorize?client_id=195506253806436353&scope=bot&permissions=-1\n\nDacă aveți nevoie de ajutor pentru folosirea acestui bot, veniți în serverul nostru pentru suport, link-ul de invitație pentru server este în comanda info.`,
+    BOT_INVITE:                                     "Aici! <https://discordapp.com/oauth2/authorize?client_id=195506253806436353&scope=bot>\n\nDacă aveți nevoie de ajutor pentru folosirea acestui bot, veniți în serverul nostru pentru suport, link-ul de invitație pentru server este în comanda info.",
 
     //inviteinspector.js
     CANNOT_GET_INVITE:                              "Nu pot să iau informațtii în link-ul de invitație.",
@@ -112,7 +113,7 @@ module.exports = {
     FIELD_CREATED:                                  field => `Am făcut un câmp cu numele de \`${field}\`.`,
     FIELD_DELETED:                                  field => `Am șters câmpul \`${field}\``,
     FIELD_NONEXISTENT:                              "Acel câmp nu există!",
-    INVALID_TIMEZONE:                               `Acest fus orar este invalid. Puteți găsi o listă cu fusuri orare posible [aici](https://cdn.rawgit.com/TTtie/TTtie-Bot/master/tz.txt)`,
+    INVALID_TIMEZONE:                               "Acest fus orar este invalid. Puteți găsi o listă cu fusuri orare posible aici: <https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List>",
     INVALID_LOCALE:                                 locale => `Locație invalidă \`${locale}\``,
     LOCALE_SET:                                     locale => `Am setat locația dvs. în ${locale}.`,
     USER_PROFILE:                                   user => `Profilul lui ${user}`,
@@ -122,7 +123,7 @@ module.exports = {
     GUILD_VERIFICATION_LOW:                         "Scăzut (Trebuie să aibă un email verificat pe contul de Discord)",
     GUILD_VERIFICATION_MEDIUM:                      "Mediu (Trebuie de asemenea să fie înregistrat/ă pe Discord mai mult de 5 minute)",
 
-        //Acestea au tableflip-uriile pierdute deoarece tableflip-uriile nu sunt traductibile.
+    //Acestea au tableflip-uriile pierdute deoarece tableflip-uriile nu sunt traductibile.
     GUILD_VERIFICATION_TABLEFLIP:                   "(Trebuie de asemenea să fie înregistrat pe Discord mai mult de 5 minute și să fie în server mai mult de 10 minute)",
     GUILD_VERIFICATION_ULTRATABLEFLIP:              "(Trebuie să aibă un număar de telefon verificat pe contul de Discord)",
     GUILD_VERIFICATION_LEVEL:                       "Nivel de verificare",
@@ -172,16 +173,7 @@ module.exports = {
     TIME_FOR:                                       (time, user) => `Timpul este ${time} pentru ${user}.`,
 
     //uinfo.js
-    PLAYING:                                        "Se joacă",
-    STREAMING:                                      "Face streaming la",
-    LISTENING_TO:                                   "Ascultă la",
-    ONLINE:                                         "Online",
-    IDLE:                                           "Inactiv",
-    DND:                                            "Nu deranja",
-    OFFLINE:                                        "Invizibil/Offline",
     USER_INFO:                                      (nickstr, limited = false) => `${limited? "Limited i" : "I"}nformație pentru ${nickstr}`,
-    PLAYING_NONE:                                   "Nimica",
-    SPACE_UNIVERSE:                                 "cu un univers în spațiu.\nSucces, A-ți găsit un ou de paște :eyes:",
     CURRENT_VOICE:                                  "Canalul de voice actual",
     JOINED_ON:                                      "Intrat din",
     NO_CURRENT_VOICE:                               "Niciunul",
@@ -190,7 +182,7 @@ module.exports = {
 
     //#region events
     // Este posibil ca deținătorul serverului să aibă un profil.
-    HI_I_AM_BOT:                                    `:wave: Salutare!`,
+    HI_I_AM_BOT:                                    ":wave: Salutare!",
     SOME_THINGS_SAID:                               () => `Mă numesc ${bot.user.username} și sunt o instanță de tt.bot, un bot de Discord multifuncțional și distractiv. Am avut o presimțire că trebuia să mă descriu ție.`,
     GETTING_STARTED:                                ":floppy_disk: Noțiuniie de bază",
     GETTING_STARTED_DESCRIPTION:                    `Nu avețti nevoie să setați tt.bot pentru folosirea caracteristicilor simple! Oricum, pentru ca să folosiți niște comenzi de moderare, dvs. (sau oricine altcineva cu permisiuni administrative) o să trebuiască să folosiți comanda \`${config.prefix}config\` ca să creați niște configurații. Și cam atât basic! Dă-le rolul "tt.bot mod" la moderatori și o să înceapă să modereze server-ul! Sau setează "modRole" în orice nume rolul tău ar avea.`,
@@ -231,11 +223,11 @@ Altfel, reacționați cu ❌ ca să anulați.
     REASON:                                         "Motiv",
     OP_CANCELLED:                                   "Operație anulată.",
     COMMAND_ERROR:                                  "Scuze, dar n-am primit comanda cum trebuie. Vă rugăm să verificați input-ul de două ori si re-rulați comanda.",
-    ARGS_MISSING:                                   `A-ți ratat niște argumente necesare. :thinking:`,
-    ROLE_HIERARCHY_ERROR:                           `Nu pot face asta în acel utilizator.`,
+    ARGS_MISSING:                                   "A-ți ratat niște argumente necesare. :thinking:",
+    ROLE_HIERARCHY_ERROR:                           "Nu pot face asta în acel utilizator.",
     ERROR:                                          err => `Ups, am încercat să executez comanda dar am căzut într-o eroare. Vă rugăm să trimite-ți asta la programatorii / dezvoltatorii mei.\n\`\`\`js\nError:\n${err}\n\`\`\``,
-    OOPS:                                           `Ups.. Am niște probleme mici.`,
-    MISSING_PERMISSIONS:                            `N-am permisiunea de a face asta în server-ul dvs..`,
+    OOPS:                                           "Ups.. Am niște probleme mici.",
+    MISSING_PERMISSIONS:                            "N-am permisiunea de a face asta în server-ul dvs..",
     CREATED_ON:                                     "Creat pe",
     YES:                                            "Da",
     NO:                                             "Nu",
@@ -245,4 +237,4 @@ Altfel, reacționați cu ❌ ca să anulați.
     NATIVE_LOCALE_NAME:                             "Română",
     ENGLISH_LOCALE_NAME:                            "Romanian",
     fallbackLanguage:                               "en"
-};
+});

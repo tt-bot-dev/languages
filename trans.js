@@ -1,21 +1,13 @@
+"use strict";
 // This language is for the translators of tt.bot to see the contexts of the terms.
 
-if (global.i18n) t()
-else setTimeout(i18nchecker, 100);
 
-function i18nchecker() {
-    if (!checkfori18n()) return setTimeout(i18nchecker, 100)
-    t()
-}
-
-function checkfori18n() {
-    return !!global.i18n
-}
-
-
-function t() {
-    for (let key in i18n.languages["en"]) {
-        if (!i18n.languages["en"].hasOwnProperty(key)) continue;
-        module.exports[key] = key;
+module.exports = bot => {
+    const o = {};
+    const english = require("./en")(bot);
+    for (const key in english) {
+        if (!Object.prototype.hasOwnProperty.call(english, key)) continue;
+        o[key] = key;
     }
-}
+    return o;
+};
