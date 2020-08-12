@@ -323,7 +323,7 @@ ID uložiště: ${ext.store}`,
     THANKS_FOR_CHOOSING:                            "Děkujeme, že sis vybral(a) tt.bot-a!",
     WISHING_GOOD_LUCK:                              "*Přeju ti hodně štěstí s tvým serverem-*",
     FREE_SOFTWARE:                                  ":desktop: tt.bot je svobodný software",
-    FREE_SOFTWARE_DESCRIPTION:                      "tt.bot je svobodný software licencovaný pod licencí [GNU AGPLv3 nebo novější](https://github.com/tt-bot-dev/tt.bot/blob/master/LICENSE). Překlady tt.bot-a jsou licencovány pod [licencí MIT](https://github.com/tt-bot-dev/languages/blob/master/LICENSE).",
+    FREE_SOFTWARE_DESCRIPTION:                      "tt.bot je svobodný software licencovaný pod licencí [GNU AGPLv3 nebo novější](https://owo.codes/tt.bot/_/-/blob/master/LICENSE). Překlady tt.bot-a jsou licencovány pod [licencí MIT](https://github.com/tt-bot-dev/languages/blob/master/LICENSE).",
     //#endregion events
 
     //#region queries
