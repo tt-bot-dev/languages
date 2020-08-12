@@ -1,0 +1,14 @@
+name: Mirror to owo.codes
+
+on: [push]
+
+jobs:
+    mirror:
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v1
+        - run: |
+            git config user.name TTtie
+            git config user.email me@tttie.cz
+            git remote add owo https://TTtie:${{ secrets.owo_token }}@owo.codes/tt.bot/l10n.git
+            git push owo ${{ github.ref }}
