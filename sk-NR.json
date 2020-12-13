@@ -1,0 +1,378 @@
+{
+    "__preamble": [
+        "Nitránčina, to je pekný prídavek slovenčiny kerú dobre poznáme.",
+        "Nitránčina je doplnek slovenčiny ako je databáza doplnek k node.js(a tak ďál)",
+        "*pozor, keďže as toto volá nitránčina, nešpecifikujeme používání mixuvaného nárečá Nitránčina + Topoľčánske doplnky + volačo z oného Píšťanského nárečá keré sa kupodivu zaplítlo(aj keď níe véla) do nášho.",
+        "šecci ju veľmi miľujeme a na jej počesť sa napijeme mlíka lebo nebudeme piť tí energeťáky lebo to je zlé na srcco.",
+        "Opakujeme poslenné 2 vety ze Slovenského prekladu:",
+        "'Keď sa niečo posere, prosím kompetentnú osobu rôzneho typu poslať na najlepšie vybraný server typu Aefer Community - sekcia napr. aj #main jednoduchú správu:",
+        "\"Šéfe, mně se asi něco nepovedlo.\"'",
+        "**POZOR! Následujúci preklad vo formáte .json je *možno* natoľko seriózny že ho netreba brať vážne. Šak priznajme si, je to iba vtipný preklad**"
+    ],
+
+    "AGREE_FAULT": "Prepáč, ale nemôžem ti dať rolu. Prosím, povedz o tom vlastníkovi serveru ({serverOwner})",
+
+    "BAN_DONE": ":ok_hand: Hovado {user} bolo zaondené, Tak mu treba. Nemal byť hovado.",
+
+    "CLEAR_DONE": ":ok_hand: {messages, plural, one {Vyondená # správa} few {Vyondené # správy} other {Vyondených # správ}}.",
+
+    "__comment1": {
+        "note": "Missing keys for config.js",
+        "missing_keys": [
+            "WELCOME_TO_CONFIG",
+            "CONFIG_PREFIX",
+            "CONFIG_PREFIX_DESCRIPTION",
+            "CONFIG_MODROLE",
+            "CONFIG_MODROLE_DESCRIPTION",
+            "CONFIG_FAREWELL",
+            "CONFIG_FAREWELL_DESCRIPTION",
+            "CONFIG_FAREWELL_CHANNEL",
+            "CONFIG_FAREWELL_CHANNEL_DESCRIPTION",
+            "CONFIG_AGREE_CHANNEL",
+            "CONFIG_AGREE_CHANNEL_DESCRIPTION",
+            "CONFIG_MODLOG_CHANNEL",
+            "CONFIG_MODLOG_CHANNEL_DESCRIPTION",
+            "CONFIG_LOG_CHANNEL",
+            "CONFIG_LOG_CHANNEL_DESCRIPTION",
+            "CONFIG_LOG_EVENTS",
+            "CONFIG_LOG_EVENTS_DESCRIPTION",
+            "CONFIG_GREETING",
+            "CONFIG_GREETING_DESCRIPTION",
+            "CONFIG_GREETING_CHANNEL",
+            "CONFIG_GREETING_CHANNEL_DESCRIPTION",
+            "CONFIG_MEMBER_ROLE",
+            "CONFIG_MEMBER_ROLE_DESCRIPTION",
+            "CONFIG_LOCALE",
+            "CONFIG_LOCALE_DESCRIPTION",
+            "SETTING_CURRENT_VAL",
+            "SETTING_SET",
+            "SETTING_SET_DESCRIPTION",
+            "SETTING_RESET",
+            "SETTING_RESET_DESCRIPTION",
+            "SETTING_DISABLE",
+            "SETTING_DISABLE_DESCRIPTION",
+            "SETTING_HOME",
+            "SETTING_HOME_DESCRIPTION",
+            "QUESTION_STRING_VAL",
+            "QUESTION_CHANNEL_VAL",
+            "QUESTION_ROLE_VAL",
+            "QUESTION_RESET",
+            "QUESTION_DISABLE"
+        ]
+    },
+
+    "__comment2": {
+        "note": "The original output of delpunish.js has changed. Although I've tried to update it, it might be incorrect."
+    },
+    "CANNOT_UNSTRIKE": "Nemóžem odondiť varovaní z dóvodu `{err}` :sad:",
+
+    "__comment3": {
+        "note": "The original output of emoji.js has changed - the images are rendered as APNGs and the timings have been resolved since."
+    },
+    "IMAGE_GENERATING": "Vyrábam obráštek. Len vydrž, šak ty máš moc času.",
+    "IMAGE_NONE": "Nemóžem vyrobiť obráštek. Skontroluj čis šecko dobre napísau.",
+    "IMAGE_AUTO_GENERATED": "Tento obráštek jest automaticky vyrábaný, osobami keré sú neni osoby",
+    "IMAGE_CAVEATS": "Nido neni dokonalý a šeci robá chyby, tak isto robá chyby aj naše softwáre, o kerých víme.\n- Oné emotikóňe môžu byt orezané.",
+    "IMAGE_GENERATION_TIME": "Vyrábaní obrášku nám minulo {seconds, plural, one {# sekundu} few {# sekundy} other {# sekúnd}} sekúnd a {ms} ms života.",
+
+    "__comment4": {
+        "note": "Missing keys for extensions.js",
+        "missing_keys": [
+            "NO_EXTENSIONS",
+            "NO_MORE_EXTENSIONS",
+            "EXTENSION_LIST",
+            "EXTENSION_LIST_FIELD",
+            "QUESTION_EXTENSION_CODE",
+            "QUESTION_EXTENSION_NAME",
+            "QUESTION_EXTENSION_TRIGGER",
+            "QUESTION_EXTENSION_CHANNEL_RESTRICT",
+            "ALLOWED_CHANNELS",
+            "EXTENSION_MENU_SUBTEXT",
+            "ALLOWED_CHANNELS_ACTION_ADD",
+            "ALLOWED_CHANNELS_ACTION_ADD_DESCRIPTION",
+            "ALLOWED_CHANNELS_ACTION_REMOVE",
+            "ALLOWED_CHANNELS_ACTION_REMOVE_DESCRIPTION",
+            "ALLOWED_CHANNELS_ACTION_DONE",
+            "ALLOWED_CHANNELS_ACTION_DONE_DESCRIPTION",
+            "QUESTION_ALLOWED_CHANNELS_ADD",
+            "QUESTION_ALLOWED_CHANNELS_REMOVE",
+            "CHANNEL_ALLOWED_ALREADY",
+            "CHANNEL_DISALLOWED_ALREADY",
+            "ALLOWED_CHANNELS_MENU_CANCELLED",
+            "MENU_CURRENTLY_SELECTED",
+            "QUESTION_EXTENSION_ROLE_RESTRICT",
+            "ALLOWED_ROLES",
+            "QUESTION_EXTENSION_STORE",
+            "QUESTION_EXTENSION_STORE_ID",
+            "STORE_NONEXISTANT",
+            "STORE_CREATED",
+            "EXTENSION_CREATED",
+            "EXTENSION_NONEXISTANT",
+            "QUESTION_EXTENSION_DELETE",
+            "QUESTION_EXTENSION_DELETE_STORE",
+            "STORE_DELETE_NONEXISTANT",
+            "STORE_DELETED"
+        ]
+    },
+
+    "__comment5": {
+        "note": "Missing keys for getavatar.js",
+        "missing_keys": [
+            "USER_AVATAR"
+        ]
+    },
+    "AVATAR_NOT_LOADING": "[Obráštek sa neondí?]({avatar})",
+
+    "__comment6": {
+        "note": "Missing keys for hackban.js",
+        "missing_keys": [
+            "USER_NOT_FOUND",
+            "USER_DESCRIPTION"
+        ]
+    },
+    "HACKBANNED_USERS": ":ok_hand: {users, plural, one {Zaondený # trogár} few {Zaondení # trogári} other {Zaondených # trogárov}}.",
+
+    "__comment7": {
+        "notes": [
+            "HELP_FOR_COMMAND should be rewritten to use '{command} - tt.bot help', although this is not blocking",
+            "HELP_HOME should be checked"
+        ]
+    },
+    "HELP_PUBLIC": "Príkazy trogárov",
+    "HELP_OWNER": "Príkazy majteľka",
+    "HELP_MOD": "Príkazy podradených",
+    "HELP_ADMIN": "Príkazy nadradených",
+    "HELP_FOR_COMMAND": "Nápovedy neexistujú, ale tu je jenna ${command}",
+    "HELP_ARGUMENTS": "Argumenty",
+    "HELP_ALIASES": "Aliasy",
+    "HELP_DESCRIPTION": "Popis",
+    "HELP_HOME": "Tu nápoveda tt.bot-a! Naondi reakciu a dostaneš ďalšé nápovedy.\n:stop_button: Vypať\n:house: Dom (toto)\n{categories}",
+    "HELP_NO_DESCRIPTION": "Žádny popis",
+    "HELP_REMINDER": "Naondi {defaultPrefix}help <príkaz> a dostaneš informácie o jennollivých príkazoch.",
+
+    "INFO_STATS": "Štatistiky",
+    "INFO_STATS_TEXT": "Serverov: {guilds}\nPoužívateľov: ${users}\nKanálov: ${channels}",
+    "INFO_AUTHORS": "Manufaktúra",
+    "INFO_OWNERS": "{owners}\n[Server podpory](https://discord.gg/pGN5dMq)\n[Zdrojový kód](https://github.com/tt-bot-dev/tt.bot)\n[Ochrana súkromia](https://tttie.cz/privacy/tt.bot.html)",
+    "INFO_VERSIONS": "Verzia:",
+    "INFO_UPTIME": "Čas funglu:",
+
+    "BOT_INVITE": "Na tu máš: <{botInviteLink}>\n\nKeď steš pomócť, nebuď lemravý a dójdi a server prvej pomoci.",
+
+    "__comment9": {
+        "notes": [
+            "Missing keys for inviteinspector.js",
+            "INV_CHANNEL_TYPE_VAL: type should be translated as a select for 'Text', 'Voice', 'Store', 'Announcement'"
+        ],
+        "missing_keys": [
+            "CANNOT_GET_INVITE_BANNED",
+            "CONTACT_GUILD_ADMIN"
+        ]
+    },
+    "CANNOT_GET_INVITE": "Nevím najísť pozvánku.",
+    "INVITE_ERR_FOOTER": "Si si istý že som neni zgegnutý odtál? Aj tak to nejde na skupinových pozvánkach.",
+    "INV_CHANNEL_TYPE": "Nitránska haraburda",
+    "INV_CHANNEL_TYPE_VAL": "{type, select, Text {Textová} Voice {Hlasová} Announcement {Oznamovacia} Store {Obchodná}} Nitránska haraburda s názvom {name}",
+    "INV_GUILD_ID": "voláke ID serveru",
+    "INV_MEMBERS_VAL": "{members, plural, one {# hovado} few {# hovadá} other {# hovád}}, {online, plural, one {# hovado} few {# hovadá} other {# hovád}} online.",
+    "INV_JOIN": "Odkaz na server",
+    "INV_JOIN_LINK": "Asi máš toto [rozdžaviť]({inviteLink})",
+    "INV_INVITER": "Pozvánku vygenil trogár ${user}",
+
+    "KICK_DONE": ":ok_hand: Trogár {user} je vykotený.",
+
+    "PING_LATENCY": "Odpad s časom {ms} ms.",
+    "PING_DISCORD_LATENCY": "Ešte vačší odpad s časom: {ms} ms",
+    "PONG": ":ping_pong: Bong",
+
+    "__comment10": {
+        "note": "Missing keys for needsmorejpeg.js",
+        "missing_keys": [
+            "CANNOT_JPEGIFY",
+            "CANNOT_FETCH_IMAGE",
+            "CANNOT_JPEGIFY_INTERNAL_ERROR"
+        ]
+    },
+
+    "__comment11": {
+        "note": "Missing keys for phone.js",
+        "missing_keys": [
+            "ALREADY_HAVE_NUMBER",
+            "NUMBER_RESERVED",
+            "NUMBER_EXISTS",
+            "QUESTION_NUMBER_PRIVATE",
+            "NUMBER_CREATED",
+            "NUMBER_INVALID",
+            "NUMBER_INVALID_HINT",
+            "CALLER_NO_NUMBER",
+            "NUMBER_NONEXISTANT",
+            "CALLING",
+            "CALL_ABORTED_BOT_REMOVED",
+            "CALL_ABORTED_NO_PERMISSIONS",
+            "PRIVATE_NUMBER",
+            "CHANNEL_INFORMATION",
+            "NUMBER_AVAILABLE",
+            "CHANNEL_INFORMATION_VALUE",
+            "UNKNOWN_CHANNEL",
+            "NUMBER_INFORMATION",
+            "QUESTION_DELETE_NUM",
+            "NUMBER_DELETED"
+        ]
+    },
+
+    "__comment12": {
+        "notes": [
+            "PROFILE_NONEXISTENT: Add the call-to-action",
+            "INVALID_LOCALE: Add the CTA to GitHub",
+            "Missing keys for profile.js"
+        ],
+        "missing_keys": [
+            "PROFILE_CREATE_SETUP",
+            "PROFILE_CREATE_TIMEZONE",
+            "PROFILE_CREATE_LOCALE",
+            "PROFILE_TIMEZONE",
+            "PROFILE_LOCALE_LIST"
+        ]
+    },
+    "PROFILE_NONEXISTENT": "Ešte nemáš profil.",
+    "PROFILE_DELETED": ":ok_hand: Tvoj profil je vyondený.",
+    "PROFILE_CREATED": ":ok_hand: Tvoj profil je vyrobený.",
+    "PROFILE_SPECIFIC_NONEXISTENT": "Trogár {user} nemá též profil.",
+    "INVALID_TIMEZONE": "Toto časové pásmo je skoro správne, len neni dobre. Zoznam časových pásem nájdeš vraj na tomto míste: <https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List>",
+    "INVALID_LOCALE": "Nahovno jazyk: `{locale}`",
+    "LOCALE_SET": "Nastaveu si si jazyk {locale}.",
+
+    "__comment13": {
+        "note": "Missing keys for serverinfo.js",
+        "missing_keys": [
+            "ALLOWED_INVITE_SPLASH",
+            "ALLOWED_VIP_REGIONS",
+            "ALLOWED_VANITY_URL",
+            "ALLOWED_VERIFIED",
+            "ALLOWED_PARTNERED",
+            "ALLOWED_COMMERCE",
+            "ALLOWED_NEWS",
+            "ALLOWED_LURKABLE",
+            "ALLOWED_DISCOVERABLE",
+            "ALLOWED_FEATURABLE",
+            "ALLOWED_ANIMATED_ICON",
+            "ALLOWED_BANNER",
+            "FEATURES"
+        ]
+    },
+
+    "GUILD_VERIFICATION_NONE":                        "Žádna",
+    "GUILD_VERIFICATION_LOW":                         "Malá (Ste overený email)",
+    "GUILD_VERIFICATION_MEDIUM":                      "Stredná (Ste overený email a musí odejsť 5 minút od registruváňá na tom Discorde)",
+    "GUILD_VERIFICATION_TABLEFLIP":                   "Vyššá (Ste overený email, musí odejsť 5 minút od registruváňá na tom Discorde a musí oedjsť 10 minút od prijídeňá na tento server)",
+    "GUILD_VERIFICATION_ULTRATABLEFLIP":              "Najvyššá (Ste overené číslo napr. aj na pevnú linku ale hlavne na mobil)",
+    "GUILD_VERIFICATION_LEVEL":                       "Voláka úroveň overeňá serveru",
+    "REQUIRES_ADMIN_MFA":                             "Ste 2FA pre voláke administrativné veci",
+    "MEMBER_COUNT": "{members, plural, one {# hovado} few {# hovadá} other {# hovád}}",
+    "ROLE_COUNT": "{roles, plural, one {# rola} few {# role} other {# rolí}}",
+    "EXPLICIT_FILTERING": "Filtruváňí nedobrého obsahu",
+    "EXPLICIT_FILTERING_OFF": "Vypaté",
+    "EXPLICIT_FILTERING_NOROLE": "Zapaté pre trogárov bez rolí",
+    "EXPLICIT_FILTERING_ON": "Zapaté",
+    "DEFAULT_NOTIFICATIONS": "Póvonné nastaveňá oznámeňí",
+    "ONLY_MENTIONS": "Len @mentions",
+    "ALL_MESSAGES": "Šecky správy",
+    "VOICE_REGION": "Lokalita serveru",
+    "AFK_TIMEOUT": "Voláky časový limit AFK",
+    "AFK_MINUTES": "{timeout, plural, one {# minúta} few {# minúty} other {# minút}}",
+    "AFK_CHANNEL": "Méno AFK kanálu",
+
+    "SOFTBAN_DONE": ":ok_hand: Trogár {user} je trochu zaondený.",
+
+    "BOTS_NOT_STRIKABLE": "Nemal by si varovať oných, botov. Je možné, že ublížíš ich rozumu :(",
+    "YOU_GOT_STRIKED": "Máš nové varovaní.",
+    "STRIKE_DETAILS": "Varovaní je poslaté od {issuer} z vraj že dajakého dóvodu: `{reason}`.",
+    "STRIKE_NO_REASON": "No, tak teda bez dóvodu",
+    "PAY_ATTENTION": "Nerob garázdu!",
+
+    "TOO_MUCH_STRIKES": "Trogár má voláko veľa varováňí na to, aby sa sem mestili. Namísto toho, tu máš voláky textový súbor:",
+    "STRIKE_OVERVIEW": "Varováňá trogára {user}",
+
+    "TAG_CREATED": "Vyrobený tag s názvom `{tag}`.",
+    "TAG_EXISTS": "Tag existuje!",
+    "TAG_DOESNTEXIST": "Tag neexistuje.",
+    "TAG_NOTOWNER": "Toto neni tvoj tag.",
+    "TAG_DELETED": "Vyondený tag s názvom `{tag}`.",
+    "TAG_UPDATED": "Preondený tag s názvom `{tag}`.",
+    "TAG_DISPLAY": "Tag {tag}",
+
+    "NO_TZ": "Toto je hovado, nemá vóbec nastavené časové pásmo.",
+    "TIME_FOR": "{time} hodín trogára {user}.",
+
+    "__comment16": {
+        "note": "Missing keys for userinfo.js",
+        "missing_keys": [
+            "NOT_IN_SERVER"
+        ]
+    },
+    "USER_INFO": "Informácie pre trogára {user}",
+    "USER_INFO_LIMITED": "Obmedzené informácie pre trogára {user}",
+    "CURRENT_VOICE": "Živý hlasový kanál",
+    "NO_CURRENT_VOICE": "Žádny",
+    "JOINED_ON": "Je na serveri:",
+
+    "__comment17": {
+        "notes": [
+            "Missing keys, might also need to recheck the English version"
+        ],
+        "missing_keys": [
+            "FREE_SOFTWARE",
+            "FREE_SOFTWARE_DESCRIPTION",
+            "WELCOME_PRIVACY_POLICY",
+            "WELCOME_PRIVACY_POLICY_DESCRIPTION",
+            "WELCOME_UPDATES",
+            "WELCOME_UPDATES_DESCRIPTION"
+        ]
+    },
+    "HI_I_AM_BOT": ":wave: Serus!",
+    "SOME_THINGS_SAID": "Ja som {botName} a som brat tt.bot-a, bota pre buzeruvání a vraj užitečné nástroje na Discorde. Mám potrebu ti trndzuvať s rukou.",
+    "GETTING_STARTED": ":floppy_disk: Začátek",
+    "GETTING_STARTED_DESCRIPTION": "Netreba nastaviť ani hovno na tt.bot-a, aby si ho používal se základýma funkcámi! Ale k používáňú príkazov pre podradených, ty (alebo volado s vlastnosťou Spravuvať server) musí naondiť príkaz `{defaultPrefix}config`, aby vyrobil konfiguráciu serveru. A to je konec! Móžeš tam aj nastaviť základné nastavení.",
+    "EVERYTHING_ELSE": ":books: Šecko iné",
+    "EVERYTHING_ELSE_DESCRIPTION": "Keď steš pomócť(alebo si povyprávať), nebuď lemravý a dójdi a server prvej pomoci; pozvánka je v príkaze `{defaultPrefix}info`.",
+    "THANKS_FOR_CHOOSING": "Gratulujem, že si si vybral(a) tt.bot-a!",
+    "WISHING_GOOD_LUCK": "*Prajem ti veľa šťasťá s tvojim serverom-*",
+    
+    "MODS_UNSTRIKABLE": "Nemôžeš zaondiť podradeného!",
+
+    "__comment18": {
+        "notes": [
+            "Missing keys",
+            "Check the English version for changes in wording."
+        ],
+        "missing_keys": [
+            "SORRY",
+            "ASK_YES_NO_CONFIRMATION (low priority, unused right now)"
+        ]
+    },
+    "NONE": "Žádne",
+    "MEMBERS": "Hovadá",
+    "OWNER": "Majiteľko",
+    "ROLES": "Role",
+    "STATUS": "Stav",
+    "REASON": "Dóvod",
+    "OP_CANCELLED": "Zrušené.",
+    "COMMAND_ERROR": "Nepochopeu som ťa :cry: Prosím ťa nebuď lemra a skontroluj tvoj oný a znovu skús príkaz.",
+    "ARGS_MISSING": "Chýba ti volačo v príkaze.",
+    "ROLE_HIERARCHY_ERROR": "Toto ti na druhého nedovolím.",
+    "ERROR": "Bodaj ťa! Skúseu som to ale volačo sa posralo... Daj to vedieť vývojárom.\n```js\nError:\n{error}\n```",
+    "OOPS": "Bodaj ťa.. Volačo sa dosralo.",
+    "MISSING_PERMISSIONS": "Toto nevím spraviť na serveri.",
+    "CREATED_ON": "Vyrobený",
+    "YES": "Áno",
+    "NO": "Níe",
+    "TOOLONG": "Mám to dlhé a nedá sa to ukázať :cry:",
+    "INVALID_ARG": "Voláky neplatný argument: {arg}, já vám tomu nerozumím ale opravte si to sami!",
+    "PAGE": "Strana {page}",
+    "ALL": "Šecko",
+
+    "NATIVE_LOCALE_NAME":                             "Slovenčina (Nitránske nárečí)",
+    "ENGLISH_LOCALE_NAME":                            "Slovak (Nitránske nárečí)",
+
+    "fallbackLanguage":                               "sk-SK"
+}

@@ -12,15 +12,13 @@ This repository serves as a git submodule for [tt.bot][tt.bot repo] that serves 
 
 
 ## Adding languages
-So you want to add your native language, huh?
-
-### Prerequisites
-- Basic understanding of ES6 and newer
+To add a language to tt.bot, you need following:
+- Basic understanding of the [ICU message format][icu-format]
 - Basic understanding of how Discord works
 - Basic understanding of how to control your computer
 
 ### How-to
-1. Make a copy of `en.js` and rename it appropriately. The format is `xx-YY`, where the `xx` stands for the language, and the `YY` stands for the region/dialect of the language.
+1. Make a copy of `en.json` and rename it appropriately. The format is `xx-YY`, where the `xx` stands for the language, and the `YY` stands for the region/dialect of the language.
 2. Translate the strings into your native language.
 3. Create a pull request.
 4. ???
@@ -36,3 +34,4 @@ This will switch you to a special locale that will show the term names instead o
 > ```
 
 [tt.bot repo]: https://github.com/tt-bot-dev/tt.bot
+[icu-format]: https://support.crowdin.com/icu-message-syntax/
