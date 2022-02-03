@@ -89,7 +89,7 @@
     "INFO_VERSIONS": "Verzie:",
     "INFO_UPTIME": "Doba prevádzky:",
     "INFO_FREE_SOFTWARE": "tt.bot je svobodný software",
-    "INFO_FREE_SOFTWARE_DESCRIPTION": "tt.bot je distribuovaný BEZ AKEJKOĽVEK ZÁRUKY. Môžeš si spustit vlastnú instanciu pod určitými podmienkami. [Zistiť viac](https://owo.codes/tt.bot/bot/-/blob/master/LICENSE)",
+    "INFO_FREE_SOFTWARE_DESCRIPTION": "tt.bot je svobodný software šírený pod rôznymi licenciami. [Zistiť viac]({learnMore})",
 
     "BOT_INVITE": "Prizvi tt.bot-a na svoj server pomocou tohto odkazu: <{botInviteLink}>\n\nKeď potrebuješ pomôcť s používaním bota, príd na náš server podpory vypísaný v príkaze `info`.",
 

@@ -115,7 +115,7 @@
     "INFO_VERSIONS": "Versions:",
     "INFO_UPTIME": "Uptime:",
     "INFO_FREE_SOFTWARE": "tt.bot is free software",
-    "INFO_FREE_SOFTWARE_DESCRIPTION": "tt.bot comes with ABSOLUTELY NO WARRANTY. You are welcome to run your own instance under certain conditions. [Learn more](https://owo.codes/tt.bot/bot/-/blob/master/LICENSE)",
+    "INFO_FREE_SOFTWARE_DESCRIPTION": "tt.bot is free software licensed under various licenses. [Learn more]({learnMore})",
     
     "BOT_INVITE": "Invite tt.bot using this link: <{botInviteLink}>\n\nIf you need help with using the bot, come to our support server listed in the `info` command.",
     
@@ -231,8 +231,8 @@
     "NO_TZ": "This user doesn't have a timezone set.",
     "TIME_FOR": "It's {time} for {user}.",
     
-    "USER_INFO": "User information for {nick}",
-    "USER_INFO_LIMITED": "Limited user information for {nick}",
+    "USER_INFO": "User information for {user}",
+    "USER_INFO_LIMITED": "Limited user information for {user}",
     "CURRENT_VOICE": "Current voice channel",
     "JOINED_ON": "Joined on",
     "NO_CURRENT_VOICE": "None",

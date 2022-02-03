@@ -326,8 +326,8 @@
             "NOT_IN_SERVER"
         ]
     },
-    "USER_INFO": "Informație pentru {nick}",
-    "USER_INFO_LIMITED": "Limited informație pentru {nick}",
+    "USER_INFO": "Informație pentru {user}",
+    "USER_INFO_LIMITED": "Limited informație pentru {user}",
     "CURRENT_VOICE": "Canalul de voice actual",
     "JOINED_ON": "Intrat din",
     "NO_CURRENT_VOICE": "Niciunul",

@@ -151,7 +151,7 @@
     "HELP_REMINDER": "Naondi {defaultPrefix}help <príkaz> a dostaneš informácie o jennollivých príkazoch.",
 
     "INFO_STATS": "Štatistiky",
-    "INFO_STATS_TEXT": "Serverov: {guilds}\nPoužívateľov: ${users}\nKanálov: ${channels}",
+    "INFO_STATS_TEXT": "Serverov: {guilds}\nPoužívateľov: {users}\nKanálov: {channels}",
     "INFO_AUTHORS": "Manufaktúra",
     "INFO_OWNERS": "{owners}\n[Server podpory](https://discord.gg/pGN5dMq)\n[Zdrojový kód](https://github.com/tt-bot-dev/tt.bot)\n[Ochrana súkromia](https://tttie.cz/privacy/tt.bot.html)",
     "INFO_VERSIONS": "Verzia:",
